@@ -1,206 +1,750 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GearCertified | Ultimate 3-in-1 Palm Grips</title>
-    <style>
-        :root {
-            --bg-color: #000000;
-            --surface-color: #0a0a0a;
-            --border-color: #222222;
-            --text-main: #ffffff;
-            --text-muted: #888888;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
-        }
-
-        /* Header / Navigation */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 24px 6%;
-            background-color: var(--bg-color);
-            border-bottom: 1px solid var(--border-color);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .logo {
-            font-weight: 900;
-            font-size: 1.4rem;
-            letter-spacing: 2px;
-            color: var(--text-main);
-            text-transform: uppercase;
-        }
-
-        nav a {
-            color: var(--text-muted);
-            text-decoration: none;
-            margin-left: 28px;
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: color 0.2s ease;
-        }
-
-        nav a:hover {
-            color: var(--text-main);
-        }
-
-        /* Hero Section */
-        .hero {
-            text-align: center;
-            padding: 100px 6% 80px 6%;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 900;
-            letter-spacing: -1px;
-            margin-bottom: 24px;
-            line-height: 1.1;
-        }
-
-        .hero p {
-            color: var(--text-muted);
-            font-size: clamp(1.1rem, 2vw, 1.3rem);
-            max-width: 640px;
-            margin: 0 auto 36px auto;
-        }
-
-        .cta-btn {
-            display: inline-block;
-            background-color: var(--text-main);
-            color: var(--bg-color);
-            padding: 16px 36px;
-            font-weight: 700;
-            text-decoration: none;
-            border-radius: 4px;
-            font-size: 1rem;
-            letter-spacing: 0.5px;
-            transition: background-color 0.2s ease, transform 0.2s ease;
-        }
-
-        .cta-btn:hover {
-            background-color: #dddddd;
-            transform: translateY(-2px);
-        }
-
-        /* Features Grid Section */
-        .features {
-            padding: 80px 6%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            font-weight: 800;
-            margin-bottom: 50px;
-            letter-spacing: -0.5px;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
-        }
-
-        .card {
-            background-color: var(--surface-color);
-            border: 1px solid var(--border-color);
-            padding: 36px 30px;
-            border-radius: 6px;
-            transition: border-color 0.2s ease;
-        }
-
-        .card:hover {
-            border-color: #444444;
-        }
-
-        .card h3 {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 14px;
-            color: var(--text-main);
-        }
-
-        .card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 40px 6%;
-            background-color: var(--bg-color);
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            border-top: 1px solid var(--border-color);
-            letter-spacing: 0.5px;
-        }
-    </style>
-</head>
-<body>
-
-    <!-- Navigation Bar -->
-    <header>
-        <div class="logo">GearCertified</div>
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#features">Features</a>
-            <a href="mailto:support@gearcertified.com">Contact</a>
-        </nav>
-    </header>
-
-    <!-- Hero Area -->
-    <section class="hero" id="home">
-        <h1>The Ultimate 3-in-1 Palm Grips</h1>
-        <p>Engineered with textured synthetic rubber and a reinforced nylon inner mesh for a completely slip-free hold, built to handle heavy abuse under any conditions.</p>
-        <a href="https://amazon.com" class="cta-btn" target="_blank" rel="noopener">View Exclusively On Amazon</a>
-    </section>
-
-    <!-- Features Section -->
-    <section class="features" id="features">
-        <h2 class="section-title">Engineered For Performance</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Ultra-Durable (3 mm)</h3>
-                <p>Designed to withstand heavy-duty friction while maintaining full dexterity and structural integrity during high-intensity training sessions.</p>
-            </div>
-            <div class="card">
-                <h3>Raised SBR Padding</h3>
-                <p>Locks your hands securely to the bar while maximizing palm comfort and eliminating friction tears during heavy pulls and presses.</p>
-            </div>
-            <div class="card">
-                <h3>7 mm Neoprene Cuffs</h3>
-                <p>Extra-thick, premium wrist support built to alleviate joint strain and stop painful digging when handling elite loads.</p>
-            </div>
+<body id="if8w">
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>GearCertified – The Ultimate 3-in-1 Palm Grips
+  </title>
+  <meta name="description" content="Premium palm grip D-ring lifting straps with textured rubber, 7mm neoprene wrist cuffs and a welded stainless steel D-ring. Available on Amazon.com."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <header>
+    <div class="wrap bar">
+      <a href="#top" aria-label="GearCertified home, back to top" class="logo"><img src="data:image/png;base64,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" alt="GearCertified" width="251" height="56"/></a>
+      <nav aria-label="Main" id="iza7j">
+        <a href="#faq">FAQ</a>
+        <a href="#contact" id="i8d8j">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid" id="i8b9x">
+        <div class="hero-text">
+          <h1>The Ultimate 3-in-1 Palm Grips
+          </h1>
         </div>
+        <div aria-roledescription="carousel" aria-label="Product images" class="shot">
+          <div tabindex="0" class="slides">
+            <div role="group" aria-roledescription="slide" aria-label="Image 1 of 7" class="slide">
+              <img src="https://storage.mlcdn.com/account_image/2723630/O1mZ6vs0r9HrcDjFqwzQTcCJLEAs0Xvl4qFhXAFq.png" alt="GearCertified 3-in-1 Palm Grips, view 1" width="560" height="560"/>
+            </div>
+            <div role="group" aria-roledescription="slide" aria-label="Image 2 of 7" class="slide">
+              <img src="https://storage.mlcdn.com/account_image/2723630/O1mZ6vs0r9HrcDjFqwzQTcCJLEAs0Xvl4qFhXAFq.png" alt="GearCertified 3-in-1 Palm Grips, view 2" width="560" height="560" loading="lazy"/>
+            </div>
+            <div role="group" aria-roledescription="slide" aria-label="Image 3 of 7" class="slide">
+              <img src="https://storage.mlcdn.com/account_image/2723630/O1mZ6vs0r9HrcDjFqwzQTcCJLEAs0Xvl4qFhXAFq.png" alt="GearCertified 3-in-1 Palm Grips, view 3" width="560" height="560" loading="lazy"/>
+            </div>
+            <div role="group" aria-roledescription="slide" aria-label="Image 4 of 7" class="slide">
+              <img src="https://storage.mlcdn.com/account_image/2723630/O1mZ6vs0r9HrcDjFqwzQTcCJLEAs0Xvl4qFhXAFq.png" alt="GearCertified 3-in-1 Palm Grips, view 4" width="560" height="560" loading="lazy"/>
+            </div>
+            <div role="group" aria-roledescription="slide" aria-label="Image 5 of 7" class="slide">
+              <img src="https://storage.mlcdn.com/account_image/2723630/O1mZ6vs0r9HrcDjFqwzQTcCJLEAs0Xvl4qFhXAFq.png" alt="GearCertified 3-in-1 Palm Grips, view 5" width="560" height="560" loading="lazy"/>
+            </div>
+            <div role="group" aria-roledescription="slide" aria-label="Image 6 of 7" class="slide">
+              <img src="https://storage.mlcdn.com/account_image/2723630/O1mZ6vs0r9HrcDjFqwzQTcCJLEAs0Xvl4qFhXAFq.png" alt="GearCertified 3-in-1 Palm Grips, view 6" width="560" height="560" loading="lazy"/>
+            </div>
+            <div role="group" aria-roledescription="slide" aria-label="Image 7 of 7" class="slide">
+              <img src="https://storage.mlcdn.com/account_image/2723630/O1mZ6vs0r9HrcDjFqwzQTcCJLEAs0Xvl4qFhXAFq.png" alt="GearCertified 3-in-1 Palm Grips, view 7" width="560" height="560" loading="lazy"/>
+            </div>
+          </div>
+          <button type="button" aria-label="Previous image" class="arrow prev">‹</button>
+          <button type="button" aria-label="Next image" class="arrow next">›</button>
+          <div class="dots">
+            <button type="button" aria-label="Go to image 1" class="dot active">Send</button>
+            <button type="button" aria-label="Go to image 2" class="dot">Send</button>
+            <button type="button" aria-label="Go to image 3" class="dot" id="idyzt">Send</button>
+            <button type="button" aria-label="Go to image 4" class="dot">Send</button>
+            <button type="button" aria-label="Go to image 5" class="dot">Send</button>
+            <button type="button" aria-label="Go to image 6" class="dot">Send</button>
+            <button type="button" aria-label="Go to image 7" class="dot">Send</button>
+          </div>
+        </div>
+        <div class="hero-actions">
+          <div class="cta-row">
+            <a href="#" class="btn btn-primary">Shop on Amazon</a>
+          </div>
+          <div class="proof" id="inkar">
+            <span><svg viewBox="0 0 24 24">
+              <path d="M5 12l5 5L20 7">
+              </path>
+              </svg>Slip-free hold</span>
+            <span id="iyblq"><svg viewBox="0 0 24 24">
+              <path d="M5 12l5 5L20 7">
+              </path>
+              </svg>Premium materials</span>
+            <span id="idlmg"><svg viewBox="0 0 24 24">
+              <path d="M5 12l5 5L20 7">
+              </path>
+              </svg>Ergonomic shape</span>
+            <span id="idpjl"><svg viewBox="0 0 24 24">
+              <path d="M5 12l5 5L20 7">
+              </path>
+              </svg>Durable stitching<span id="it3pt"><svg viewBox="0 0 24 24">
+              <path d="M5 12l5 5L20 7">
+              </path>
+              </svg>Versatile</span></span>
+            <span id="i0mnb"><svg viewBox="0 0 24 24">
+              <path d="M5 12l5 5L20 7">
+              </path>
+              </svg>Fits 5.5 to 8.5 in wrists</span>
+          </div>
+        </div>
+      </div>
     </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 GearCertified. All rights reserved. Available exclusively on Amazon.</p>
-    </footer>
-
+    <section id="details" class="alt">
+      <div class="wrap">
+        <div class="head">
+          <h2 id="ij2mk">Engineered for perfection
+          </h2>
+        </div>
+        <div class="features">
+          <div class="feature">
+            <span class="spec">3mm Grips</span>
+            <h3>Ultra-durable palm grips
+            </h3>
+            <p>Engineered to withstand heavy abuse while maintaining full dexterity and functionality.
+            </p>
+          </div>
+          <div class="feature">
+            <span class="spec">Seamless Finger Padding</span>
+            <h3>Grip that locks in
+            </h3>
+            <p>Rectangular rubber padding that locks your hands to the bar while maximizing finger comfort.
+            </p>
+          </div>
+          <div class="feature">
+            <span class="spec">Durable Stitching</span>
+            <h3>Reinforced against tearing
+            </h3>
+            <p>Heavily reinforced stitching along the palm piece and wrist cuff to prevent tearing and guarantee maximum lifespan.
+            </p>
+          </div>
+          <div class="feature">
+            <span class="spec">7mm neoprene</span>
+            <h3>Extra-thick wrist cuffs
+            </h3>
+            <p>Premium padding for maximum wrist support that eliminates painful digging during heavy lifts.
+            </p>
+          </div>
+          <div class="feature">
+            <span class="spec">Welded stainless steel</span>
+            <h3>Indestructible cable ring
+            </h3>
+            <p>Built for heavy weight loads and attaches to cable machines for endless versatility.
+            </p>
+          </div>
+          <div class="feature">
+            <span class="spec">3D rubber logo</span>
+            <h3>A premium finish
+            </h3>
+            <p>A sleek, high-end 3D logo that looks as good as it feels.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="wrap split">
+        <div>
+          <h2>Made to stay put when it gets sweaty
+          </h2>
+          <p>Textured synthetic rubber and a reinforced nylon inner mesh deliver maximum durability and a completely slip-free hold. The premium materials have been rigorously tested for the ultimate training experience.
+          </p>
+          <div class="uses">
+            <span>Heavy Pushes</span>
+            <span>Intense Pulls</span>
+            <span>Cable Exercises</span>
+          </div>
+        </div>
+        <div class="size">
+          <p>One Size Fits Most
+          </p>
+          <b>5.5 to 8.5 inches
+          </b>
+          <p>Wrist Circumference
+          </p>
+        </div>
+      </div>
+    </section>
+    <section id="faq" class="alt">
+      <div class="wrap faq">
+        <div class="head">
+          <h2 id="idbl4g">Frequently Asked Questions
+          </h2>
+        </div>
+        <details open>
+          <summary>What makes these different from the current available market?
+          </summary>
+          <p>Traditional gear forces you to choose between standard wrapping straps or basic rubber grips. This is the only design that unifies instant-grip textured rubber, elite wrist padding and an indestructible stainless steel ring for complete exercise versatility.
+          </p>
+        </details>
+        <details id="itiw9j">
+          <summary>Do the grips stand up on their own, or do they flop over?
+          </summary>
+          <p>The premium material blend is engineered to hold its shape perfectly. This means the flap stays upright and ready when you reach for the bar, allowing for lightning-fast, seamless transitions between exercises.
+          </p>
+        </details>
+        <details>
+          <summary>Do they work on machines with rubber handles?
+          </summary>
+          <p>Yes, they work extremely well and easy on all machines. The textured synthetic rubber material is engineered to lock onto both bare steel and rubber-coated handles, giving you a completely slip-free hold even when sweaty.
+          </p>
+        </details>
+        <details>
+          <summary>Is the material holding the cable ring durable?
+          </summary>
+          <p>Yes, it's made with a heavy-duty fabric that lasts and features double box X-stitching to prevent tearing. This ensures the steel ring stays completely secure under heavy weight loads.
+          </p>
+        </details>
+      </div>
+    </section>
+    <section id="i08aqs">
+      <div class="wrap">
+        <div class="final">
+          <h2>Lift heavier. Grip harder.
+          </h2>
+          <p>Get the 3-in-1 Palm Grips on Amazon.com.
+          </p>
+          <a href="#" class="btn">Shop on Amazon</a>
+        </div>
+      </div>
+    </section>
+    <section id="contact">
+      <div class="wrap contact">
+        <h2>Contact us
+        </h2>
+        <p>Questions, feedback or need help with your order? Send us an email and we will get back to you.
+        </p>
+        <a href="mailto:support@gearcertified.com" class="btn btn-primary">support@gearcertified.com</a>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="wrap foot">
+      <div>© 2026 GearCertified. All rights reserved.
+      </div>
+    </div>
+  </footer>
 </body>
-</html>
+<style>* {
+  box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+  }
+  :root{
+    --white:#fff;
+    --paper:#f5f5f5;
+    --line:#e5e5e5;
+    --ink:#111111;
+    --muted:#5f5f5f;
+    --green:#000000;
+    --green-2:#2b2b2b;
+    --gold:#000000;
+    --gold-soft:#ededed;
+    --radius:14px;
+  }
+  *{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+  }
+  html{
+    scroll-behavior:smooth;
+    scroll-padding-top:84px;
+  }
+  body{
+    font-family:Manrope,system-ui,sans-serif;
+    color:var(--ink);
+    background:var(--white);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1, h2, h3{
+    font-family:Fraunces,Georgia,serif;
+    line-height:1.1;
+    letter-spacing:-.01em;
+  }
+  a{
+    color:inherit;
+    text-decoration:none;
+  }
+  img{
+    max-width:100%;
+    display:block;
+  }
+  :focus-visible{
+    outline:3px solid var(--gold);
+    outline-offset:3px;
+    border-radius:6px;
+  }
+  .wrap{
+    max-width:1160px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+  section{
+    padding:96px 0;
+  }
+  .alt{
+    background:var(--paper);
+  }
+  header{
+    position:sticky;
+    top:0;
+    z-index:20;
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .bar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    padding-top:14px;
+    padding-bottom:14px;
+  }
+  nav{
+    display:flex;
+    gap:28px;
+    font-weight:600;
+    font-size:.95rem;
+  }
+  nav a{
+    color:var(--ink);
+    padding:8px 2px;
+    border-bottom:2px solid transparent;
+    transition:border-color .2s;
+  }
+  nav a:hover{
+    border-color:var(--green);
+  }
+  .logo{
+    display:block;
+    line-height:0;
+  }
+  .logo img{
+    height:auto;
+    width:260px;
+    max-width:70vw;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:600;
+    font-size:.95rem;
+    padding:15px 28px;
+    border-radius:999px;
+    border:1.5px solid transparent;
+    cursor:pointer;
+    transition:background .2s,color .2s,border-color .2s;
+  }
+  .btn-primary{
+    background:var(--green);
+    color:#fff;
+  }
+  .btn-primary:hover{
+    background:var(--green-2);
+  }
+  .hero{
+    padding:80px 0 96px;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    grid-template-rows:1fr auto auto 1fr;
+    column-gap:64px;
+  }
+  .hero-text{
+    grid-column:1;
+    grid-row:2;
+  }
+  .hero-actions{
+    grid-column:1;
+    grid-row:3;
+  }
+  .hero-grid .shot{
+    grid-column:2;
+    grid-row:1/5;
+    align-self:center;
+  }
+  h1{
+    font-size:clamp(2.3rem,5vw,4rem);
+    color:var(--green);
+    margin-bottom:28px;
+  }
+  .cta-row{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+    margin-bottom:36px;
+  }
+  .proof{
+    display:flex;
+    gap:26px;
+    flex-wrap:wrap;
+    font-size:.92rem;
+    color:var(--muted);
+  }
+  .proof span{
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .proof svg{
+    width:18px;
+    height:18px;
+    stroke:var(--gold);
+    fill:none;
+    stroke-width:2.4;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    flex:none;
+  }
+  .shot{
+    position:relative;
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:28px;
+    padding:20px 20px 52px;
+    box-shadow:0 30px 60px -30px rgba(0,0,0,.35);
+  }
+  .slides{
+    display:flex;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    scrollbar-width:none;
+    -webkit-overflow-scrolling:touch;
+    border-radius:16px;
+  }
+  .slides::-webkit-scrollbar{
+    display:none;
+  }
+  .slide{
+    flex:0 0 100%;
+    scroll-snap-align:center;
+  }
+  .slide img{
+    width:100%;
+    height:auto;
+    border-radius:16px;
+  }
+  .arrow{
+    position:absolute;
+    top:calc(50% - 16px);
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    border:1px solid var(--line);
+    background:rgba(255,255,255,.92);
+    color:var(--ink);
+    font-size:1.5rem;
+    line-height:1;
+    cursor:pointer;
+    display:grid;
+    place-items:center;
+    padding-bottom:3px;
+    transition:background .2s,color .2s;
+  }
+  .arrow:hover{
+    background:var(--green);
+    color:#fff;
+  }
+  .prev{
+    left:30px;
+  }
+  .next{
+    right:30px;
+  }
+  .dots{
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:18px;
+    display:flex;
+    justify-content:center;
+    gap:8px;
+  }
+  .dot{
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    border:0;
+    background:#c9c9c9;
+    cursor:pointer;
+    padding:0;
+    transition:background .2s,width .2s;
+  }
+  .dot.active{
+    background:var(--green);
+    width:24px;
+    border-radius:999px;
+  }
+  .head{
+    max-width:660px;
+    margin-bottom:56px;
+  }
+  .head h2{
+    font-size:clamp(2rem,3.6vw,2.8rem);
+    color:var(--green);
+    margin-bottom:16px;
+  }
+  .head p{
+    color:var(--muted);
+    font-size:1.05rem;
+  }
+  .features{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+  }
+  .feature{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:30px;
+    transition:border-color .2s,box-shadow .2s;
+  }
+  .feature:hover{
+    border-color:var(--green);
+    box-shadow:0 18px 40px -22px rgba(0,0,0,.35);
+  }
+  .feature .spec{
+    display:inline-block;
+    font-size:.8rem;
+    font-weight:700;
+    color:var(--gold);
+    background:var(--gold-soft);
+    padding:4px 12px;
+    border-radius:999px;
+    margin-bottom:16px;
+  }
+  .feature h3{
+    font-size:1.25rem;
+    color:var(--green);
+    margin-bottom:10px;
+  }
+  .feature p{
+    color:var(--muted);
+    font-size:.96rem;
+  }
+  .split{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:64px;
+    align-items:center;
+  }
+  .split h2{
+    font-size:clamp(2rem,3.4vw,2.6rem);
+    color:var(--green);
+    margin-bottom:20px;
+  }
+  .split p{
+    color:var(--muted);
+    margin-bottom:16px;
+    font-size:1.03rem;
+  }
+  .uses{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-top:8px;
+  }
+  .uses span{
+    border:1px solid var(--line);
+    background:#fff;
+    border-radius:999px;
+    padding:8px 18px;
+    font-weight:600;
+    font-size:.9rem;
+    color:var(--green);
+  }
+  .size{
+    background:var(--green);
+    color:#fff;
+    border-radius:24px;
+    padding:48px;
+    text-align:center;
+  }
+  .size b{
+    display:block;
+    font-family:Fraunces,serif;
+    font-size:clamp(2.4rem,4.5vw,3.4rem);
+    color:#fff;
+    line-height:1.1;
+    margin:10px 0;
+  }
+  .size p{
+    color:rgba(255,255,255,.8);
+    margin:0;
+  }
+  .faq{
+    max-width:780px;
+  }
+  details{
+    border-bottom:1px solid var(--line);
+    padding:22px 0;
+  }
+  summary{
+    cursor:pointer;
+    font-weight:600;
+    font-size:1.05rem;
+    list-style:none;
+    display:flex;
+    justify-content:space-between;
+    gap:16px;
+  }
+  summary::-webkit-details-marker{
+    display:none;
+  }
+  summary::after{
+    content:"+";
+    font-size:1.5rem;
+    line-height:1;
+    color:var(--gold);
+    transition:transform .2s;
+  }
+  details[open] summary::after{
+    transform:rotate(45deg);
+  }
+  details p{
+    margin-top:12px;
+    color:var(--muted);
+  }
+  details a{
+    color:var(--green);
+    font-weight:600;
+    text-decoration:underline;
+  }
+  .final{
+    background:var(--green);
+    color:#fff;
+    text-align:center;
+    border-radius:24px;
+    padding:72px 24px;
+  }
+  .final h2{
+    font-size:clamp(2rem,3.8vw,2.9rem);
+    margin-bottom:16px;
+  }
+  .final p{
+    opacity:.8;
+    max-width:34em;
+    margin:0 auto 32px;
+  }
+  .final .btn{
+    background:#fff;
+    color:var(--green);
+  }
+  .final .btn:hover{
+    background:var(--gold-soft);
+  }
+  .contact{
+    text-align:center;
+    max-width:640px;
+    margin:0 auto;
+  }
+  .contact h2{
+    font-size:clamp(2rem,3.6vw,2.8rem);
+    color:var(--green);
+    margin-bottom:16px;
+  }
+  .contact p{
+    color:var(--muted);
+    font-size:1.05rem;
+    margin-bottom:28px;
+  }
+  .contact .social{
+    justify-content:center;
+    margin-top:36px;
+    flex-wrap:wrap;
+  }
+  footer{
+    border-top:1px solid var(--line);
+    padding:44px 0;
+    color:var(--muted);
+    font-size:.9rem;
+  }
+  .foot{
+    display:flex;
+    justify-content:center;
+    text-align:center;
+    gap:24px;
+    flex-wrap:wrap;
+    align-items:center;
+  }
+  .social a:hover{
+    color:var(--green);
+  }
+  #i08aqs{
+    padding-top:96px;
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{
+      transition:none !important;
+      scroll-behavior:auto !important;
+    }
+  }
+  @media (max-width:960px){
+    .split{
+      grid-template-columns:1fr;
+      gap:44px;
+    }
+    .hero-grid{
+      grid-template-columns:1fr;
+      grid-template-rows:auto;
+      column-gap:0;
+    }
+    .hero-text{
+      grid-column:1;
+      grid-row:1;
+    }
+    .hero-actions, .hero-grid .shot{
+      grid-column:1;
+    }
+    .hero-grid .shot{
+      grid-row:2;
+      margin:0 auto 32px;
+      width:100%;
+      max-width:520px;
+    }
+    .hero-actions{
+      grid-row:3;
+    }
+    .features{
+      grid-template-columns:repeat(2,1fr);
+    }
+    section{
+      padding:72px 0;
+    }
+  }
+  @media (max-width:560px){
+    .logo img{
+      width:150px;
+    }
+    nav{
+      gap:16px;
+      font-size:.88rem;
+    }
+    .features{
+      grid-template-columns:1fr;
+    }
+    .hero{
+      padding-top:36px;
+    }
+    .cta-row .btn{
+      width:100%;
+    }
+    .cta-row{
+      margin-bottom:28px;
+    }
+    .proof{
+      gap:14px 22px;
+    }
+    .size{
+      padding:36px 24px;
+    }
+  }
+</style>
