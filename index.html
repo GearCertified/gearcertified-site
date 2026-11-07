@@ -3,8 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>GearCertified – The Ultimate 3-in-1 Palm Grips</title>
+<title>GearCertified – The Ultimate 3-in-1 Lifting Grips</title>
 <meta name="description" content="Premium palm grip D-ring lifting straps with textured rubber, 7mm neoprene wrist cuffs and a welded stainless steel D-ring. Available on Amazon.com.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="GearCertified – The Ultimate 3-in-1 Lifting Grips">
+<meta property="og:description" content="Premium lifting grips with textured rubber, 7mm neoprene wrist cuffs and a welded stainless steel D-ring.">
+<meta property="og:url" content="https://gearcertified.com">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -21,20 +26,24 @@ img{max-width:100%;display:block}
 .wrap{max-width:1160px;margin:0 auto;padding:0 24px}
 section{padding:96px 0}
 .alt{background:var(--paper)}
-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:#000;color:#fff}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:#000;z-index:10}
+header :focus-visible{outline-color:#fff}
 .bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:14px;padding-bottom:14px}
 nav{display:flex;gap:28px;font-weight:600;font-size:.95rem}
 nav a{padding:8px 2px;border-bottom:2px solid transparent;transition:border-color .2s}
-nav a:hover{border-color:var(--green)}
-.logo{display:block;line-height:0}.logo img{height:auto;width:220px;max-width:60vw}
+nav a:hover{border-color:#fff}
+.logo{display:block;line-height:0}.logo img{height:auto;width:200px;max-width:55vw;filter:invert(1)}
 .btn{display:inline-flex;align-items:center;justify-content:center;font-weight:600;font-size:.95rem;padding:15px 28px;border-radius:999px;border:1.5px solid transparent;cursor:pointer;transition:background .2s,color .2s}
 .btn-primary{background:var(--green);color:#fff}
 .btn-primary:hover{background:var(--green-2)}
 .hero{padding:80px 0 96px}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;grid-template-rows:1fr auto auto 1fr;column-gap:64px}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;grid-template-rows:1fr auto auto 1fr auto;column-gap:64px}
 .hero-text{grid-column:1;grid-row:2}
 .hero-actions{grid-column:1;grid-row:3}
 .hero-grid .shot{grid-column:2;grid-row:1/5;align-self:center}
+.rate{grid-column:2;grid-row:5;justify-self:center;text-align:center;margin-top:14px;font-size:.9rem;color:var(--muted)}
+.rate a{font-weight:700;color:var(--ink);text-decoration:underline;text-underline-offset:3px}
 h1{font-size:clamp(2.3rem,5vw,4rem);margin-bottom:28px}
 .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:36px}
 .proof{display:flex;gap:14px 26px;flex-wrap:wrap;font-size:.92rem;color:var(--muted)}
@@ -83,18 +92,80 @@ details p{margin-top:12px;color:var(--muted)}
 .contact{text-align:center;max-width:640px;margin:0 auto}
 .contact h2{font-size:clamp(2rem,3.6vw,2.8rem);margin-bottom:16px}
 .contact p{color:var(--muted);font-size:1.05rem;margin-bottom:28px}
-footer{border-top:1px solid var(--line);padding:44px 0;color:var(--muted);font-size:.9rem;text-align:center}
+footer{background:#000;color:#fff;padding:44px 0;font-size:.9rem;text-align:center}
+.promo{position:fixed;right:0;top:50%;transform:translateY(-50%);z-index:30;display:flex;flex-direction:column;align-items:center;gap:12px;background:#000;color:#fff;padding:8px calc(6px + env(safe-area-inset-right,0px)) 16px 6px;border-radius:10px 0 0 10px;box-shadow:0 8px 24px -8px rgba(0,0,0,.5)}
+.promo-open{background:none;border:0;color:inherit;font-family:inherit;cursor:pointer;writing-mode:vertical-rl;transform:rotate(180deg);font-weight:700;font-size:.85rem;letter-spacing:.05em;white-space:nowrap;padding:4px 2px}
+.promo-x{width:24px;height:24px;border:0;border-radius:50%;background:rgba(255,255,255,.18);color:#fff;font-size:16px;line-height:1;cursor:pointer;padding-bottom:2px}
+.promo-x:hover{background:rgba(255,255,255,.32)}
+.promo :focus-visible{outline-color:#fff}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.drawer-bg{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:40;opacity:0;visibility:hidden;transition:opacity .25s,visibility 0s .25s}
+.drawer-bg.open{opacity:1;visibility:visible;transition:opacity .25s,visibility 0s}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:50%;min-width:380px;max-width:100%;background:#fff;color:var(--ink);z-index:50;display:flex;overflow-y:auto;transform:translateX(100%);visibility:hidden;transition:transform .3s,visibility 0s .3s;box-shadow:-20px 0 50px -20px rgba(0,0,0,.4)}
+.drawer.open{transform:none;visibility:visible;transition:transform .3s,visibility 0s}
+.drawer-body{width:100%;max-width:520px;margin:auto;padding:64px 40px 40px}
+.drawer-body h2{font-size:clamp(1.8rem,3vw,2.4rem);margin-bottom:12px}
+.drawer-body>div>p{color:var(--muted);margin-bottom:24px}
+.drawer-close{position:absolute;top:14px;right:14px;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--paper);color:var(--ink);font-size:1.5rem;line-height:1;cursor:pointer;display:grid;place-items:center;padding-bottom:3px}
+.drawer-close:hover{background:var(--ink);color:#fff}
+#dEmail,#dEmail2,#dCode{width:100%;padding:15px 20px;border:1.5px solid var(--line);border-radius:999px;font:inherit;margin-bottom:18px;background:#fff;color:var(--ink)}
+#dEmail:focus,#dEmail2:focus,#dCode:focus{outline:none;border-color:var(--ink)}
+.consent{display:flex;gap:12px;align-items:flex-start;font-size:.88rem;color:var(--muted);margin-bottom:12px;cursor:pointer}
+.consent input{width:20px;height:20px;flex:none;margin-top:2px;accent-color:#000}
+.err{color:#b00020;font-size:.88rem;min-height:1.4em;margin-bottom:8px}
+#signup .btn{width:100%}
+.coupon{display:flex;gap:10px;align-items:stretch;margin:20px 0 14px}
+.coupon code{flex:1;display:grid;place-items:center;border:2px dashed var(--ink);border-radius:14px;padding:14px;font-family:Manrope,system-ui,sans-serif;font-weight:700;font-size:1.6rem;letter-spacing:.12em;user-select:all}
+.coupon .btn{padding:0 22px;white-space:nowrap;border-radius:14px}
+#dDone .note{margin:0 0 24px;font-size:.92rem;color:var(--muted)}
+#dDone>.btn{width:100%}
+#dCode{text-align:center;letter-spacing:.4em;font-size:1.5rem;font-weight:700}
+#verifyForm .btn{width:100%}
+#dVerify .resend{font-size:.92rem;color:var(--muted);text-align:center;margin:20px 0 4px}
+#dVerify .ok{font-size:.88rem;color:var(--ink);text-align:center;min-height:1.3em;margin:0 0 8px}
+#dVerify .tip{font-size:.88rem;color:var(--muted);text-align:center;margin:0}
+.linkbtn{background:none;border:0;font:inherit;color:var(--ink);font-weight:600;text-decoration:underline;cursor:pointer;padding:0}
+.resend-btn{font-weight:700;letter-spacing:.04em}
+.share{position:absolute;top:30px;right:30px;z-index:2;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.92);color:var(--ink);display:grid;place-items:center;cursor:pointer;transition:background .2s,color .2s}
+.share:hover{background:var(--green);color:#fff}
+.flinks{display:flex;justify-content:center;flex-wrap:wrap;gap:8px 24px;margin-bottom:14px}
+.flink{background:none;border:0;color:#fff;font:inherit;text-decoration:underline;cursor:pointer;padding:6px 2px}
+footer :focus-visible{outline-color:#fff}
+.legal{font-size:.82rem;color:var(--muted);margin-bottom:6px}
+#docBg{z-index:60}
+.doc{position:fixed;left:50%;top:50%;transform:translate(-50%,-48%);width:min(720px,calc(100% - 32px));background:#fff;color:var(--ink);border-radius:20px;z-index:70;overflow:hidden;opacity:0;visibility:hidden;transition:opacity .25s,transform .25s,visibility 0s .25s}
+.doc.open{opacity:1;visibility:visible;transform:translate(-50%,-50%);transition:opacity .25s,transform .25s,visibility 0s}
+.doc-body{padding:56px 32px 32px;overflow-y:auto;max-height:85vh}
+.doc-body h2{font-size:1.9rem;margin-bottom:6px}
+.doc-body h3{font-family:Manrope,system-ui,sans-serif;font-size:1.05rem;font-weight:700;letter-spacing:0;margin:22px 0 6px}
+.doc-body p,.doc-body li{color:var(--muted);font-size:.95rem;margin-bottom:8px}
+.doc-body ul{padding-left:20px}
+.doc-body a{text-decoration:underline;color:var(--ink)}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:#000;color:#fff;padding:12px 20px;border-radius:999px;font-size:.9rem;z-index:80;opacity:0;pointer-events:none;transition:opacity .25s}
+.toast.show{opacity:1}
+#shBg{z-index:60}
+#shSheet{width:min(440px,calc(100% - 32px))}
+.share-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px 10px;margin-top:22px}
+.share-grid a,.share-grid button{display:flex;flex-direction:column;align-items:center;gap:8px;background:none;border:0;font:inherit;font-size:.82rem;font-weight:600;color:var(--ink);cursor:pointer;text-align:center;text-decoration:none}
+.si{width:52px;height:52px;display:block;transition:transform .15s}.si svg{display:block}
+.share-grid a:hover .si,.share-grid button:hover .si{transform:translateY(-2px)}
+@media (max-width:700px){
+.drawer{top:auto;left:0;width:100%;min-width:0;min-height:50vh;max-height:90vh;transform:translateY(100%);border-radius:20px 20px 0 0;padding-bottom:env(safe-area-inset-bottom,0px);box-shadow:0 -20px 50px -20px rgba(0,0,0,.4)}
+.drawer-body{padding:56px 24px 32px}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 @media (max-width:960px){
 .split{grid-template-columns:1fr;gap:44px}
 .hero-grid{grid-template-columns:1fr;grid-template-rows:auto;column-gap:0}
 .hero-text{grid-row:1}
-.hero-grid .shot{grid-column:1;grid-row:2;margin:0 auto 32px;width:100%;max-width:520px}
-.hero-actions{grid-column:1;grid-row:3}
+.hero-grid .shot{grid-column:1;grid-row:2;margin:0 auto 12px;width:100%;max-width:520px}
+.rate{grid-column:1;grid-row:3;justify-self:center;margin:0 0 32px}
+.hero-actions{grid-column:1;grid-row:4}
 .features{grid-template-columns:repeat(2,1fr)}
 section{padding:72px 0}}
 @media (max-width:560px){
-nav{gap:16px;font-size:.88rem}
+nav{gap:18px;font-size:.88rem}
+.bar{padding-top:12px;padding-bottom:12px}
+.logo img{width:140px}
 .features{grid-template-columns:1fr}
 .hero{padding-top:36px}
 .cta-row .btn{width:100%}
@@ -105,13 +176,13 @@ nav{gap:16px;font-size:.88rem}
 <header>
 <div class="wrap bar">
 <a href="#top" class="logo" aria-label="GearCertified home"><img src="data:image/png;base64,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" alt="GearCertified" width="220" height="16"></a>
-<nav aria-label="Main"><a href="#faq">FAQ</a><a href="#contact">Contact Us</a></nav>
+<nav aria-label="Main"><a href="#faq">FAQ</a><a href="#contact">Contact</a></nav>
 </div>
 </header>
 <main id="top">
 <section class="hero">
 <div class="wrap hero-grid">
-<div class="hero-text"><h1>The Ultimate 3-in-1 Palm Grips</h1></div>
+<div class="hero-text"><h1>The Ultimate 3-in-1 Lifting Grips</h1></div>
 <div class="shot" aria-roledescription="carousel" aria-label="Product images">
 <div class="slides" tabindex="0" aria-label="Product image slides">
 <div class="slide" role="group" aria-roledescription="slide" aria-label="Image 1 of 7"><img alt="GearCertified 3-in-1 Palm Grips, view 1" width="560" height="560"></div>
@@ -125,7 +196,9 @@ nav{gap:16px;font-size:.88rem}
 <button type="button" class="arrow prev" aria-label="Previous image">‹</button>
 <button type="button" class="arrow next" aria-label="Next image">›</button>
 <div class="dots"></div>
+<button type="button" class="share" aria-label="Share this product"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V3"/><path d="M8 7l4-4 4 4"/><path d="M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/></svg></button>
 </div>
+<p class="rate">Own it? <a href="#">Rate it on Amazon.</a></p>
 <div class="hero-actions">
 <div class="cta-row"><a href="#" class="btn btn-primary">Buy on Amazon</a></div>
 <div class="proof" id="proof"></div>
@@ -161,10 +234,11 @@ nav{gap:16px;font-size:.88rem}
 <section id="faq" class="alt">
 <div class="wrap faq">
 <div class="head"><h2>Frequently Asked Questions</h2></div>
-<details open><summary>What makes these different from the current available market?</summary><p>Traditional gear forces you to choose between standard wrapping straps or basic rubber grips. This is the only design that unifies instant-grip textured rubber, elite wrist padding and an indestructible stainless steel ring for complete exercise versatility.</p></details>
+<details open><summary>What makes these different from the rest in current available market?</summary><p>Traditional gear forces you to choose between standard wrapping straps or basic rubber grips. This is the only design that unifies instant-grip textured rubber, elite wrist padding and an indestructible stainless steel ring for complete exercise versatility.</p></details>
 <details><summary>Do the grips stand up on their own, or do they flop over?</summary><p>The premium material blend is engineered to hold its shape perfectly. This means the flap stays upright and ready when you reach for the bar, allowing for lightning-fast, seamless transitions between exercises.</p></details>
 <details><summary>Do they work on machines with rubber handles?</summary><p>Yes, they work extremely well and easy on all machines. The textured synthetic rubber material is engineered to lock onto both bare steel and rubber-coated handles, giving you a completely slip-free hold even when sweaty.</p></details>
 <details><summary>Is the material holding the cable ring durable?</summary><p>Yes, it’s made with a heavy-duty fabric that lasts and features double box X-stitching to prevent tearing. This ensures the steel ring stays completely secure under heavy weight loads.</p></details>
+<details><summary>What exactly do I get inside my package when I order?</summary><p>You will receive a premium pair of our custom-engineered lifting grips, a reusable frosted ziplock storage pouch, and an instructional user guide to maximize your performance from day one.</p></details>
 </div>
 </section>
 
@@ -176,7 +250,45 @@ nav{gap:16px;font-size:.88rem}
 <div class="wrap contact"><h2>Contact us</h2><p>Questions, feedback or need help with your order? Send us an email and we will get back to you.</p><span class="btn btn-primary" style="cursor:text;user-select:text;background:var(--green)">support@gearcertified.com</span></div>
 </section>
 </main>
-<footer><div class="wrap">© 2026 GearCertified. All rights reserved.</div></footer>
+<footer><div class="wrap"><div class="flinks"><button type="button" class="flink" data-doc="privacy">Privacy Policy</button><button type="button" class="flink" data-doc="terms">Terms of Service</button></div>© 2026 GearCertified. All rights reserved.</div></footer>
+<div class="promo" role="complementary" aria-label="Promotion"><button type="button" class="promo-x" aria-label="Close promotion" onclick="this.parentNode.remove()">×</button><button type="button" class="promo-open" aria-haspopup="dialog">Get 10% off</button></div>
+<div class="drawer-bg" id="dBg"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="dTitle">
+<button type="button" class="drawer-close" aria-label="Close">×</button>
+<div class="drawer-body">
+<div id="dForm">
+<h2 id="dTitle">Get 10% off</h2>
+<p>Enter your email to get your discount.</p>
+<form id="signup" novalidate>
+<label for="dEmail" class="vh">Email address</label>
+<input id="dEmail" type="email" placeholder="Email address" autocomplete="email">
+<label class="consent"><input type="checkbox" id="dConsent"><span>I agree to receive product updates, exclusive offers, and marketing communications from GearCertified. Unsubscribe anytime.</span></label>
+<p class="legal">By signing up you agree to our <button type="button" class="linkbtn" data-doc="terms">Terms</button> and <button type="button" class="linkbtn" data-doc="privacy">Privacy Policy</button>.</p>
+<p class="err" id="dErr" role="alert"></p>
+<button type="submit" class="btn btn-primary">Get my 10% off</button>
+</form>
+</div>
+<div id="dVerify" hidden>
+<h2>Almost there!</h2>
+<p>We just sent a 4-digit verification code to your email. Enter it below to unlock your 10% OFF discount instantly!</p>
+<form id="verifyForm" novalidate>
+<label for="dCode" class="vh">4-digit verification code</label>
+<input id="dCode" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="4" autocomplete="one-time-code" placeholder="0000">
+<p class="err" id="vErr" role="alert"></p>
+<button type="submit" class="btn btn-primary">Unlock my 10% off</button>
+</form>
+<p class="resend">Didn’t receive a code? <span id="rsBox">Resend Code in 0:29</span></p>
+<p class="ok" id="vOk" role="status"></p>
+<p class="tip">Tip: Check your Spam or Promotions folder, or <button type="button" class="linkbtn" id="diffEmail">Try a different email address</button></p>
+</div>
+<div id="dDone" hidden><h2>Your 10% off code</h2><div class="coupon"><code id="codeText">GC10OFF</code><button type="button" class="btn btn-primary" id="copyBtn">Copy code</button></div><p class="note">Add our product to your Amazon cart, then paste this code at checkout.</p><a href="#" class="btn btn-primary">Redeem on Amazon</a></div>
+</div>
+</aside>
+<div class="drawer-bg" id="docBg"></div>
+<div class="doc" id="doc" role="dialog" aria-modal="true" aria-label="Legal information"><button type="button" class="drawer-close" id="docClose" aria-label="Close">×</button><div class="doc-body" id="docBody"></div></div>
+<div class="toast" id="toast" role="status"></div>
+<div class="drawer-bg" id="shBg"></div>
+<div class="doc" id="shSheet" role="dialog" aria-modal="true" aria-label="Share"><button type="button" class="drawer-close" id="shClose" aria-label="Close">×</button><div class="doc-body"><h2>Share GearCertified</h2><p>Send it to friends and family.</p><div class="share-grid" id="shGrid"></div></div></div>
 <script>
 (function(){
 var proof=["Slip-free hold","Premium materials","Ergonomic shape","Durable stitching","Versatile","Fits 5.5 to 8.5 in wrists"];
@@ -195,6 +307,141 @@ function sync(){var c=cur();dotsBox.querySelectorAll(".dot").forEach(function(d,
 track.addEventListener("scroll",sync);
 document.querySelector(".prev").onclick=function(){go(cur()-1)};
 document.querySelector(".next").onclick=function(){go(cur()+1)};
+var dr=document.getElementById("drawer"),dbg=document.getElementById("dBg"),emailEl=document.getElementById("dEmail"),lastFocus;
+function openD(){var su=false;try{su=localStorage.getItem("gc_signed_up")==="1"}catch(x){}if(su){clearInterval(tmr);document.getElementById("dForm").hidden=true;document.getElementById("dVerify").hidden=true;document.getElementById("dDone").hidden=false}lastFocus=document.activeElement;dbg.classList.add("open");dr.classList.add("open");document.body.style.overflow="hidden";setTimeout(function(){(su?document.getElementById("copyBtn"):emailEl).focus()},60)}
+function closeD(){dbg.classList.remove("open");dr.classList.remove("open");document.body.style.overflow="";if(lastFocus&&lastFocus.focus)lastFocus.focus()}
+document.querySelector(".promo-open").onclick=openD;
+dr.querySelector(".drawer-close").onclick=closeD;
+dbg.onclick=closeD;
+document.addEventListener("keydown",function(e){if(e.key==="Escape"){if(shEl.classList.contains("open")){closeSh()}else if(docEl.classList.contains("open")){closeDoc()}else if(dr.classList.contains("open")){closeD()}}});
+document.getElementById("signup").addEventListener("submit",function(e){e.preventDefault();var err=document.getElementById("dErr");if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailEl.value.trim())){err.textContent="Please enter a valid email address.";emailEl.focus();return}if(!document.getElementById("dConsent").checked){err.textContent="Please check the box to agree to receive emails.";return}err.textContent="";recordConsent(emailEl.value.trim());showVerify()});
+["dEmail"].forEach(function(id){["paste","copy","cut","drop","contextmenu"].forEach(function(t){document.getElementById(id).addEventListener(t,function(e){e.preventDefault()})})});
+var SHARE_URL="https://gearcertified.com";
+var toastEl=document.getElementById("toast"),toastT;
+function toast(m){toastEl.textContent=m;toastEl.classList.add("show");clearTimeout(toastT);toastT=setTimeout(function(){toastEl.classList.remove("show")},2200)}
+function copyLink(msg,txt){var T=txt||SHARE_URL;function ok(){toast(msg||"Link copied")}function fb(){var ta=document.createElement("textarea");ta.value=T;ta.style.position="fixed";ta.style.opacity="0";document.body.appendChild(ta);ta.select();try{document.execCommand("copy");ok()}catch(e){toast(T)}document.body.removeChild(ta)}if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(T).then(ok,fb)}else{fb()}}
+var shEl=document.getElementById("shSheet"),shBg=document.getElementById("shBg"),shGrid=document.getElementById("shGrid"),shLast;
+var IC_RD="<svg width='52' height='52' aria-hidden='true' viewBox='0 0 24 24'><rect width='24' height='24' rx='5.5' fill='#FF4500'/><ellipse cx='12' cy='13.6' rx='6.2' ry='4.3' fill='#fff'/><circle cx='17.6' cy='10.6' r='1.4' fill='#fff'/><circle cx='6.4' cy='10.6' r='1.4' fill='#fff'/><circle cx='9.8' cy='13' r='1' fill='#FF4500'/><circle cx='14.2' cy='13' r='1' fill='#FF4500'/><path d='M9.9 15.5c1.2.8 3 .8 4.2 0' fill='none' stroke='#FF4500' stroke-width='.9' stroke-linecap='round'/><circle cx='16.2' cy='6' r='1.1' fill='#fff'/><path d='M12 9.4l.9-3.4 2.3.5' fill='none' stroke='#fff' stroke-width='.9' stroke-linecap='round'/></svg>";
+var IC={"msg":"<svg width='52' height='52' aria-hidden='true' viewBox='0 0 24 24'><defs><linearGradient id='mg' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#5BF675'/><stop offset='1' stop-color='#0CBD2A'/></linearGradient></defs><rect width='24' height='24' rx='5.5' fill='url(#mg)'/><path fill='#fff' d='M12 4.8c4.5 0 8.2 2.8 8.2 6.3S16.5 17.4 12 17.4c-.8 0-1.6-.1-2.3-.3-.9.7-2.1 1.2-3.4 1.3.6-.6 1-1.4 1.1-2.2C5.4 15.1 3.8 13.2 3.8 11.1c0-3.5 3.7-6.3 8.2-6.3z'/></svg>","wa":"<svg width='52' height='52' aria-hidden='true' viewBox='0 0 24 24'><rect width='24' height='24' rx='5.5' fill='#25D366'/><g transform='translate(3.6 3.6) scale(.7)'><path fill='#fff' d='M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z'/></g></svg>","ig":"<svg width='52' height='52' aria-hidden='true' viewBox='0 0 24 24'><defs><radialGradient id='ig' cx='.3' cy='1.07' r='1.3'><stop offset='0' stop-color='#FED576'/><stop offset='.26' stop-color='#F47133'/><stop offset='.61' stop-color='#BC3081'/><stop offset='1' stop-color='#4C63D2'/></radialGradient></defs><rect width='24' height='24' rx='5.5' fill='url(#ig)'/><rect x='5.2' y='5.2' width='13.6' height='13.6' rx='4' fill='none' stroke='#fff' stroke-width='1.7'/><circle cx='12' cy='12' r='3.1' fill='none' stroke='#fff' stroke-width='1.7'/><circle cx='16.2' cy='7.8' r='1' fill='#fff'/></svg>","fb":"<svg width='52' height='52' aria-hidden='true' viewBox='0 0 24 24'><path fill='#0866FF' d='M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z'/></svg>","mail":"<svg width='52' height='52' aria-hidden='true' viewBox='0 0 24 24'><rect width='24' height='24' rx='5.5' fill='#2F80ED'/><rect x='4.5' y='6.5' width='15' height='11' rx='2' fill='none' stroke='#fff' stroke-width='1.7'/><path d='M5 8l7 5 7-5' fill='none' stroke='#fff' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/></svg>","link":"<svg width='52' height='52' aria-hidden='true' viewBox='0 0 24 24'><rect width='24' height='24' rx='5.5' fill='#4B5563'/><g fill='none' stroke='#fff' stroke-width='1.8' stroke-linecap='round'><path d='M10.5 13.5a3 3 0 004.2 0l2.3-2.3a3 3 0 00-4.2-4.2l-.8.8'/><path d='M13.5 10.5a3 3 0 00-4.2 0L7 12.8a3 3 0 004.2 4.2l.8-.8'/></g></svg>","more":"<svg width='52' height='52' aria-hidden='true' viewBox='0 0 24 24'><rect width='24' height='24' rx='5.5' fill='#E5E7EB'/><g fill='#374151'><circle cx='7' cy='12' r='1.6'/><circle cx='12' cy='12' r='1.6'/><circle cx='17' cy='12' r='1.6'/></g></svg>","x":"<svg width='52' height='52' aria-hidden='true' viewBox='0 0 24 24'><rect width='24' height='24' rx='5.5' fill='#000'/><path d='M6.5 6l11 12M17.5 6l-11 12' stroke='#fff' stroke-width='1.9' stroke-linecap='round'/></svg>","tg":"<svg width='52' height='52' aria-hidden='true' viewBox='0 0 24 24'><rect width='24' height='24' rx='5.5' fill='#229ED9'/><path fill='#fff' d='M4.6 11.7l13.8-5.3c.7-.3 1.3.2 1.1 1.2l-2.3 11c-.2.8-.7 1-1.4.6l-3.7-2.7-1.8 1.7c-.2.2-.4.4-.8.4l.3-3.8 6.9-6.2c.3-.3-.1-.4-.5-.2l-8.5 5.4-3.7-1.1c-.8-.3-.8-.8.2-1.1z'/></svg>","li":"<svg width='52' height='52' aria-hidden='true' viewBox='0 0 24 24'><rect width='24' height='24' rx='5.5' fill='#0A66C2'/><rect x='5.4' y='9.6' width='2.7' height='8.6' fill='#fff'/><circle cx='6.75' cy='6.6' r='1.55' fill='#fff'/><path fill='#fff' d='M10.3 9.6h2.6v1.2c.5-.9 1.5-1.4 2.7-1.4 2.4 0 3 1.5 3 3.7v5.1h-2.7v-4.5c0-1.1-.2-1.9-1.3-1.9-1.2 0-1.7.8-1.7 2v4.4h-2.6z'/></svg>"};
+function R(x){var inner='<span class="si">'+x.i+'</span>'+x.n;if(x.a)return '<button type="button" data-a="'+x.a+'">'+inner+'</button>';return '<a href="'+x.h+'"'+(x.w?' target="_blank" rel="noopener"':'')+'>'+inner+'</a>'}
+var SH_TEXT="Check out these premium lifting grips by GearCertified.";
+function extraItems(){var e=encodeURIComponent,t=SH_TEXT,u=SHARE_URL;return [{n:"X",h:"https://twitter.com/intent/tweet?text="+e(t)+"&url="+e(u),w:1,i:IC.x},{n:"Telegram",h:"https://t.me/share/url?url="+e(u)+"&text="+e(t),w:1,i:IC.tg},{n:"LinkedIn",h:"https://www.linkedin.com/sharing/share-offsite/?url="+e(u),w:1,i:IC.li},{n:"Reddit",h:"https://www.reddit.com/submit?url="+e(u)+"&title="+e(t),w:1,i:IC_RD}]}
+function buildSh(){var e=encodeURIComponent,t=SH_TEXT,u=SHARE_URL;var items=[
+{n:"Messages",h:"sms:?&body="+e(t+" "+u),i:IC.msg},
+{n:"WhatsApp",h:"https://wa.me/?text="+e(t+" "+u),w:1,i:IC.wa},
+{n:"Instagram",a:"ig",i:IC.ig},
+{n:"Facebook",a:"fb",i:IC.fb},
+{n:"Email",h:"mailto:?subject="+e("Premium lifting grips by GearCertified")+"&body="+e(t+"\n"+u),i:IC.mail},
+{n:"Copy link",a:"copy",i:IC.link},
+{n:"More",a:"more",i:IC.more}];
+shGrid.innerHTML=items.map(R).join("")}
+function openSh(){shLast=document.activeElement;buildSh();shBg.classList.add("open");shEl.classList.add("open");document.body.style.overflow="hidden";document.getElementById("shClose").focus()}
+function closeSh(){shBg.classList.remove("open");shEl.classList.remove("open");document.body.style.overflow="";if(shLast&&shLast.focus)shLast.focus()}
+document.querySelector(".share").onclick=openSh;
+document.getElementById("shClose").onclick=closeSh;
+shBg.onclick=closeSh;
+shGrid.addEventListener("click",function(ev){var b=ev.target.closest("button[data-a]"),a=ev.target.closest("a");if(b){var k=b.getAttribute("data-a");if(k==="copy"){copyLink();closeSh()}else if(k==="ig"){var igT=SH_TEXT+" "+SHARE_URL;function igFallback(){copyLink("Message copied. Paste it in Instagram.",igT);window.open("https://www.instagram.com/direct/inbox/","_blank","noopener")}if(navigator.share){navigator.share({text:igT}).catch(function(err){if(!err||err.name!=="AbortError")igFallback()})}else{igFallback()}closeSh()}else if(k==="fb"){window.open("https://www.facebook.com/sharer/sharer.php?u="+encodeURIComponent(SHARE_URL)+"&quote="+encodeURIComponent(SH_TEXT),"_blank","noopener,width=640,height=640");closeSh()}else if(k==="more"){b.remove();shGrid.insertAdjacentHTML("beforeend",extraItems().map(R).join(""))}}else if(a){setTimeout(closeSh,200)}});
+var POLICY_VERSION="2026-11-07";
+function recordConsent(email){var rec={email:email,consentedAt:new Date().toISOString(),consentText:document.querySelector(".consent span").textContent,policyVersion:POLICY_VERSION,source:"discount-drawer"};try{localStorage.setItem("gc_consent",JSON.stringify({consentedAt:rec.consentedAt,consentText:rec.consentText,policyVersion:rec.policyVersion}))}catch(x){}/* TODO: send rec (email, timestamp, consent wording, IP) to your email service or backend so the consent record is stored server-side */return rec}
+var DOCS={privacy:{t:"Privacy Policy",h:`<p><strong>Effective November 7, 2026</strong></p>
+<p>This Privacy Policy explains how <strong>[Company legal name]</strong> (“GearCertified”, “we”, “us”) collects, uses, shares, and protects personal information when you use gearcertified.com and gearcertified.ca (the “Site”), and what rights you have. It is written to meet the main privacy and anti-spam laws that apply to a website open to visitors worldwide, including the EU and UK GDPR, the ePrivacy rules, Canada’s PIPEDA, Quebec’s Law 25 and CASL, U.S. federal and state privacy laws, and comparable laws in other countries listed in section 10.</p>
+<h3>1. Who is responsible for your data</h3>
+<p>Controller: <strong>[Company legal name]</strong>, <strong>[Registered office and mailing address]</strong>. Privacy contact / person responsible for privacy: <strong>[Name or title]</strong>, <a href='mailto:support@gearcertified.com'>support@gearcertified.com</a>. EU representative (GDPR Art. 27): <strong>[Name and address, if required]</strong>. UK representative: <strong>[Name and address, if required]</strong>. Data protection officer: <strong>[Name, or “not required”]</strong>.</p>
+<h3>2. Information we collect</h3>
+<ul><li><strong>Information you give us:</strong> your email address and your consent choices when you request the discount code, the 4-digit verification code you enter, and anything you write when you email us.</li>
+<li><strong>Consent records:</strong> the date and time of consent, the exact wording shown, the policy version, and technical data such as your IP address and browser type, kept as proof of consent.</li>
+<li><strong>Automatic technical data:</strong> when you load the Site, our hosting provider and content networks receive your IP address, device and browser type, pages requested, referring page, and timestamps, in server logs used for delivery, security, and fraud prevention.</li>
+<li><strong>Browser storage:</strong> two first-party items in your browser’s local storage: one remembers that you completed the discount sign-up, and one stores your consent record details. They are not used to track you across sites.</li>
+<li><strong>Third-party resources:</strong> the Site loads fonts from Google Fonts, so your IP address and browser details are sent to Google when the page loads.</li></ul>
+<p>We do not sell products on the Site, so we do not collect payment card details, delivery addresses, or order history. We do not use advertising or analytics cookies or trackers. We do not knowingly collect sensitive personal information (such as health, biometric, precise location, race, religion, or government ID data). Amazon processes orders under its own privacy notice.</p>
+<h3>3. Why we use it and our legal bases</h3>
+<ul><li>To verify your email and deliver your discount code: <em>consent, and steps you request before a purchase</em> (GDPR Art. 6(1)(a), (b)).</li>
+<li>To send product updates, offers, and marketing emails: <em>your express consent</em>, which you can withdraw at any time.</li>
+<li>To keep proof of consent and respond to legal requests: <em>legal obligation and our legitimate interest in defending legal claims</em>.</li>
+<li>To run, secure, and protect the Site and prevent fraud and abuse (including limiting repeated discount sign-ups): <em>legitimate interests</em>, balanced against your rights.</li>
+<li>To answer your messages: <em>legitimate interests, or steps at your request</em>.</li></ul>
+<p>Providing your email is optional. If you do not provide it you can still use the Site but cannot receive the discount code. We do not make decisions about you by automated means that have legal or similarly significant effects, and we do not profile you.</p>
+<h3>4. Cookies and similar technologies</h3>
+<p>The Site uses only the strictly necessary browser storage described in section 2, which is exempt from consent under the ePrivacy Directive and similar laws, so there is no cookie banner. If we add analytics, advertising, or affiliate tracking, we will update this policy and ask for your consent first where the law requires it. We honor the Global Privacy Control (GPC) and similar opt-out signals. You can clear local storage in your browser settings at any time, which will also reset the sign-up reminder.</p>
+<h3>5. Who we share it with</h3>
+<p>We do not sell your personal information and we do not share it for cross-context behavioral advertising, including under California law, so we do not offer a “Do Not Sell or Share” link. We disclose personal information only to: (a) service providers and processors acting on our instructions under written contracts, such as our website host, email delivery provider (<strong>[Email provider name]</strong>), and Google (fonts); (b) professional advisers, insurers, and auditors; (c) authorities, courts, or other parties when required by law or to protect rights and safety; and (d) a buyer or successor if our business is sold or reorganized, subject to this policy. In the past 12 months we disclosed the categories “identifiers” (email address, IP address) and “internet activity” (log data) to service providers for the business purposes above.</p>
+<h3>6. International transfers</h3>
+<p>We and our providers may process data in countries other than yours, including Canada and the United States, which may have different data protection rules. When personal data from the EEA, UK, or Switzerland is transferred to a country without an adequacy decision, we rely on safeguards such as the European Commission’s Standard Contractual Clauses, the UK International Data Transfer Addendum, and supplementary measures, or on the EU-U.S. Data Privacy Framework where the recipient is certified. For other countries with transfer rules (for example Brazil, China, India, South Korea, and Japan), we transfer data only as those laws allow. You can contact us for a copy of the safeguards.</p>
+<h3>7. How long we keep it</h3>
+<p>Email address and marketing consent: until you unsubscribe or ask us to delete it, then we keep only a minimal suppression record so we do not email you again. Consent records: for as long as we send you marketing and for up to 6 years afterward to defend legal claims. Server logs: up to 90 days unless needed for a security investigation. Messages to support: up to 3 years. We then delete or anonymize the data.</p>
+<h3>8. Security and breaches</h3>
+<p>We use reasonable technical and organizational measures, including encrypted connections (HTTPS), access controls, and provider contracts. No system is perfectly secure. If a breach creates a real risk of harm, we will notify affected people and regulators as required by law, for example within 72 hours to EU/UK authorities where GDPR applies, and as soon as feasible to Canadian regulators and individuals.</p>
+<h3>9. Marketing emails and anti-spam compliance</h3>
+<p>We send marketing email only with your prior express consent, never from a pre-ticked box, and we may use a confirmation step to verify it. Each message identifies GearCertified as the sender, includes our mailing address and contact details, and has a working unsubscribe link. We process unsubscribes promptly and no later than 10 business days (CASL and CAN-SPAM), and sooner where other laws require it. We comply with Canada’s CASL, the U.S. CAN-SPAM Act, the EU/UK ePrivacy rules (including PECR), Australia’s Spam Act 2003, and similar laws. We do not buy or rent email lists. Transactional messages (such as a verification code) are not marketing.</p>
+<h3>10. Your rights</h3>
+<p><strong>Everyone:</strong> you can ask to access, correct, or delete your information, withdraw consent at any time (this does not affect earlier lawful processing), and unsubscribe from marketing. We will not treat you worse for exercising a right. Email <a href='mailto:support@gearcertified.com'>support@gearcertified.com</a> with the subject “Privacy request”. We may need to verify your identity, and we will answer within the time your law sets (generally within 30 days, or 45 days under most U.S. state laws, with a lawful extension if needed). Authorized agents may submit requests with proof of authority.</p>
+<p><strong>EEA, UK, and Switzerland (GDPR, UK GDPR, FADP):</strong> rights of access, rectification, erasure, restriction, data portability, and objection (including to processing based on legitimate interests and to direct marketing, which we will stop immediately), and the right not to be subject to solely automated decisions. You may complain to your local supervisory authority, such as the UK ICO, Ireland’s DPC, France’s CNIL, or Germany’s state authorities, or to the authority in the country where you live or work or where the issue occurred. We would appreciate the chance to resolve it first.</p>
+<p><strong>California and other U.S. states (CCPA/CPRA and state laws such as those of Virginia, Colorado, Connecticut, Texas, Oregon, and others):</strong> rights to know and access (including the categories and specific pieces of data), delete, correct, obtain a portable copy, opt out of sale, sharing, targeted advertising, and certain profiling (we do none of these), limit use of sensitive personal information (we do not collect it for inference), and appeal a refusal by replying to our decision with the subject “Appeal”, after which we will respond within the time your state law requires. If your appeal is denied, you may contact your state attorney general. California’s “Shine the Light” law lets California residents ask which categories we disclosed to third parties for their direct marketing (none). Nevada residents may opt out of sales (we make none). California minors who are registered users may ask for removal of content they posted (the Site has none).</p>
+<p><strong>Canada (PIPEDA, Quebec Law 25, Alberta and British Columbia PIPA):</strong> access, correction, withdrawal of consent, and a complaint to the Office of the Privacy Commissioner of Canada or your provincial authority (for Quebec, the Commission d’accès à l’information). Quebec residents may also ask about the technologies we use, request portability in a structured format, and ask us to stop disseminating or to de-index personal information where the law allows. Our privacy officer’s details are in section 1.</p>
+<p><strong>Brazil (LGPD):</strong> confirmation of processing, access, correction, anonymization or deletion, portability, information about sharing, and revocation of consent, with complaints to the ANPD. <strong>Australia (Privacy Act 1988, Australian Privacy Principles):</strong> access, correction, and complaints to us and then to the OAIC. <strong>New Zealand (Privacy Act 2020):</strong> access, correction, and complaints to the Privacy Commissioner. <strong>Singapore (PDPA), Malaysia, Thailand (PDPA), Philippines, Vietnam, Indonesia:</strong> access, correction, consent withdrawal, and complaints to the national authority. <strong>Japan (APPI) and South Korea (PIPA):</strong> disclosure, correction, deletion, suspension of use, and complaints to the PPC or PIPC. <strong>India (DPDP Act 2023):</strong> access, correction, erasure, grievance redress, and the right to nominate someone to act for you, with escalation to the Data Protection Board; our grievance contact is in section 1. <strong>China (PIPL):</strong> to know, decide, restrict, refuse, access, copy, correct, and delete, and to withdraw consent. <strong>South Africa (POPIA), Kenya, Nigeria, and other African laws:</strong> access, correction, deletion, objection, and complaints to the Information Regulator or your national authority. <strong>UAE, Saudi Arabia, Qatar, Turkey (KVKK), Israel, Argentina, Mexico, Chile, Colombia, and other countries:</strong> the access, rectification, deletion, objection, and complaint rights your local law grants. If your country is not named, contact us and we will honor the rights your law gives you.</p>
+<h3>11. Children</h3>
+<p>The Site is for adults and is not directed at children. We do not knowingly collect personal information from anyone under 16 (or the higher age your country sets for digital consent, such as 18 in some places), and we comply with the U.S. COPPA rule for children under 13. If you believe a child has given us information, contact us and we will delete it.</p>
+<h3>12. Links to other sites</h3>
+<p>The Site links to Amazon and offers share buttons for services such as WhatsApp, Facebook, Instagram, X, Telegram, LinkedIn, Reddit, and email. Those services have their own privacy practices, and we are not responsible for them. Share links open only when you click them.</p>
+<h3>13. Changes to this policy</h3>
+<p>We will post updates here with a new effective date. For material changes that affect how we use your email address, we will notify you by email or on the Site and, where the law requires, ask for your consent again.</p>
+<h3>14. Contact</h3>
+<p>Questions, requests, or complaints: <a href='mailto:support@gearcertified.com'>support@gearcertified.com</a>, <strong>[Mailing address]</strong>.</p>`},
+terms:{t:"Terms of Service",h:`<p><strong>Effective November 7, 2026</strong></p>
+<p>These Terms govern your use of gearcertified.com and gearcertified.ca (the “Site”), operated by <strong>[Company legal name]</strong>, <strong>[Registered address]</strong>, <strong>[Company/registration number and VAT/GST/tax ID, if any]</strong>, contact <a href='mailto:support@gearcertified.com'>support@gearcertified.com</a> (“GearCertified”, “we”). By using the Site you agree to these Terms and our Privacy Policy. If you do not agree, please do not use the Site.</p>
+<h3>1. Eligibility</h3>
+<p>You must be old enough to form a binding contract where you live (or have a parent or guardian’s permission) and legally able to use the Site. The Site is not directed at children under 16.</p>
+<h3>2. What the Site is</h3>
+<p>The Site provides information about our products and a discount offer. We do not sell products or take payment on the Site. Products are sold by Amazon or its sellers, and your purchase is a contract between you and the seller under Amazon’s terms, including price, taxes, delivery, returns, refunds, and your statutory consumer rights. We may not be able to ship to every country.</p>
+<h3>3. Product information</h3>
+<p>We try to keep descriptions, sizes, and images accurate, but colors and sizing can vary and errors can occur. Sizing is an approximate guide (wrist circumference 5.5 to 8.5 inches). The Amazon listing controls price and availability.</p>
+<h3>4. Discount offers</h3>
+<p>Discount codes are offered on request, need a valid email address, are limited to one per person, are not transferable or redeemable for cash, may not be combined with other offers unless stated, and depend on Amazon accepting the code at checkout. We may change, limit, or end an offer at any time, and we will not charge you for it. Requesting a code is optional and does not oblige you to buy. Marketing email is sent only if you consent as described in our Privacy Policy.</p>
+<h3>5. Safe use and warnings</h3>
+<p>Lifting grips are fitness equipment. Read the user guide, check the grips, stitching, and steel ring before each use, and stop using them if they are worn or damaged. Do not exceed your own ability or use them for anything other than their intended purpose. Heavy lifting can cause injury, so consult a qualified professional if you are unsure about your health or fitness. Information on the Site is general and is not medical, safety, or professional advice.</p>
+<h3>6. Acceptable use</h3>
+<p>You agree not to misuse the Site, including by: breaking the law; attempting unauthorized access or testing security; sending malware; scraping, harvesting, or automated bulk requests; abusing or farming discount codes (including using false or other people’s emails); interfering with the Site; or infringing others’ rights. We may block access to anyone who does.</p>
+<h3>7. Intellectual property</h3>
+<p>The Site’s text, images, logos, trademarks, graphics, and design belong to GearCertified or its licensors and are protected by copyright, trademark, and other laws. We give you a limited, non-exclusive, revocable, non-transferable license to view the Site and share its link for personal, non-commercial use. All other rights are reserved. Amazon and other third-party names belong to their owners.</p>
+<h3>8. Reporting infringement or illegal content</h3>
+<p>If you believe content on the Site infringes your rights or is unlawful, email <a href='mailto:support@gearcertified.com'>support@gearcertified.com</a> with your name and contact details, a description and location of the material, the legal basis of your claim, and a statement that your notice is accurate (and, for U.S. copyright claims under the DMCA, a good-faith statement and a statement made under penalty of perjury that you are the owner or authorized to act). We will review it and may remove content and notify affected people. This address is also our single point of contact for authorities and recipients of the service under the EU Digital Services Act. We accept communications in English.</p>
+<h3>9. Third-party links and services</h3>
+<p>The Site links to Amazon and social or messaging services. We do not control them and are not responsible for their content, practices, or availability. Using them is at your own risk and under their terms.</p>
+<h3>10. Warranty, your statutory rights, and disclaimers</h3>
+<p>Our products carry the warranty and return terms shown in the Amazon listing, and nothing in these Terms limits the legal guarantees and rights you have as a consumer, such as the EU and UK legal guarantee of conformity, the Australian Consumer Law guarantees, and consumer rules in Canada and elsewhere, which cannot be excluded. Subject to that, the Site is provided “as is” and “as available”, and to the fullest extent permitted by law we disclaim all other warranties, including implied warranties of merchantability, fitness for a particular purpose, and non-infringement, and we do not promise the Site will be uninterrupted, error-free, or secure. Under Australian law, our liability for a failure to comply with a consumer guarantee is limited, where permitted, to supplying the services again or paying the cost of having them supplied again.</p>
+<h3>11. Limitation of liability</h3>
+<p>To the fullest extent permitted by law, GearCertified and its owners, officers, employees, and suppliers are not liable for indirect, incidental, special, consequential, or punitive damages, or for loss of profits, data, or goodwill, arising from your use of the Site, and our total liability for claims relating to the Site is limited to CAD/USD 100. Nothing in these Terms excludes or limits liability for death or personal injury caused by negligence, fraud or fraudulent misrepresentation, gross negligence or intentional misconduct, liability for defective products that cannot be limited under mandatory product liability law, or any other liability that cannot lawfully be excluded. Some places do not allow certain limits, so they may not apply to you.</p>
+<h3>12. Indemnity (business users only)</h3>
+<p>If you use the Site for business purposes rather than as a consumer, you agree to defend and compensate us for third-party claims caused by your breach of these Terms or misuse of the Site. This section does not apply to consumers.</p>
+<h3>13. Suspension and termination</h3>
+<p>We may suspend or end your access to the Site or any offer if you breach these Terms or the law, or if we close or change the Site. You may stop using the Site at any time. Sections that by nature should continue (including intellectual property, disclaimers, limitation of liability, and governing law) survive.</p>
+<h3>14. Privacy and electronic communications</h3>
+<p>Our Privacy Policy explains how we handle personal data and forms part of these Terms. You agree that we may give you legally required notices by posting them on the Site or emailing the address you gave us, and that these satisfy any requirement that notices be in writing.</p>
+<h3>15. Changes</h3>
+<p>We may update the Site and these Terms. We will post the new effective date here, and for material changes we will give reasonable notice. Continued use after the effective date means you accept the update, except where the law requires your consent or a longer notice period.</p>
+<h3>16. Governing law and disputes</h3>
+<p>These Terms are governed by the laws of <strong>[Province/State and country of the company]</strong>, without regard to conflict-of-law rules, and the courts of <strong>[Place]</strong> have jurisdiction, except that if you are a consumer you keep the protection of mandatory consumer laws of the country where you live and may bring claims in your local courts where the law gives you that right. We first encourage you to contact us so we can try to resolve any issue informally. Nothing here removes your right to complain to a consumer protection or data protection authority, or to use any official dispute-resolution scheme available in your country.</p>
+<h3>17. Export controls and sanctions</h3>
+<p>You may not use the Site if you are subject to applicable trade sanctions or located in an embargoed country, and you agree to comply with export and sanctions laws that apply to you.</p>
+<h3>18. General</h3>
+<p>These Terms and the Privacy Policy are the entire agreement between you and us about the Site. If a part is found unenforceable, the rest stays in effect. Our failure to enforce a right is not a waiver. We may assign these Terms in a business transfer, but you may not assign them without our consent. We are not liable for delay or failure caused by events beyond our reasonable control. Headings are for convenience. If we provide a translation, the English version prevails to the extent the law allows. No third party has rights to enforce these Terms except as the law requires.</p>
+<h3>19. Contact</h3>
+<p>GearCertified, <strong>[Mailing address]</strong>, <a href='mailto:support@gearcertified.com'>support@gearcertified.com</a>.</p>`}};
+var docEl=document.getElementById("doc"),docBg=document.getElementById("docBg"),docBody=document.getElementById("docBody"),docLast;
+function openDoc(k){docLast=document.activeElement;docBody.innerHTML="<h2>"+DOCS[k].t+"</h2>"+DOCS[k].h;docBody.scrollTop=0;docBg.classList.add("open");docEl.classList.add("open");document.body.style.overflow="hidden";document.getElementById("docClose").focus()}
+function closeDoc(){docBg.classList.remove("open");docEl.classList.remove("open");if(!dr.classList.contains("open"))document.body.style.overflow="";if(docLast&&docLast.focus)docLast.focus()}
+document.getElementById("docClose").onclick=closeDoc;
+docBg.onclick=closeDoc;
+document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("[data-doc]");if(b)openDoc(b.getAttribute("data-doc"))});
+var tmr,rsBox=document.getElementById("rsBox");
+function fmt(s){return "0:"+(s<10?"0":"")+s}
+function startTimer(){clearInterval(tmr);var s=29;rsBox.textContent="Resend Code in "+fmt(s);tmr=setInterval(function(){s--;if(s>0){rsBox.textContent="Resend Code in "+fmt(s)}else{clearInterval(tmr);rsBox.innerHTML='<button type="button" class="linkbtn resend-btn" id="rsBtn">RESEND CODE</button>';document.getElementById("rsBtn").onclick=function(){document.getElementById("vOk").textContent="A new code has been sent.";document.getElementById("vErr").textContent="";startTimer()}}},1000)}
+function showVerify(){document.getElementById("dForm").hidden=true;document.getElementById("dVerify").hidden=false;document.getElementById("dCode").value="";document.getElementById("vErr").textContent="";document.getElementById("vOk").textContent="";startTimer();setTimeout(function(){document.getElementById("dCode").focus()},50)}
+document.getElementById("dCode").addEventListener("input",function(){this.value=this.value.replace(/\D/g,"").slice(0,4)});
+document.getElementById("verifyForm").addEventListener("submit",function(e){e.preventDefault();if(!/^\d{4}$/.test(document.getElementById("dCode").value)){document.getElementById("vErr").textContent="Please enter the 4-digit code.";return}try{localStorage.setItem("gc_signed_up","1")}catch(x){}clearInterval(tmr);document.getElementById("dVerify").hidden=true;document.getElementById("dDone").hidden=false});
+document.getElementById("diffEmail").onclick=function(){clearInterval(tmr);document.getElementById("dVerify").hidden=true;document.getElementById("dForm").hidden=false;emailEl.value="";document.getElementById("dConsent").checked=false;document.getElementById("dErr").textContent="";emailEl.focus()};
+var cb=document.getElementById("copyBtn");
+cb.onclick=function(){var t="GC10OFF";function ok(){cb.textContent="Copied!";setTimeout(function(){cb.textContent="Copy code"},2000)}function fb(){var ta=document.createElement("textarea");ta.value=t;ta.style.position="fixed";ta.style.opacity="0";document.body.appendChild(ta);ta.select();try{document.execCommand("copy");ok()}catch(e){cb.textContent="Press Ctrl+C"}document.body.removeChild(ta)}if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok,fb)}else{fb()}};
 })();
 </script>
 </body>
