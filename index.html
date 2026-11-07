@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GearCertified | Ultimate 3-in-1 Palm Grips</title>
+    <style>
+        :root {
+            --bg-color: #000000;
+            --surface-color: #0a0a0a;
+            --border-color: #222222;
+            --text-main: #ffffff;
+            --text-muted: #888888;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Header / Navigation */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 6%;
+            background-color: var(--bg-color);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-weight: 900;
+            font-size: 1.4rem;
+            letter-spacing: 2px;
+            color: var(--text-main);
+            text-transform: uppercase;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 28px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover {
+            color: var(--text-main);
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 100px 6% 80px 6%;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 900;
+            letter-spacing: -1px;
+            margin-bottom: 24px;
+            line-height: 1.1;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            max-width: 640px;
+            margin: 0 auto 36px auto;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background-color: var(--text-main);
+            color: var(--bg-color);
+            padding: 16px 36px;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .cta-btn:hover {
+            background-color: #dddddd;
+            transform: translateY(-2px);
+        }
+
+        /* Features Grid Section */
+        .features {
+            padding: 80px 6%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 50px;
+            letter-spacing: -0.5px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            padding: 36px 30px;
+            border-radius: 6px;
+            transition: border-color 0.2s ease;
+        }
+
+        .card:hover {
+            border-color: #444444;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 14px;
+            color: var(--text-main);
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 6%;
+            background-color: var(--bg-color);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border-color);
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <div class="logo">GearCertified</div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#features">Features</a>
+            <a href="mailto:support@gearcertified.com">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Area -->
+    <section class="hero" id="home">
+        <h1>The Ultimate 3-in-1 Palm Grips</h1>
+        <p>Engineered with textured synthetic rubber and a reinforced nylon inner mesh for a completely slip-free hold, built to handle heavy abuse under any conditions.</p>
+        <a href="https://amazon.com" class="cta-btn" target="_blank" rel="noopener">View Exclusively On Amazon</a>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <h2 class="section-title">Engineered For Performance</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Ultra-Durable (3 mm)</h3>
+                <p>Designed to withstand heavy-duty friction while maintaining full dexterity and structural integrity during high-intensity training sessions.</p>
+            </div>
+            <div class="card">
+                <h3>Raised SBR Padding</h3>
+                <p>Locks your hands securely to the bar while maximizing palm comfort and eliminating friction tears during heavy pulls and presses.</p>
+            </div>
+            <div class="card">
+                <h3>7 mm Neoprene Cuffs</h3>
+                <p>Extra-thick, premium wrist support built to alleviate joint strain and stop painful digging when handling elite loads.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 GearCertified. All rights reserved. Available exclusively on Amazon.</p>
+    </footer>
+
+</body>
+</html>
