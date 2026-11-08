@@ -259,6 +259,36 @@ footer{background:#000;color:#fff;padding:44px 0;font-size:.9rem;text-align:cent
 .coupon .btn{padding:0 22px;white-space:nowrap;border-radius:14px}
 #dDone .note{margin:0 0 24px;font-size:.92rem;color:var(--muted)}
 #dDone>.btn{width:100%}
+.btn-ghost{background:#fff;color:var(--ink);border-color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:#fff}
+.btn-danger{background:#b00020;color:#fff}
+.btn-danger:hover{background:#8a0019}
+.signin-lbl{max-width:16ch;overflow:hidden;text-overflow:ellipsis}
+#profilePage{min-height:60vh}
+.profile{padding:72px 0 96px}
+.profile-in{max-width:560px}
+.profile h1{margin-bottom:36px;word-break:break-word}
+.pf-sec{margin-bottom:28px}
+.pf-lbl{display:block;font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+.pf-lbl small{font-weight:600;text-transform:none;letter-spacing:0}
+.pf-box{padding:15px 20px;border:1.5px solid var(--line);border-radius:999px;background:var(--paper);word-break:break-all;color:var(--ink)}
+.pf-in{width:100%;padding:15px 20px;border:1.5px solid var(--line);border-radius:999px;font:inherit;margin-bottom:10px;background:#fff;color:var(--ink)}
+.pf-in:focus{outline:none;border-color:var(--ink)}
+.pf-in.shake{border-color:#b00020}
+.profile .btn{width:100%}
+#nickMsg,#pwErr{min-height:1.4em;margin:0 0 10px;font-size:.88rem}
+#nickMsg{color:var(--muted)}
+#pwErr{color:#b00020}
+.pf-pw{display:flex;gap:10px;align-items:stretch}
+.pf-pw .pf-box{flex:1;margin:0;letter-spacing:.18em}
+.pf-pw .btn{width:auto;white-space:nowrap;padding:0 22px}
+#pwForm .pwrow{margin:0 0 16px}
+.pw-btns{display:flex;gap:10px}
+.pf-out{margin-top:8px}
+.profile .pf-help{display:flex;width:fit-content;margin:28px auto 0;padding:12px 28px}
+.pf-del{display:block;margin:28px auto 0;font-size:.8rem;font-weight:500;color:var(--muted);text-decoration:underline;background:none;border:0;cursor:pointer;font-family:inherit;padding:4px}
+.pf-del:hover{color:#b00020}
+#delPop .btn+.btn{margin-top:10px}
 .linkbtn{background:none;border:0;font:inherit;color:var(--ink);font-weight:600;text-decoration:underline;cursor:pointer;padding:0}
 .share{position:absolute;top:30px;right:30px;z-index:2;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.92);color:var(--ink);display:grid;place-items:center;cursor:pointer;transition:background .2s,color .2s}
 .share:hover{background:var(--green);color:#fff}
@@ -318,18 +348,51 @@ nav{gap:18px;font-size:.88rem}
 .lb-arrow{top:calc(50% - 22px)}
 .lb-prev{left:12px}.lb-next{right:12px}
 .lb-count{position:absolute;left:0;right:0;top:calc(100% + 14px);text-align:center;color:#fff;font-size:.9rem;font-weight:600;font-variant-numeric:tabular-nums}
-@media (max-width:700px){.lb-stage{width:min(94vw,80vh)}}
+.lb-fs{display:none;top:12px;left:12px}
+.lb-slide{overflow:hidden}
+.lb-slide img{-webkit-user-drag:none;user-select:none;-webkit-user-select:none;will-change:transform;transition:transform .15s ease-out}
+.lb.panning .lb-slide img{transition:none}
+.lb-zoom{display:none;position:absolute;z-index:2;top:12px;left:12px;align-items:center;gap:2px;padding:3px;border-radius:999px;background:rgba(0,0,0,.62);border:1px solid rgba(255,255,255,.35)}
+.lb-zb{width:36px;height:36px;border:0;border-radius:999px;background:none;color:#fff;font-size:1.35rem;line-height:1;cursor:pointer;display:grid;place-items:center;padding:0 0 2px;transition:background .2s}
+.lb-zb:hover:not(:disabled){background:rgba(255,255,255,.18)}
+.lb-zb:disabled{opacity:.35;cursor:default}
+.lb-zb:focus-visible{outline:2px solid #fff;outline-offset:0}
+.lb-zp{width:auto;min-width:54px;padding:0 8px;font-size:.8rem;font-weight:700;font-variant-numeric:tabular-nums}
+@media (min-width:701px){.lb-zoom{display:flex}
+.lb-slide img{cursor:zoom-in}
+.lb.zoomed .lb-slide img{cursor:grab}
+.lb.panning .lb-slide img{cursor:grabbing}}
+.lb-fs svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.lb-fs .i-col{display:none}
+.lb.full .lb-fs .i-col{display:block}
+.lb.full .lb-fs .i-exp{display:none}
+@media (max-width:700px){.lb-stage{width:min(94vw,80vh)}
+.arrow{width:28px;height:28px;font-size:1.1rem;padding-bottom:2px;background:rgba(255,255,255,.5);border-color:transparent;color:rgba(0,0,0,.6);opacity:.8;-webkit-tap-highlight-color:transparent}
+.arrow:hover{background:rgba(255,255,255,.5);color:rgba(0,0,0,.6)}
+.prev{left:26px}.next{right:26px}
+.lb-arrow{width:30px;height:30px;font-size:1.15rem;padding-bottom:2px;background:rgba(0,0,0,.3);border-color:transparent;opacity:.7;top:calc(50% - 15px)}
+.lb-prev{left:6px}.lb-next{right:6px}
+.lb-fs{display:grid}
+.lb.full .lb-stage{width:100vw;height:100vh;height:100dvh;aspect-ratio:auto}
+.lb.full .lb-track{border-radius:0}
+.lb.full .lb-close,.lb.full .lb-fs{top:calc(12px + env(safe-area-inset-top,0px))}
+.lb.full .lb-close{right:max(12px,env(safe-area-inset-right,0px))}
+.lb.full .lb-fs{left:max(12px,env(safe-area-inset-left,0px))}
+.lb.full .lb-count{top:auto;bottom:calc(14px + env(safe-area-inset-bottom,0px));left:50%;right:auto;transform:translateX(-50%);width:auto;padding:4px 12px;border-radius:999px;background:rgba(0,0,0,.55)}}
 .hero-text .lede{color:var(--muted);font-size:1.05rem;max-width:32em;margin:-8px 0 8px}
 
 .consent[hidden],.legal[hidden]{display:none}
 /* account icon, menu, auth drawer extras, welcome notice */
 .hdr-r{display:flex;align-items:center;gap:22px;position:relative}
-.acct{width:40px;height:40px;border-radius:50%;border:1.5px solid rgba(255,255,255,.55);background:rgba(255,255,255,.06);color:#fff;display:grid;place-items:center;cursor:pointer;padding:0;flex:none;animation:acctglow 3.6s ease-in-out infinite;transition:border-color .25s,color .25s,background .25s}
-.acct:hover{background:rgba(255,255,255,.14);border-color:#fff}
+.acct{display:inline-flex;align-items:center;gap:10px;background:none;border:0;padding:0;color:#fff;cursor:pointer;flex:none;border-radius:999px;font:inherit}
+.acct:focus-visible{outline:2px solid #fff;outline-offset:4px}
+.acct:hover .signin-lbl{opacity:.75}
+.acct-ico{width:40px;height:40px;border-radius:50%;border:1.5px solid rgba(255,255,255,.55);background:rgba(255,255,255,.06);color:#fff;display:grid;place-items:center;flex:none;animation:acctglow 3.6s ease-in-out infinite;transition:border-color .25s,color .25s,background .25s}
+.acct:hover .acct-ico{background:rgba(255,255,255,.14);border-color:#fff}
 .acct svg{width:20px;height:20px;display:block}
 @keyframes acctglow{0%,100%{box-shadow:0 0 0 0 rgba(255,255,255,0),0 0 6px 0 rgba(255,255,255,.18)}50%{box-shadow:0 0 0 3px rgba(255,255,255,.07),0 0 14px 2px rgba(255,255,255,.32)}}
-.acct.on{color:#C9B37E;border-color:#C9B37E;background:rgba(201,179,126,.10);animation:none;box-shadow:none}
-.acct.on:hover{background:rgba(201,179,126,.18);border-color:#D8C691;color:#D8C691}
+.acct.on .acct-ico{color:#C9B37E;border-color:#C9B37E;background:rgba(201,179,126,.10);animation:none;box-shadow:none}
+.acct.on:hover .acct-ico{background:rgba(201,179,126,.18);border-color:#D8C691;color:#D8C691}
 .acct-menu{position:absolute;top:calc(100% + 12px);right:0;min-width:230px;background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:16px;box-shadow:0 18px 40px -12px rgba(0,0,0,.45);padding:8px;z-index:60}
 .acct-menu[hidden]{display:none}
 .acct-who{font-size:.8rem;color:var(--muted);padding:8px 12px 10px;border-bottom:1px solid var(--line);margin-bottom:6px;word-break:break-all}
@@ -356,15 +419,71 @@ nav{gap:18px;font-size:.88rem}
 .notice-x:hover{background:var(--line)}
 @keyframes noteIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
 #dDone .tagline{font-size:.8rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 4px}
-@media (max-width:480px){.hdr-r{gap:12px}.acct{width:36px;height:36px}.logo img{max-width:40vw}.notice{right:10px;left:10px;max-width:none}}
-@media (prefers-reduced-motion:reduce){.acct{animation:none;box-shadow:0 0 10px 1px rgba(255,255,255,.25)}.acct.on{box-shadow:none}.notice{animation:none}}
+@media (max-width:480px){.hdr-r{gap:12px}.acct{gap:8px}.acct-ico{width:36px;height:36px}.logo img{max-width:40vw}.notice{right:10px;left:10px;max-width:none}}
+@media (prefers-reduced-motion:reduce){.acct-ico{animation:none;box-shadow:0 0 10px 1px rgba(255,255,255,.25)}.acct.on .acct-ico{box-shadow:none}.notice{animation:none}}
+/* header: menu left, logo centre, account right */
+.bar{display:grid;grid-template-columns:1fr auto 1fr;align-items:center}
+.hdr-l{justify-self:start}
+.logo{justify-self:center}
+.hdr-r{justify-self:end;gap:10px}
+.burger{width:40px;height:40px;border-radius:50%;border:1.5px solid rgba(255,255,255,.55);background:rgba(255,255,255,.06);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;cursor:pointer;padding:0;transition:background .25s,border-color .25s}
+.burger:hover{background:rgba(255,255,255,.14);border-color:#fff}
+.burger span{display:block;width:18px;height:2px;background:currentColor;border-radius:2px;transition:transform .25s,opacity .2s}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.nav-menu{position:absolute;top:64px;left:0;right:0;min-height:25vh;flex-direction:column;justify-content:center;gap:0;background:#000;color:#fff;border-top:1px solid rgba(255,255,255,.18);box-shadow:0 28px 40px -18px rgba(0,0,0,.55);padding:6px max(24px,calc((100vw - 1160px)/2 + 24px));z-index:60;animation:menuDrop .28s cubic-bezier(.22,.61,.36,1)}
+@keyframes menuDrop{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.nav-menu{animation:none}}
+@media (max-width:700px){
+.drawer{top:0;bottom:0;height:100%;max-height:none;min-height:0;border-radius:0;overscroll-behavior:contain}
+.drawer-body{padding-top:76px}
+.drawer .drawer-close{position:fixed;top:calc(14px + env(safe-area-inset-top,0px));right:14px;width:46px;height:46px;font-size:1.8rem;background:#fff;border-color:#bbb;box-shadow:0 4px 14px rgba(0,0,0,.22);z-index:55}
+.drawer .drawer-close:hover{background:#fff;color:var(--ink)}
+}
+.nav-menu[hidden]{display:none}
+.nav-menu a{display:block;padding:16px 0;border-radius:0;border-bottom:1px solid rgba(255,255,255,.14);font-weight:600;font-size:1.25rem;color:#fff;transition:padding-left .25s}
+.nav-menu a:last-child{border-bottom:0}
+.nav-menu a:hover{background:none;padding-left:10px;border-color:rgba(255,255,255,.14)}
+.nav-menu :focus-visible{outline-color:#fff;outline-offset:-3px}
+.signin-lbl{background:none;border:0;color:#fff;font:inherit;font-weight:600;font-size:.95rem;cursor:pointer;padding:6px 2px;white-space:nowrap;transition:opacity .2s}
+.signin-lbl[hidden]{display:none}
+#aboutPage{min-height:60vh}
+.about{padding:80px 0 112px}
+.about-in{max-width:720px}
+.about h1{margin-bottom:12px}
+.about-lede{font-family:Fraunces,Georgia,serif;font-size:1.35rem;margin-bottom:20px}
+.about .uses{margin:0 0 32px}
+.about p{color:var(--muted);font-size:1.08rem;margin-bottom:18px}
+.about h2{font-size:clamp(1.5rem,2.6vw,1.9rem);margin:44px 0 14px}
+.about .about-end{font-family:Fraunces,Georgia,serif;font-weight:700;color:var(--ink);font-size:clamp(2rem,4.5vw,3.2rem);line-height:1.1;margin:64px 0 0}
+body.on-about .promo,body.on-about .notice,body.on-about .ann-wrap{display:none!important}
+@media (max-width:480px){.nav-menu{top:60px}.logo img{width:120px;max-width:34vw}.hdr-r{gap:6px}.signin-lbl{font-size:.85rem}.burger{width:36px;height:36px}}
+.as-lede{color:var(--muted);margin:-18px 0 28px}
+.as-ta{border-radius:18px;resize:vertical;min-height:140px;line-height:1.5}
+select.pf-in{cursor:pointer}
+.as-count{font-size:.82rem;color:var(--muted);margin:2px 0 0 8px}
+.as-count.ok{color:#1a7f37}
+.as-drop{border:2px dashed var(--line);border-radius:18px;padding:28px 16px;text-align:center;color:var(--muted);cursor:pointer;transition:border-color .2s,background .2s}
+.as-drop:hover,.as-drop.over,.as-drop:focus-visible{border-color:var(--ink);background:var(--paper)}
+.as-drop[aria-disabled="true"]{opacity:.5;cursor:default}
+.as-thumbs{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.as-th{position:relative;width:72px;height:72px;border-radius:12px;overflow:hidden;border:1px solid var(--line)}
+.as-th img{width:100%;height:100%;object-fit:cover}
+.as-th button{position:absolute;top:3px;right:3px;width:22px;height:22px;border:0;border-radius:50%;background:rgba(0,0,0,.7);color:#fff;cursor:pointer;line-height:1;padding:0 0 2px}
+#asDone{text-align:center}
+.pf-help svg{width:20px;height:20px;margin-right:10px;flex:none}
+body{display:flex;flex-direction:column;min-height:calc(100vh - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px))}
+main{flex:1 0 auto}
+footer{flex:none}
 </style>
 </head>
 <body>
 <header>
 <div class="wrap bar">
+<div class="hdr-l"><button type="button" class="burger" id="navBtn" aria-label="Open menu" aria-haspopup="true" aria-expanded="false" aria-controls="navMenu"><span></span><span></span><span></span></button><nav class="nav-menu" id="navMenu" aria-label="Main" hidden><a href="#top">Home</a><a href="#about">About</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></nav></div>
 <a href="#top" class="logo" aria-label="GearCertified home"><img src="data:image/png;base64,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" alt="GearCertified" width="220" height="16"></a>
-<div class="hdr-r"><nav aria-label="Main"><a href="#faq">FAQ</a><a href="#contact">Contact</a></nav><button type="button" class="acct" id="acctBtn" aria-label="Sign in or sign up" aria-haspopup="true" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20.5c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg></button><div class="acct-menu" id="acctMenu" role="menu" hidden><div class="acct-who" id="acctWho"></div><button type="button" role="menuitem" id="menuCoupons"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9a2 2 0 0 0 0 6v3h18v-3a2 2 0 0 1 0-6V6H3z"/><path d="M13 6v12" stroke-dasharray="2 2.4"/></svg>My Coupons</button><button type="button" role="menuitem" id="menuOut"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg>Sign out</button></div></div>
+<div class="hdr-r"><button type="button" class="acct" id="acctBtn" aria-label="Sign in or sign up" aria-haspopup="true" aria-expanded="false"><span class="acct-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20.5c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg></span><span class="signin-lbl" id="signInLbl">Sign In</span></button><div class="acct-menu" id="acctMenu" role="menu" hidden><div class="acct-who" id="acctWho"></div><button type="button" role="menuitem" id="menuProfile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20.5c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg>Profile</button><button type="button" role="menuitem" id="menuCoupons"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9a2 2 0 0 0 0 6v3h18v-3a2 2 0 0 1 0-6V6H3z"/><path d="M13 6v12" stroke-dasharray="2 2.4"/></svg>Coupons</button><button type="button" role="menuitem" id="menuOut"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg>Sign out</button></div></div>
 </div>
 <div class="ann-wrap"><div class="ann" id="ann" role="region" aria-label="Shipping and guarantee information"><div class="ann-in"><div class="ann-set"><span><svg class='flag' viewBox='0 0 28 20' width='20' height='14' aria-hidden='true'><rect x='1' y='2' width='16' height='12' rx='1.6' fill='#F08C00'/><path d='M17 5.5h5.4l4.1 4.3V14H17z' fill='#D9730D'/><path d='M19.2 7.4h2.5l2.4 2.5h-4.9z' fill='#fff'/><circle cx='7' cy='15.5' r='3' fill='#222'/><circle cx='7' cy='15.5' r='1.2' fill='#ddd'/><circle cx='21' cy='15.5' r='3' fill='#222'/><circle cx='21' cy='15.5' r='1.2' fill='#ddd'/></svg>Free Shipping for U.S. Amazon Prime Members</span><span><svg class='flag' viewBox='0 0 24 28' width='12' height='14' aria-hidden='true'><path d='M12 1l10 3.6v8.1c0 6-4.2 11.2-10 13.3C6.2 23.9 2 18.7 2 12.7V4.6L12 1z' fill='#2F6FDE'/><path d='M12 1l10 3.6v8.1c0 6-4.2 11.2-10 13.3z' fill='#1F54B8'/><path d='M7.2 13.6l3.3 3.3 6.4-6.8' fill='none' stroke='#fff' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/></svg>Risk-Free 30-Day Money-Back Guarantee via Amazon</span><span><svg class='flag' viewBox='0 0 24 25' width='15' height='15.6' aria-hidden='true'><circle cx='5' cy='6' r='3.4' fill='#E03131'/><circle cx='19' cy='6' r='3.4' fill='#E03131'/><circle cx='12' cy='13.2' r='8.6' fill='#fff' stroke='#E03131' stroke-width='2.4'/><path d='M12 8v5.4l3.4 2' fill='none' stroke='#111' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/><path d='M7 21.4l-1.6 1.8M17 21.4l1.6 1.8' stroke='#E03131' stroke-width='2' stroke-linecap='round'/></svg>Limited-Time Offer: Claim Your Exclusive 10% Off Coupon</span></div></div></div>
 <button type="button" class="ann-pause" id="annPause" aria-pressed="false" aria-label="Pause announcements"><svg class="i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg><svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button></div>
@@ -440,6 +559,66 @@ nav{gap:18px;font-size:.88rem}
 <div class="wrap contact reveal"><h2 class="ct"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3.5 7.5 7.4 5.1a2 2 0 0 0 2.2 0l7.4-5.1"/></svg></span>Contact Us</h2><p>Questions, feedback or need help with your product? Send us an email and we will get back to you.</p><span class="btn btn-primary" style="cursor:text;user-select:text;background:var(--green)">support@gearcertified.com</span></div>
 </section>
 </main>
+<main id="aboutPage" hidden>
+<section class="about"><div class="wrap about-in">
+<h1>Built for the lifter who shows up.</h1>
+<p class="about-lede">GearCertified makes gym gear for people who give every session everything they’ve got.</p>
+<p>You know the moment. The last rep of the heaviest set. Your hands are slick, your grip is fading, and the only thing standing between you and the next pull is whether your gear holds up.</p>
+<p>That moment is why we exist.</p>
+<h2>The work nobody sees</h2>
+<p>Every session is a promise you made to yourself. The early mornings. The late nights. The days you didn’t feel like going, and went anyway. That discipline is yours, and it deserves gear that keeps up with it.</p>
+<h2>What we believe</h2>
+<p>Good gear should disappear into the work. It should hold when you’re tired, feel right when you’re pushing, and keep going long after the newness wears off. Gear that only almost works isn’t good enough for the effort you put in.</p>
+<h2>Where it started</h2>
+<p>I’m Stanley, a 22-year-old lifter from Calgary, Canada. I’ve spent over five years in the gym, and somewhere along the way it stopped being just a workout and became my passion, the thing that has shaped who I am.</p>
+<p>Along the way, I picked up a lot of gym knowledge. I also started noticing something I couldn’t ignore: some gym gear just missed the mark. It was close, but not right, and I knew lifters deserved better.</p>
+<p>I saw an opportunity to fix that. I felt like I could make gym gear that customers would love, built by someone who actually lives this.</p>
+<p>GearCertified is me putting that passion into something you can hold. Thank you for being part of it.</p>
+</div></section>
+</main>
+<main id="profilePage" hidden>
+<section class="profile"><div class="wrap profile-in">
+<h1 id="pfTitle">My Profile</h1>
+<form id="nickForm" class="pf-sec" novalidate>
+<label class="pf-lbl" for="dNick">Nickname <small>(optional)</small></label>
+<input id="dNick" class="pf-in" type="text" maxlength="24" placeholder="Add a nickname" autocomplete="nickname">
+<p id="nickMsg" role="status"></p>
+<button type="button" class="btn btn-primary" id="nickSave">Save</button>
+</form>
+<div class="pf-sec"><span class="pf-lbl" id="pfEmailLbl">Email</span><div class="pf-box" id="pfEmail"></div></div>
+<div class="pf-sec" id="pfPwSec" hidden>
+<span class="pf-lbl">Password</span>
+<div id="pwView" class="pf-pw"><div class="pf-box" aria-label="Password hidden">••••••••••</div><button type="button" class="btn btn-ghost" id="pwChange">Change password</button></div>
+<form id="pwForm" novalidate hidden>
+<label for="pwCur" class="vh">Current password</label><input id="pwCur" class="pf-in" type="password" placeholder="Current password" autocomplete="current-password">
+<label for="pwNew" class="vh">New password</label><input id="pwNew" class="pf-in" type="password" placeholder="New password" autocomplete="new-password">
+<label for="pwNew2" class="vh">Confirm new password</label><input id="pwNew2" class="pf-in" type="password" placeholder="Confirm new password" autocomplete="new-password">
+<div class="pwrow"><label class="showpw"><input type="checkbox" id="pwShow"><span>Show passwords</span></label></div>
+<p id="pwErr" role="alert"></p>
+<div class="pw-btns"><button type="button" class="btn btn-primary" id="pwSave">Update password</button><button type="button" class="btn btn-ghost" id="pwCancel">Cancel</button></div>
+</form>
+</div>
+<button type="button" class="btn btn-ghost pf-out" id="pfOut">Sign out</button>
+<a href="#assistance" class="btn btn-primary pf-help" id="pfHelp"><svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M4 14v-2a8 8 0 0 1 16 0v2'/><rect x='3' y='14' width='4' height='6' rx='1.5'/><rect x='17' y='14' width='4' height='6' rx='1.5'/><path d='M19 20c0 1.1-1.3 2-3 2h-3'/></svg>Get Assistance</a>
+<button type="button" class="pf-del" id="pfDelete">Delete my account</button>
+</div></section>
+</main>
+<main id='assistPage' hidden>
+<section class='profile assist'><div class='wrap profile-in'>
+<a href='#profile' class='backbtn'>‹ Back to profile</a>
+<form id='asForm' novalidate>
+<h1>Get Assistance</h1>
+<p class='as-lede'>Tell us what’s going on and we’ll reply by email.</p>
+<div class='pf-sec'><label class='pf-lbl' for='asName'>Your name</label><input id='asName' class='pf-in' type='text' maxlength='60' autocomplete='name' placeholder='Your name'></div>
+<div class='pf-sec'><label class='pf-lbl' for='asReason'>Reason for contact</label><input id='asReason' class='pf-in' type='text' maxlength='80' placeholder='Give your message a title'></div>
+<div class='pf-sec'><label class='pf-lbl' for='asMsg'>How can we help?</label><textarea id='asMsg' class='pf-in as-ta' rows='6'></textarea></div>
+<div class='pf-sec'><span class='pf-lbl'>Photos <small>(optional)</small></span><div class='as-drop' id='asDrop' tabindex='0' role='button'>Drag photos here or click to browse (0 / 5)</div><input id='asFile' type='file' accept='image/*' multiple hidden><div class='as-thumbs' id='asThumbs'></div></div>
+<p id='asErr' class='err' role='alert'></p>
+<button type='button' class='btn btn-primary' id='asSend'>Send message</button>
+</form>
+<div id='asDone' hidden><h2>Message sent</h2><p class='as-lede' style='margin:12px 0 24px'>Thanks for reaching out. We’ll reply to your email as soon as we can.</p><a href='#profile' class='btn btn-ghost'>Back to profile</a></div>
+</div></section>
+</main>
 <footer><div class="wrap"><div class="flinks"><button type="button" class="flink" data-doc="privacy">Privacy Policy</button><button type="button" class="flink" data-doc="terms">Terms of Service</button><button type="button" class="flink follow" id="followBtn" aria-haspopup="dialog">Follow Us</button></div>© 2026 GearCertified. All rights reserved.</div></footer>
 <div class="promo" role="complementary" aria-label="Promotion"><button type="button" class="promo-x" aria-label="Close promotion" onclick="this.parentNode.remove()">×</button><button type="button" class="promo-open" aria-haspopup="dialog">Get 10% off</button></div>
 <div class="drawer-bg" id="dBg"></div>
@@ -473,9 +652,17 @@ nav{gap:18px;font-size:.88rem}
 <button type="submit" class="btn btn-primary" id="dSubmit">Continue</button>
 </form>
 </div>
-<div id="dDone" hidden><p class="tagline">10% off your order</p><h2>My Coupons</h2><div class="coupon"><code id="codeText">GC10OFF</code><button type="button" class="btn btn-primary" id="copyBtn">Copy code</button></div><p class="note">Add our product to your Amazon cart, then paste this code at checkout.</p><a href="#" class="btn btn-primary">Redeem on Amazon</a></div>
+<div id="dDone" hidden><p class="tagline">Coupon Code</p><h2>10% OFF YOUR ORDER</h2><div class="coupon"><code id="codeText">GC10OFF</code><button type="button" class="btn btn-primary" id="copyBtn">Copy code</button></div><p class="note">Add our product to your Amazon cart, then paste this code at checkout.</p><a href="#" class="btn btn-primary">Redeem on Amazon</a></div>
 </div>
 </aside>
+<div class="rs-bg" id="delBg" hidden></div>
+<div class="rs-pop" id="delPop" role="alertdialog" aria-modal="true" aria-labelledby="delTitle" hidden>
+<h3 id="delTitle">Delete your account?</h3>
+<p class="rs-lead">This permanently deletes your account and nickname, and you’ll be signed out. This can’t be undone.</p>
+<p class="err" id="delErr" role="alert"></p>
+<button type="button" class="btn btn-danger" id="delYes">Delete account</button>
+<button type="button" class="btn btn-ghost" id="delNo">Cancel</button>
+</div>
 <div class="rs-bg" id="rsBg" hidden></div>
 <div class="rs-pop" id="rsPop" role="dialog" aria-modal="true" aria-labelledby="rsTitle" hidden>
 <button type="button" class="notice-x" id="rsX" aria-label="Close">×</button>
@@ -495,6 +682,8 @@ nav{gap:18px;font-size:.88rem}
 <div class="lb-stage">
 <div class="lb-track" id="lbTrack"></div>
 <button type="button" class="lb-btn lb-close" id="lbClose" aria-label="Close enlarged image">×</button>
+<button type="button" class="lb-btn lb-fs" id="lbFs" aria-label="Full screen" aria-pressed="false"><svg class="i-exp" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg><svg class="i-col" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4v5H4M15 4v5h5M9 20v-5H4M15 20v-5h5"/></svg></button>
+<div class="lb-zoom" role="group" aria-label="Zoom"><button type="button" class="lb-zb" id="lbZout" aria-label="Zoom out">−</button><button type="button" class="lb-zb lb-zp" id="lbZoomPct" aria-label="Reset zoom">100%</button><button type="button" class="lb-zb" id="lbZin" aria-label="Zoom in">+</button></div>
 <button type="button" class="lb-btn lb-arrow lb-prev" id="lbPrev" aria-label="Previous image">‹</button>
 <button type="button" class="lb-btn lb-arrow lb-next" id="lbNext" aria-label="Next image">›</button>
 <div class="lb-count" id="lbCount" aria-live="polite"></div>
@@ -510,7 +699,7 @@ nav{gap:18px;font-size:.88rem}
 <div class="fl-links" id="flLinks"></div>
 </div>
 </div>
-<div class="notice" id="gcNote" role="status" hidden><button type="button" class="notice-x" id="noteX" aria-label="Close">×</button><p><button type="button" class="linkbtn" id="noteLink">Click Here</button> to get your 10% off coupon, or find it anytime by clicking your profile icon.</p></div>
+<div class="notice" id="gcNote" role="status" hidden><button type="button" class="notice-x" id="noteX" aria-label="Close">×</button><p><button type="button" class="linkbtn" id="noteLink">Click Here</button> to get your 10% coupon, or find it anytime by clicking your profile icon.</p></div>
 <div class="toast" id="toast" role="status"></div>
 <div class="drawer-bg" id="shBg"></div>
 <div class="doc" id="shSheet" role="dialog" aria-modal="true" aria-label="Share"><button type="button" class="drawer-close" id="shClose" aria-label="Close">×</button><div class="doc-body"><h2>Share GearCertified</h2><p>Send it to friends and family.</p><div class="share-grid" id="shGrid"></div></div></div>
@@ -534,23 +723,44 @@ document.querySelector(".prev").onclick=function(){go(cur()-1)};
 document.querySelector(".next").onclick=function(){go(cur()+1)};
 var lb=document.getElementById("lb"),lbTrack=document.getElementById("lbTrack"),lbCount=document.getElementById("lbCount"),lbClose=document.getElementById("lbClose"),lbPrev=document.getElementById("lbPrev"),lbNext=document.getElementById("lbNext"),lbIdx=0,lbLast,lbBuilt=false;
 function lbCur(){return Math.round(lbTrack.scrollLeft/lbTrack.clientWidth)}
-function lbGo(i,smooth){i=(i+n)%n;lbTrack.scrollTo({left:i*lbTrack.clientWidth,behavior:smooth?"smooth":"auto"})}
+function lbGo(i,smooth){lbZoomReset();i=(i+n)%n;lbTrack.scrollTo({left:i*lbTrack.clientWidth,behavior:smooth?"smooth":"auto"})}
 function lbSync(){var c=Math.max(0,Math.min(n-1,lbCur()));lbIdx=c;lbCount.textContent=(c+1)+" / "+n}
 function lbBuild(){if(lbBuilt)return;lbBuilt=true;Array.prototype.forEach.call(slides,function(s,i){var src=s.querySelector("img"),d=document.createElement("div"),im=document.createElement("img");d.className="lb-slide";d.setAttribute("role","group");d.setAttribute("aria-roledescription","slide");d.setAttribute("aria-label","Image "+(i+1)+" of "+n);im.src=src.src;im.alt=src.alt;d.appendChild(im);lbTrack.appendChild(d)})}
 function openLb(i){lbBuild();lbLast=document.activeElement;lb.classList.add("open");document.body.style.overflow="hidden";lbGo(i,false);lbSync();lbClose.focus()}
-function closeLb(){lb.classList.remove("open");document.body.style.overflow="";track.scrollTo({left:lbIdx*track.clientWidth,behavior:"auto"});sync();if(lbLast&&lbLast.focus)lbLast.focus()}
+function lbFull(on){lb.classList.toggle("full",on);var b=document.getElementById("lbFs");b.setAttribute("aria-pressed",on?"true":"false");b.setAttribute("aria-label",on?"Exit full screen":"Full screen");requestAnimationFrame(function(){lbTrack.style.scrollSnapType="none";lbTrack.scrollLeft=lbIdx*lbTrack.clientWidth;lbTrack.style.scrollSnapType=""})}
+function closeLb(){lb.classList.remove("open");lbFull(false);lbZoomReset();document.body.style.overflow="";track.scrollTo({left:lbIdx*track.clientWidth,behavior:"auto"});sync();if(lbLast&&lbLast.focus)lbLast.focus()}
 track.addEventListener("click",function(e){var im=e.target.closest&&e.target.closest("img");if(im)openLb(Array.prototype.indexOf.call(slides,im.parentNode))});
 track.addEventListener("keydown",function(e){if(e.key==="Enter"&&e.target===track)openLb(cur())});
 lbTrack.addEventListener("scroll",lbSync);
 lbPrev.onclick=function(){lbGo(lbCur()-1,true)};
 lbNext.onclick=function(){lbGo(lbCur()+1,true)};
 lbClose.onclick=closeLb;
+document.getElementById("lbFs").onclick=function(){lbFull(!lb.classList.contains("full"))};
+var lbZ=1,lbTx=0,lbTy=0,lbZoomEl=document.getElementById("lbZoomPct"),lbZin=document.getElementById("lbZin"),lbZout=document.getElementById("lbZout"),DESK=window.matchMedia("(min-width:701px)"),lbPan=null,lbMoved=false;
+function lbImg(){var s=lbTrack.children[Math.max(0,Math.min(n-1,lbCur()))];return s&&s.firstChild}
+function lbApply(){var im=lbImg();if(!im)return;var W=lbTrack.clientWidth,H=lbTrack.clientHeight,mx=(lbZ-1)*W/2,my=(lbZ-1)*H/2;lbTx=Math.max(-mx,Math.min(mx,lbTx));lbTy=Math.max(-my,Math.min(my,lbTy));im.style.transform=lbZ>1?"translate("+lbTx+"px,"+lbTy+"px) scale("+lbZ+")":"";lbTrack.style.overflowX=lbZ>1?"hidden":"";lb.classList.toggle("zoomed",lbZ>1);lbZoomEl.textContent=Math.round(lbZ*100)+"%";lbZin.disabled=lbZ>=4;lbZout.disabled=lbZ<=1}
+function lbZoomTo(z,cx,cy){z=Math.max(1,Math.min(4,z));if(z===lbZ)return;var r=lbTrack.getBoundingClientRect(),px=cx==null?0:cx-(r.left+r.width/2),py=cy==null?0:cy-(r.top+r.height/2);lbTx=px-(px-lbTx)*z/lbZ;lbTy=py-(py-lbTy)*z/lbZ;lbZ=z;if(z===1){lbTx=0;lbTy=0}lbApply()}
+function lbZoomReset(){lbZ=1;lbTx=0;lbTy=0;Array.prototype.forEach.call(lbTrack.querySelectorAll("img"),function(i){i.style.transform=""});lbTrack.style.overflowX="";lb.classList.remove("zoomed","panning");lbZoomEl.textContent="100%";lbZin.disabled=false;lbZout.disabled=true}
+lbZout.disabled=true;
+lbZin.onclick=function(){lbZoomTo(lbZ+.5)};
+lbZout.onclick=function(){lbZoomTo(lbZ-.5)};
+lbZoomEl.onclick=function(){lbZoomTo(1)};
+lbTrack.addEventListener("wheel",function(e){if(!DESK.matches)return;if(!e.ctrlKey&&Math.abs(e.deltaX)>Math.abs(e.deltaY))return;e.preventDefault();lbZoomTo(lbZ*Math.exp(-e.deltaY*(e.ctrlKey?.01:.002)),e.clientX,e.clientY)},{passive:false});
+lbTrack.addEventListener("pointerdown",function(e){if(!DESK.matches||e.pointerType!=="mouse"||e.button!==0||lbZ<=1)return;lbPan={x:e.clientX,y:e.clientY,tx:lbTx,ty:lbTy,id:e.pointerId};lbMoved=false});
+lbTrack.addEventListener("pointermove",function(e){if(!lbPan)return;var dx=e.clientX-lbPan.x,dy=e.clientY-lbPan.y;if(!lbMoved&&Math.abs(dx)+Math.abs(dy)<5)return;if(!lbMoved){lbMoved=true;try{lbTrack.setPointerCapture(lbPan.id)}catch(x){}lb.classList.add("panning")}lbTx=lbPan.tx+dx;lbTy=lbPan.ty+dy;lbApply()});
+function lbPanEnd(){lbPan=null;lb.classList.remove("panning");setTimeout(function(){lbMoved=false},0)}
+lbTrack.addEventListener("pointerup",lbPanEnd);
+lbTrack.addEventListener("pointercancel",lbPanEnd);
+lbTrack.addEventListener("dragstart",function(e){e.preventDefault()});
+lbTrack.addEventListener("click",function(e){if(!DESK.matches||lbMoved)return;if(!(e.target.closest&&e.target.closest("img")))return;if(lbZ>1)lbZoomTo(1);else lbZoomTo(2.5,e.clientX,e.clientY)});
+document.addEventListener("keydown",function(e){if(!lb.classList.contains("open")||!DESK.matches||e.ctrlKey||e.metaKey||e.altKey)return;if(e.key==="+"||e.key==="="){e.preventDefault();lbZoomTo(lbZ+.5)}else if(e.key==="-"||e.key==="_"){e.preventDefault();lbZoomTo(lbZ-.5)}else if(e.key==="0"){e.preventDefault();lbZoomTo(1)}});
 lb.addEventListener("click",function(e){if(!e.target.closest(".lb-stage"))closeLb()});
 window.addEventListener("resize",function(){if(lb.classList.contains("open"))lbTrack.scrollLeft=lbIdx*lbTrack.clientWidth});
 document.addEventListener("keydown",function(e){if(!lb.classList.contains("open"))return;if(e.key==="Escape"){e.stopImmediatePropagation();closeLb()}else if(e.key==="ArrowLeft"){e.preventDefault();lbGo(lbCur()-1,true)}else if(e.key==="ArrowRight"){e.preventDefault();lbGo(lbCur()+1,true)}else if(e.key==="Tab"){var f=[lbClose,lbPrev,lbNext],i=f.indexOf(document.activeElement);e.preventDefault();if(e.shiftKey)f[i<=0?f.length-1:i-1].focus();else f[(i+1)%f.length].focus()}});
 var authMode="up",authStep=1;
 var dr=document.getElementById("drawer"),dbg=document.getElementById("dBg"),emailEl=document.getElementById("dEmail"),lastFocus;
-function openD(){var su=false;try{su=localStorage.getItem("gc_signed_up")==="1"}catch(x){}if(su){document.getElementById("dForm").hidden=true;document.getElementById("dDone").hidden=false}lastFocus=document.activeElement;dbg.classList.add("open");dr.classList.add("open");document.body.style.overflow="hidden";setTimeout(function(){(su?document.getElementById("copyBtn"):emailEl).focus()},60)}
+function showPane(p){document.getElementById("dForm").hidden=p!=="form";document.getElementById("dDone").hidden=p!=="coupons"}
+function openD(){var su=false;try{su=localStorage.getItem("gc_signed_up")==="1"}catch(x){}if(su)showPane("coupons");lastFocus=document.activeElement;dbg.classList.add("open");dr.classList.add("open");document.body.style.overflow="hidden";setTimeout(function(){(su?document.getElementById("copyBtn"):emailEl).focus()},60)}
 function closeD(){hidePw();goStep(1);dbg.classList.remove("open");dr.classList.remove("open");document.body.style.overflow="";if(lastFocus&&lastFocus.focus)lastFocus.focus()}
 var promo=document.querySelector(".promo"),dragMoved=false,drag=null;
 promo.addEventListener("pointerdown",function(e){if(e.target.closest(".promo-x"))return;var r=promo.getBoundingClientRect();drag={y:e.clientY,top:r.top,id:e.pointerId};dragMoved=false});
@@ -597,8 +807,8 @@ var POLICY_VERSION="2026-11-08.2";
 function recordConsent(email,method){var rec={email:email,consentedAt:new Date().toISOString(),consentText:document.querySelector(".consent span").textContent,policyVersion:POLICY_VERSION,source:"account-"+(method||"email"),method:method||"email"};try{localStorage.setItem("gc_consent",JSON.stringify({consentedAt:rec.consentedAt,consentText:rec.consentText,policyVersion:rec.policyVersion}))}catch(x){}/* TODO: send rec (email, timestamp, consent wording, IP) to your email service or backend so the consent record is stored server-side */return rec}
 var DOCS={privacy:{t:"Privacy Policy",h:`<p>Last updated: November 8, 2026</p>
 <p>This website is operated by GearCertified (“we”, “us”). This policy explains what personal information we collect, why, and the choices you have. Contact: <a href='mailto:support@gearcertified.com'>support@gearcertified.com</a></p>
-<h3>Information we collect</h3><ul><li>Your email address, if you create an account, sign in, or sign up for our discount code or updates.</li><li>If you create an account with email, the password you choose. We store passwords only in hashed form, never in plain text.</li><li>If you choose to sign in with Google or Apple, the basic account details that provider shares with us, such as your email address and whether sign-in succeeded. We do not receive your Google or Apple password.</li><li>A record of your consent: the date and time, the wording you agreed to, the sign-in method you used, and the version of this policy.</li><li>Technical data such as IP address and browser type, which our hosting and email providers may log automatically.</li><li>Small settings stored in your browser to remember that you are signed in and that you signed up.</li></ul>
-<h3>How and why we use it</h3><ul><li>To create and manage your account and show you your discount code in My Coupons (to provide what you asked for).</li><li>To send product updates, offers, and marketing emails (with your consent, which you can withdraw at any time).</li><li>To keep proof of consent and unsubscribe requests, and to comply with the law (legal obligation and our legitimate interest in protecting our business).</li></ul>
+<h3>Information we collect</h3><ul><li>Your email address, if you create an account, sign in, or sign up for our discount code or updates.</li><li>If you create an account with email, the password you choose. We store passwords only in hashed form, never in plain text.</li><li>If you choose to sign in with Google or Apple, the basic account details that provider shares with us, such as your email address and whether sign-in succeeded. We do not receive your Google or Apple password.</li><li>A record of your consent: the date and time, the wording you agreed to, the sign-in method you used, and the version of this policy.</li><li>If you contact us through Get Assistance, your name, email address, message, and any photos you attach.</li><li>Technical data such as IP address and browser type, which our hosting and email providers may log automatically.</li><li>Small settings stored in your browser to remember that you are signed in and that you signed up.</li></ul>
+<h3>How and why we use it</h3><ul><li>To create and manage your account and show you your discount code in Coupons (to provide what you asked for).</li><li>To send product updates, offers, and marketing emails (with your consent, which you can withdraw at any time).</li><li>To keep proof of consent and unsubscribe requests, and to comply with the law (legal obligation and our legitimate interest in protecting our business).</li></ul>
 <h3>Sharing</h3><p>We do not sell your personal information or share it for cross-context behavioral advertising. If you sign in with Google or Apple, that provider handles your sign-in under its own privacy policy. We share information only with service providers that help us run this website and send email, under contract and only for our purposes, and when required by law or to protect our rights.</p>
 <h3>International transfers</h3><p>We and our providers may process information in countries other than your own, including Canada and the United States. Where the law requires, we use appropriate safeguards for these transfers.</p>
 <h3>How long we keep it</h3><p>We keep your account details and email until you ask us to delete them or unsubscribe. We may keep a minimal record of your consent and unsubscribe request afterwards so we can honor your choice and meet legal requirements.</p>
@@ -615,7 +825,7 @@ terms:{t:"Terms of Service",h:`<p>Last updated: November 8, 2026</p>
 <h3>Using the website</h3><p>Use the site only for lawful purposes. Do not misuse it, interfere with its operation, or try to access it in ways we have not allowed.</p>
 <h3>Purchases</h3><p>Our products are sold through Amazon. Pricing, availability, shipping, taxes, returns, and refunds are handled by Amazon under its own terms. We are not a party to your Amazon purchase.</p>
 <h3>Shipping, returns, and guarantees</h3><p>Free shipping for U.S. Amazon Prime members and the 30-day money-back guarantee mentioned on this website are provided by Amazon through its own programs and policies, not by GearCertified. Eligibility, terms, availability, and any changes are determined solely by Amazon and may change at any time. GearCertified does not control or provide Amazon’s shipping, delivery, returns, or refunds, and is not responsible for them. For help with an order, please contact Amazon.</p>
-<h3>Discount codes</h3><p>Your discount code is available in My Coupons while you are signed in. Discount codes are subject to Amazon’s promotion rules and any conditions shown when you redeem them. Codes have no cash value, may not be available in every country, and we may change or end an offer at any time. Offers are void where prohibited by law.</p>
+<h3>Discount codes</h3><p>Your discount code is available in Coupons while you are signed in. Discount codes are subject to Amazon’s promotion rules and any conditions shown when you redeem them. Codes have no cash value, may not be available in every country, and we may change or end an offer at any time. Offers are void where prohibited by law.</p>
 <h3>Safe use of products</h3><p>Lifting grips are fitness equipment. Inspect them before each use, stop using them if they are worn out or damaged, and follow the product guide. Exercise carries risk. Talk to a qualified professional if you are unsure about your health or fitness.</p>
 <h3>Intellectual property</h3><p>The content on this site, including text, images, logos, and design, belongs to GearCertified or its licensors. You may not copy or reuse it without our written permission, except to share the site link.</p>
 <h3>Disclaimer</h3><p>The site is provided “as is” and “as available”, and we do not guarantee it will always be uninterrupted or error-free.</p>
@@ -678,21 +888,71 @@ rsBg.onclick=closeReset;
 rsEmail.addEventListener("keydown",function(e){if(e.key==="Enter"){e.preventDefault();sendReset()}});
 document.getElementById("tabUp").onclick=function(){setMode("up")};
 document.getElementById("tabIn").onclick=function(){setMode("in")};
-function applyAuthUI(){var u=getUser(),pr=document.querySelector(".promo");acctBtn.classList.toggle("on",!!u);acctBtn.setAttribute("aria-label",u?"My account":"Sign in or sign up");if(u){document.getElementById("acctWho").textContent=u.email?("Signed in as "+u.email):("Signed in with "+(u.method==="apple"?"Apple":"Google"));if(pr)pr.style.display="none"}else if(pr){pr.style.display=""}}
+function nickKey(u){return u.email?u.email.toLowerCase():"social:"+(u.method||"")}
+function getNicks(){try{return JSON.parse(localStorage.getItem("gc_nicks")||"{}")||{}}catch(x){return {}}}
+var memNicks={};
+function getNick(u){if(!u)return "";var k=nickKey(u);if(has(memNicks,k))return memNicks[k];var n=getNicks()[k];return typeof n==="string"?n:""}
+function setNick(u,v){var m=getNicks(),k=nickKey(u);memNicks[k]=v;if(v)m[k]=v;else delete m[k];try{localStorage.setItem("gc_nicks",JSON.stringify(m))}catch(x){}var h=window.GC_AUTH&&window.GC_AUTH.nickname;if(typeof h==="function"){try{h(v)}catch(x){}}}
+function applyAuthUI(){var u=getUser(),pr=document.querySelector(".promo"),lbl=document.getElementById("signInLbl"),nk=getNick(u);if(lbl){lbl.textContent=u&&nk?nk:"Sign In";lbl.dataset.nick=u&&nk?"1":"";lbl.hidden=!!u&&!nk;lbl.title=u&&nk?nk:""}acctBtn.classList.toggle("on",!!u);acctBtn.setAttribute("aria-label",u?"My account":"Sign in or sign up");if(u){document.getElementById("acctWho").textContent=u.email?("Signed in as "+u.email):("Signed in with "+(u.method==="apple"?"Apple":"Google"));if(pr)pr.style.display="none"}else if(pr){pr.style.display=""}}
 function closeMenu(){acctMenu.hidden=true;acctBtn.setAttribute("aria-expanded","false")}
 function hideNote(){noteEl.hidden=true}
 function completeSignIn(u){try{localStorage.setItem("gc_user",JSON.stringify({method:u.method,email:u.email||""}));localStorage.setItem("gc_signed_up","1")}catch(x){}resetPw();document.getElementById("dForm").hidden=true;document.getElementById("dDone").hidden=false;applyAuthUI();closeD();noteEl.hidden=false}
-function signOut(){try{localStorage.removeItem("gc_user");localStorage.removeItem("gc_signed_up")}catch(x){}closeMenu();hideNote();resetPw();document.getElementById("dDone").hidden=true;document.getElementById("dForm").hidden=false;emailEl.value="";document.getElementById("dConsent").checked=false;setMode("up");applyAuthUI();toast("Signed out")}
+function signOut(){try{localStorage.removeItem("gc_user");localStorage.removeItem("gc_signed_up")}catch(x){}closeMenu();hideNote();resetPw();showPane("form");if(location.hash==="#profile"||location.hash==="#assistance")location.hash="top";emailEl.value="";document.getElementById("dConsent").checked=false;setMode("up");applyAuthUI();toast("Signed out")}
 /* One-click Google / Apple. To go live, set window.GC_AUTH={google:fn,apple:fn}; each fn runs the real OAuth popup and returns a Promise of {email}. Until then this simulates a successful sign-in so the flow can be previewed. */
 function needConsent(){var c=document.getElementById("dConsent");document.getElementById("cErr").textContent="Please check the box to agree before continuing.";c.focus();nudge(document.querySelector(".consent"))}
 document.getElementById("dConsent").addEventListener("change",function(){if(this.checked)document.getElementById("cErr").textContent=""});
 function socialSignIn(p){if(!document.getElementById("dConsent").checked){needConsent();return}document.getElementById("cErr").textContent="";recordConsent("",p);var h=window.GC_AUTH&&window.GC_AUTH[p];if(typeof h==="function"){h().then(function(r){completeSignIn({method:p,email:r&&r.email})},function(){toast("Sign-in cancelled")})}else{completeSignIn({method:p})}}
 document.getElementById("btnGoogle").onclick=function(){socialSignIn("google")};
 document.getElementById("btnApple").onclick=function(){socialSignIn("apple")};
-acctBtn.onclick=function(e){e.stopPropagation();hideNote();if(getUser()){var open=acctMenu.hidden;acctMenu.hidden=!open;acctBtn.setAttribute("aria-expanded",open?"true":"false");if(open)document.getElementById("menuCoupons").focus()}else{openD()}};
+acctBtn.onclick=function(e){e.stopPropagation();hideNote();if(getUser()){var open=acctMenu.hidden;acctMenu.hidden=!open;acctBtn.setAttribute("aria-expanded",open?"true":"false");if(open)document.getElementById("menuProfile").focus()}else{openD()}};
 document.addEventListener("click",function(e){if(!acctMenu.hidden&&!e.target.closest("#acctMenu"))closeMenu()});
 document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!acctMenu.hidden){closeMenu();acctBtn.focus()}});
 document.getElementById("menuCoupons").onclick=function(){closeMenu();openD()};
+document.getElementById("menuProfile").onclick=function(){closeMenu();location.hash="profile"};
+var pwView=document.getElementById("pwView"),pwForm=document.getElementById("pwForm"),pwCur=document.getElementById("pwCur"),pwNew=document.getElementById("pwNew"),pwNew2=document.getElementById("pwNew2"),pwShow=document.getElementById("pwShow"),pwErr=document.getElementById("pwErr"),nickIn=document.getElementById("dNick");
+function closePwForm(){pwForm.hidden=true;pwView.hidden=false;pwCur.value="";pwNew.value="";pwNew2.value="";pwShow.checked=false;[pwCur,pwNew,pwNew2].forEach(function(i){i.type="password"});pwErr.textContent=""}
+function setPfTitle(nk){document.getElementById("pfTitle").textContent=nk?nk+"\u2019s profile":"My Profile"}
+function renderProfile(){var u=getUser();if(!u)return;var nk=getNick(u),em=!!u.email;setPfTitle(nk);nickIn.value=nk;document.getElementById("nickMsg").textContent="";document.getElementById("pfEmailLbl").textContent=em?"Email":"Signed in with";document.getElementById("pfEmail").textContent=em?u.email:(u.method==="apple"?"Apple":"Google");document.getElementById("pfPwSec").hidden=!em;closePwForm()}
+window.addEventListener("gcprofile",renderProfile);
+var asName=document.getElementById('asName'),asReason=document.getElementById('asReason'),asMsg=document.getElementById('asMsg'),asDrop=document.getElementById('asDrop'),asFile=document.getElementById('asFile'),asThumbs=document.getElementById('asThumbs'),asErr=document.getElementById('asErr'),asForm=document.getElementById('asForm'),asFiles=[],asTouched=false;
+function asRender(){asThumbs.innerHTML='';asFiles.forEach(function(f,i){var d=document.createElement('div'),im=document.createElement('img'),b=document.createElement('button');d.className='as-th';im.alt='Attached photo '+(i+1);im.src=URL.createObjectURL(f);b.type='button';b.textContent='×';b.setAttribute('aria-label','Remove photo '+(i+1));b.onclick=function(){asFiles.splice(i,1);asRender()};d.appendChild(im);d.appendChild(b);asThumbs.appendChild(d)});var full=asFiles.length>=5;asDrop.setAttribute('aria-disabled',full?'true':'false');asDrop.textContent=full?'Maximum of 5 photos added':'Drag photos here or click to browse ('+asFiles.length+' / 5)'}
+function asAdd(list){var bad=0,big=0;Array.prototype.forEach.call(list,function(f){if(!/^image\//.test(f.type)){bad++;return}if(f.size>10485760){big++;return}if(asFiles.length>=5){bad++;return}asFiles.push(f)});asRender();asErr.textContent=big?'Each photo must be under 10 MB.':bad?'Only images are accepted, up to 5 in total.':''}
+function asWait(){var u=getUser();if(!u)return 0;var t=0;try{t=parseInt(localStorage.getItem('gc_assist_'+nickKey(u))||'0',10)||0}catch(x){}var left=t+600000-Date.now();return left>0&&left<=600000?left:0}
+function asWaitMsg(ms){var m=Math.ceil(ms/60000);return 'You can send another message in '+m+' minute'+(m===1?'':'s')+'.'}
+asDrop.onclick=function(){if(asFiles.length<5)asFile.click()};
+asDrop.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();asDrop.click()}});
+asFile.addEventListener('change',function(){asAdd(asFile.files);asFile.value=''});
+['dragenter','dragover'].forEach(function(t){asDrop.addEventListener(t,function(e){e.preventDefault();asDrop.classList.add('over')})});
+['dragleave','drop'].forEach(function(t){asDrop.addEventListener(t,function(e){e.preventDefault();asDrop.classList.remove('over')})});
+asDrop.addEventListener('drop',function(e){asAdd(e.dataTransfer.files)});
+asName.addEventListener('input',function(){asTouched=true});
+window.addEventListener('gcassist',function(){var u=getUser();if(!u)return;document.getElementById('asDone').hidden=true;asForm.hidden=false;if(!asTouched)asName.value=getNick(u)||'';var w=asWait();asErr.textContent=w?asWaitMsg(w):'';asRender()});
+function asSend(){var name=asName.value.replace(/[\u0000-\u001f\u007f<>]/g,'').replace(/\s+/g,' ').trim(),reason=asReason.value,msg=asMsg.value.trim(),btn=document.getElementById('asSend'),u=getUser();var wait=asWait();if(wait){asErr.textContent=asWaitMsg(wait);return}if(!name){asErr.textContent='Please enter your name.';nudge(asName);asName.focus();return}if(!reason){asErr.textContent='Please add a title for your message.';nudge(asReason);asReason.focus();return}if(msg.split(/\s+/).filter(Boolean).length<7){asErr.textContent='Please write at least 7 words so we can help.';nudge(asMsg);asMsg.focus();return}asErr.textContent='';var payload={name:name,reason:reason,message:msg,email:(u&&u.email)||'',images:asFiles.slice()};function done(){try{if(u)localStorage.setItem('gc_assist_'+nickKey(u),String(Date.now()))}catch(x){}asForm.hidden=true;document.getElementById('asDone').hidden=false;asMsg.value='';asReason.value='';asFiles=[];asRender();toast('Message sent');window.scrollTo(0,0)}var h=window.GC_AUTH&&window.GC_AUTH.assist;if(typeof h==='function'){btn.disabled=true;h(payload).then(done,function(er){asErr.textContent=(er&&er.message)||'Couldn’t send your message. Please try again.'}).then(function(){btn.disabled=false})}else{done()}}
+document.getElementById('asSend').onclick=asSend;
+asForm.addEventListener('submit',function(e){e.preventDefault();asSend()});
+function saveNick(){var u=getUser();if(!u)return;var v=nickIn.value.replace(/[\u0000-\u001f\u007f<>]/g,"").replace(/\s+/g," ").trim().slice(0,24);setNick(u,v);nickIn.value=v;applyAuthUI();setPfTitle(v);document.getElementById("nickMsg").textContent=v?"Saved.":"Nickname removed.";toast(v?"Nickname saved":"Nickname removed")}
+document.getElementById("nickForm").addEventListener("submit",function(e){e.preventDefault();saveNick()});
+document.getElementById("nickSave").onclick=saveNick;
+document.getElementById("pwChange").onclick=function(){pwView.hidden=true;pwForm.hidden=false;pwCur.focus()};
+document.getElementById("pwCancel").onclick=closePwForm;
+pwShow.addEventListener("change",function(){var t=this.checked?"text":"password";[pwCur,pwNew,pwNew2].forEach(function(i){i.type=t})});
+/* Change password. To go live, set window.GC_AUTH.changePassword=function(current,next){...} returning a Promise; reject with an Error whose message is shown to the user. Until then this only simulates success. */
+function savePw(){var c=pwCur.value,n1=pwNew.value,n2=pwNew2.value,btn=document.getElementById("pwSave");if(!c){pwErr.textContent="Enter your current password.";nudge(pwCur);pwCur.focus();return}if(n1.length<8){pwErr.textContent="New password must be at least 8 characters.";nudge(pwNew);pwNew.focus();return}if(n1===c){pwErr.textContent="Choose a password different from your current one.";nudge(pwNew);pwNew.focus();return}if(n1!==n2){pwErr.textContent="Passwords do not match.";nudge(pwNew2);pwNew2.focus();return}pwErr.textContent="";function done(){closePwForm();toast("Password updated")}var h=window.GC_AUTH&&window.GC_AUTH.changePassword;if(typeof h==="function"){btn.disabled=true;h(c,n1).then(done,function(er){pwErr.textContent=(er&&er.message)||"Couldn\u2019t update your password. Please try again."}).then(function(){btn.disabled=false})}else{done()}}
+pwForm.addEventListener("submit",function(e){e.preventDefault();savePw()});
+document.getElementById("pwSave").onclick=savePw;
+[pwCur,pwNew,pwNew2].forEach(function(i){i.addEventListener("keydown",function(e){if(e.key==="Enter"){e.preventDefault();savePw()}})});
+document.getElementById("pfOut").onclick=signOut;
+document.getElementById("pfHelp").addEventListener("click",function(e){e.preventDefault();try{history.pushState(null,"","#assistance")}catch(x){location.hash="assistance";return}window.dispatchEvent(new Event("hashchange"))});
+var delPop=document.getElementById("delPop"),delBg=document.getElementById("delBg"),delLast;
+function openDel(){delLast=document.activeElement;document.getElementById("delErr").textContent="";delBg.hidden=false;delPop.hidden=false;setTimeout(function(){document.getElementById("delNo").focus()},30)}
+function closeDel(){delPop.hidden=true;delBg.hidden=true;if(delLast&&delLast.focus)delLast.focus()}
+/* Delete account. To go live, set window.GC_AUTH.deleteAccount=function(){...} returning a Promise that deletes the account on your server. Until then this only clears this browser's saved data. */
+function doDelete(){var u=getUser(),btn=document.getElementById("delYes");function done(){try{if(u){memNicks[nickKey(u)]="";var m=getNicks();delete m[nickKey(u)];localStorage.setItem("gc_nicks",JSON.stringify(m))}localStorage.removeItem("gc_consent")}catch(x){}closeDel();signOut();toast("Account deleted")}var h=window.GC_AUTH&&window.GC_AUTH.deleteAccount;if(typeof h==="function"){btn.disabled=true;h().then(done,function(){document.getElementById("delErr").textContent="Couldn\u2019t delete your account. Please try again."}).then(function(){btn.disabled=false})}else{done()}}
+document.getElementById("pfDelete").onclick=openDel;
+document.getElementById("delNo").onclick=closeDel;
+delBg.onclick=closeDel;
+document.getElementById("delYes").onclick=doDelete;
+document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!delPop.hidden){e.stopImmediatePropagation();closeDel()}},true);
 document.getElementById("menuOut").onclick=signOut;
 document.getElementById("noteX").onclick=hideNote;
 document.getElementById("noteLink").onclick=function(){hideNote();openD()};
@@ -773,6 +1033,21 @@ if(clicked||!document.body.contains(promo)){clearInterval(t);return}
 if(document.hidden||promo.classList.contains("dragging")||document.body.style.overflow==="hidden")return;
 promo.classList.remove("attn");void promo.offsetWidth;promo.classList.add("attn")
 },15000);
+})();
+</script>
+<script>
+(function(){
+var b=document.getElementById("navBtn"),m=document.getElementById("navMenu"),l=document.getElementById("signInLbl"),a=document.getElementById("acctBtn");
+function closeNav(){m.hidden=true;b.setAttribute("aria-expanded","false");b.setAttribute("aria-label","Open menu")}
+b.addEventListener("click",function(){var open=m.hidden;m.hidden=!open;b.setAttribute("aria-expanded",open?"true":"false");b.setAttribute("aria-label",open?"Close menu":"Open menu")});
+document.addEventListener("click",function(e){if(!m.hidden&&!e.target.closest("#navMenu")&&!e.target.closest("#navBtn"))closeNav()},true);
+m.addEventListener("click",function(e){var a=e.target.closest("a");if(!a)return;e.preventDefault();var h=a.getAttribute("href").slice(1);closeNav();try{history.pushState(null,"","#"+h)}catch(x){try{location.hash=h}catch(y){}}route(false,h)});
+document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!m.hidden){closeNav();b.focus()}});
+function sync(){l.hidden=a.classList.contains("on")&&!l.dataset.nick}
+sync();new MutationObserver(sync).observe(a,{attributes:true,attributeFilter:["class"]});
+var mainEl=document.getElementById("top"),ab=document.getElementById("aboutPage"),pfp=document.getElementById("profilePage"),asp=document.getElementById("assistPage");
+function route(first,hh){var h=hh!==undefined?hh:location.hash.slice(1),about=h==="about",prof=h==="profile",asst=h==="assistance";if(prof||asst){var su=null;try{su=JSON.parse(localStorage.getItem("gc_user")||"null")}catch(x){}if(!su){location.replace("#top");return}}mainEl.hidden=about||prof||asst;ab.hidden=!about;pfp.hidden=!prof;asp.hidden=!asst;document.body.classList.toggle("on-about",about||prof||asst);if(!about&&!prof&&!asst)window.dispatchEvent(new Event("resize"));document.title=about?"About | GearCertified":prof?"Profile | GearCertified":asst?"Get Assistance | GearCertified":"Rubber Lifting Grips & Palm Grips | GearCertified";if(prof)window.dispatchEvent(new Event("gcprofile"));if(asst)window.dispatchEvent(new Event("gcassist"));if(about||prof||asst){window.scrollTo(0,0)}else{var t=h&&document.getElementById(h);if(t)t.scrollIntoView();else if(!first)window.scrollTo(0,0)}}
+window.addEventListener("hashchange",function(){route(false)});route(true);
 })();
 </script>
 </body>
