@@ -227,38 +227,39 @@ footer{background:#000;color:#fff;padding:44px 0;font-size:.9rem;text-align:cent
 .drawer-body>div>p{color:var(--muted);margin-bottom:24px}
 .drawer-close{position:absolute;top:14px;right:14px;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--paper);color:var(--ink);font-size:1.5rem;line-height:1;cursor:pointer;display:grid;place-items:center;padding-bottom:3px}
 .drawer-close:hover{background:var(--ink);color:#fff}
-#dEmail,#dEmail2,#dCode{width:100%;padding:15px 20px;border:1.5px solid var(--line);border-radius:999px;font:inherit;margin-bottom:18px;background:#fff;color:var(--ink)}
-#dEmail:focus,#dEmail2:focus,#dCode:focus{outline:none;border-color:var(--ink)}
+#dEmail,#dEmail2,#dPass,#dPass2{width:100%;padding:15px 20px;border:1.5px solid var(--line);border-radius:999px;font:inherit;margin-bottom:18px;background:#fff;color:var(--ink)}
+#dEmail:focus,#dEmail2:focus,#dPass:focus,#dPass2:focus{outline:none;border-color:var(--ink)}
 .consent{display:flex;gap:12px;align-items:flex-start;font-size:.88rem;color:var(--muted);margin-bottom:12px;cursor:pointer}
+#cErr{margin:0 0 10px;min-height:0}#cErr:empty{display:none}
 .consent input{width:20px;height:20px;flex:none;margin-top:2px;accent-color:#000}
 .err{color:#b00020;font-size:.88rem;min-height:1.4em;margin-bottom:8px}
 #signup .btn{width:100%}
 .shake{animation:shake .45s cubic-bezier(.36,.07,.19,.97)}
 @keyframes shake{10%,90%{transform:translateX(-2px)}20%,80%{transform:translateX(4px)}30%,50%,70%{transform:translateX(-6px)}40%,60%{transform:translateX(6px)}}
 .consent.shake{color:#b00020}
-#dEmail.shake{border-color:#b00020}
+.pwrow{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:-4px 0 14px}
+.showpw{display:flex;align-items:center;gap:10px;font-size:.88rem;color:var(--muted);margin:0;cursor:pointer;width:max-content}
+.forgot{font-size:.88rem}
+.backbtn{display:inline-flex;align-items:center;gap:6px;background:none;border:0;font:inherit;font-weight:600;font-size:.9rem;color:var(--muted);cursor:pointer;padding:0;margin:0 0 14px}
+.backbtn:hover{color:var(--ink)}
+.backbtn[hidden]{display:none}
+.rs-bg{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:90}
+.rs-pop{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);width:min(380px,calc(100vw - 32px));background:#fff;color:var(--ink);border-radius:18px;box-shadow:0 24px 60px -12px rgba(0,0,0,.5);padding:26px 24px 22px;z-index:91}
+.rs-bg[hidden],.rs-pop[hidden]{display:none}
+.rs-pop h3{font-size:1.25rem;margin:0 0 8px;padding-right:28px}
+.rs-lead{color:var(--muted);font-size:.92rem;margin:0 0 16px}
+.rs-pop input{width:100%;padding:14px 18px;border:1.5px solid var(--line);border-radius:999px;font:inherit;margin-bottom:10px;background:#fff;color:var(--ink)}
+.rs-pop input:focus{outline:none;border-color:var(--ink)}
+.rs-pop input.shake{border-color:#b00020}
+.rs-pop .btn{width:100%}
+.showpw input{width:18px;height:18px;accent-color:#000;margin:0}
+#dEmail.shake,#dPass.shake,#dPass2.shake{border-color:#b00020}
 .coupon{display:flex;gap:10px;align-items:stretch;margin:20px 0 14px}
 .coupon code{flex:1;display:grid;place-items:center;border:2px dashed var(--ink);border-radius:14px;padding:14px;font-family:Manrope,system-ui,sans-serif;font-weight:700;font-size:1.6rem;letter-spacing:.12em;user-select:all}
 .coupon .btn{padding:0 22px;white-space:nowrap;border-radius:14px}
 #dDone .note{margin:0 0 24px;font-size:.92rem;color:var(--muted)}
 #dDone>.btn{width:100%}
-#dCode{text-align:center;letter-spacing:.4em;font-size:1.5rem;font-weight:700}
-#verifyForm .btn{width:100%}
-#dVerify .resend{font-size:.92rem;color:var(--muted);text-align:center;margin:20px 0 4px}
-#dVerify .ok{font-size:.88rem;color:var(--ink);text-align:center;min-height:1.3em;margin:0 0 8px}
-#dVerify .tip{font-size:.88rem;color:var(--muted);text-align:center;margin:0}
 .linkbtn{background:none;border:0;font:inherit;color:var(--ink);font-weight:600;text-decoration:underline;cursor:pointer;padding:0}
-.resend-btn{font-weight:400;letter-spacing:normal;text-decoration:underline}
-.offer-timer{display:inline-flex;align-items:center;gap:8px;background:#000;color:#fff;border-radius:999px;padding:6px 16px;font-size:.85rem;font-weight:600;margin-bottom:16px;transition:background .3s}
-.offer-timer b{font-size:1rem;font-variant-numeric:tabular-nums}
-.offer-timer.warn{background:#b00020}
-.offer-timer.warn{animation:offerpulse 1s ease-in-out infinite}
-@keyframes offerpulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
-.offer-bar{height:6px;background:var(--line);border-radius:999px;overflow:hidden;margin:0 0 18px}
-.offer-bar i{display:block;height:100%;width:100%;background:#000;border-radius:999px;transition:width .3s linear,background .3s}
-.offer-bar.warn i{background:#b00020}
-#dForm .hurry{color:#b00020;font-weight:700;font-size:.92rem;margin:0 0 12px}
-@media (prefers-reduced-motion:reduce){.offer-timer.warn{animation:none}}
 .share{position:absolute;top:30px;right:30px;z-index:2;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.92);color:var(--ink);display:grid;place-items:center;cursor:pointer;transition:background .2s,color .2s}
 .share:hover{background:var(--green);color:#fff}
 .flinks{display:flex;justify-content:center;flex-wrap:wrap;gap:8px 24px;margin-bottom:14px}
@@ -319,13 +320,51 @@ nav{gap:18px;font-size:.88rem}
 .lb-count{position:absolute;left:0;right:0;top:calc(100% + 14px);text-align:center;color:#fff;font-size:.9rem;font-weight:600;font-variant-numeric:tabular-nums}
 @media (max-width:700px){.lb-stage{width:min(94vw,80vh)}}
 .hero-text .lede{color:var(--muted);font-size:1.05rem;max-width:32em;margin:-8px 0 8px}
+
+.consent[hidden],.legal[hidden]{display:none}
+/* account icon, menu, auth drawer extras, welcome notice */
+.hdr-r{display:flex;align-items:center;gap:22px;position:relative}
+.acct{width:40px;height:40px;border-radius:50%;border:1.5px solid rgba(255,255,255,.55);background:rgba(255,255,255,.06);color:#fff;display:grid;place-items:center;cursor:pointer;padding:0;flex:none;animation:acctglow 3.6s ease-in-out infinite;transition:border-color .25s,color .25s,background .25s}
+.acct:hover{background:rgba(255,255,255,.14);border-color:#fff}
+.acct svg{width:20px;height:20px;display:block}
+@keyframes acctglow{0%,100%{box-shadow:0 0 0 0 rgba(255,255,255,0),0 0 6px 0 rgba(255,255,255,.18)}50%{box-shadow:0 0 0 3px rgba(255,255,255,.07),0 0 14px 2px rgba(255,255,255,.32)}}
+.acct.on{color:#C9B37E;border-color:#fff;animation:none;box-shadow:none}
+.acct.on:hover{color:#D8C691;border-color:#fff}
+.acct-menu{position:absolute;top:calc(100% + 12px);right:0;min-width:230px;background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:16px;box-shadow:0 18px 40px -12px rgba(0,0,0,.45);padding:8px;z-index:60}
+.acct-menu[hidden]{display:none}
+.acct-who{font-size:.8rem;color:var(--muted);padding:8px 12px 10px;border-bottom:1px solid var(--line);margin-bottom:6px;word-break:break-all}
+.acct-menu button{display:flex;align-items:center;gap:10px;width:100%;background:none;border:0;font:inherit;font-weight:600;font-size:.95rem;color:var(--ink);padding:11px 12px;border-radius:10px;cursor:pointer;text-align:left}
+.acct-menu button:hover,.acct-menu button:focus-visible{background:var(--paper)}
+.acct-menu svg{width:18px;height:18px;flex:none}
+.auth-tabs{display:flex;gap:4px;background:var(--paper);border-radius:999px;padding:4px;margin:0 0 20px}
+.auth-tabs button{flex:1;border:0;background:none;font:inherit;font-weight:600;font-size:.92rem;padding:10px 12px;border-radius:999px;cursor:pointer;color:var(--muted);transition:background .2s,color .2s}
+.auth-tabs button[aria-selected="true"]{background:#000;color:#fff}
+.social{display:flex;flex-direction:column;gap:10px;margin:0 0 4px}
+.social button{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;font:inherit;font-weight:600;font-size:.95rem;padding:13px 20px;border-radius:999px;cursor:pointer;transition:background .2s,border-color .2s}
+.social svg{width:20px;height:20px;flex:none}
+.social .g{background:#fff;color:#111;border:1.5px solid var(--line)}
+.social .g:hover{border-color:#111;background:var(--paper)}
+.social .a{background:#000;color:#fff;border:1.5px solid #000}
+.social .a:hover{background:#2b2b2b}
+.or{display:flex;align-items:center;gap:14px;color:var(--muted);font-size:.85rem;margin:18px 0}
+.or::before,.or::after{content:"";flex:1;height:1px;background:var(--line)}
+.notice{position:fixed;top:calc(78px + env(safe-area-inset-top,0px));right:16px;max-width:290px;background:#fff;color:var(--ink);border:1px solid var(--line);border-left:3px solid #C9B37E;border-radius:12px;box-shadow:0 14px 32px -10px rgba(0,0,0,.4);padding:12px 36px 12px 14px;font-size:.84rem;line-height:1.45;z-index:35;animation:noteIn .35s ease}
+.notice[hidden]{display:none}
+.notice p{margin:0}
+.notice .linkbtn{font-size:inherit}
+.notice-x{position:absolute;top:6px;right:6px;width:24px;height:24px;border:0;border-radius:50%;background:var(--paper);color:var(--ink);font-size:16px;line-height:1;cursor:pointer;padding-bottom:2px}
+.notice-x:hover{background:var(--line)}
+@keyframes noteIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+#dDone .tagline{font-size:.8rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 4px}
+@media (max-width:480px){.hdr-r{gap:12px}.acct{width:36px;height:36px}.logo img{max-width:40vw}.notice{right:10px;left:10px;max-width:none}}
+@media (prefers-reduced-motion:reduce){.acct{animation:none;box-shadow:0 0 10px 1px rgba(255,255,255,.25)}.acct.on{box-shadow:none}.notice{animation:none}}
 </style>
 </head>
 <body>
 <header>
 <div class="wrap bar">
 <a href="#top" class="logo" aria-label="GearCertified home"><img src="data:image/png;base64,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" alt="GearCertified" width="220" height="16"></a>
-<nav aria-label="Main"><a href="#faq">FAQ</a><a href="#contact">Contact</a></nav>
+<div class="hdr-r"><nav aria-label="Main"><a href="#faq">FAQ</a><a href="#contact">Contact</a></nav><button type="button" class="acct" id="acctBtn" aria-label="Sign in or sign up" aria-haspopup="true" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20.5c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg></button><div class="acct-menu" id="acctMenu" role="menu" hidden><div class="acct-who" id="acctWho"></div><button type="button" role="menuitem" id="menuCoupons"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9a2 2 0 0 0 0 6v3h18v-3a2 2 0 0 1 0-6V6H3z"/><path d="M13 6v12" stroke-dasharray="2 2.4"/></svg>My Coupons</button><button type="button" role="menuitem" id="menuOut"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg>Sign out</button></div></div>
 </div>
 <div class="ann-wrap"><div class="ann" id="ann" role="region" aria-label="Shipping and guarantee information"><div class="ann-in"><div class="ann-set"><span><svg class='flag' viewBox='0 0 28 20' width='20' height='14' aria-hidden='true'><rect x='1' y='2' width='16' height='12' rx='1.6' fill='#F08C00'/><path d='M17 5.5h5.4l4.1 4.3V14H17z' fill='#D9730D'/><path d='M19.2 7.4h2.5l2.4 2.5h-4.9z' fill='#fff'/><circle cx='7' cy='15.5' r='3' fill='#222'/><circle cx='7' cy='15.5' r='1.2' fill='#ddd'/><circle cx='21' cy='15.5' r='3' fill='#222'/><circle cx='21' cy='15.5' r='1.2' fill='#ddd'/></svg>Free Shipping for U.S. Amazon Prime Members</span><span><svg class='flag' viewBox='0 0 24 28' width='12' height='14' aria-hidden='true'><path d='M12 1l10 3.6v8.1c0 6-4.2 11.2-10 13.3C6.2 23.9 2 18.7 2 12.7V4.6L12 1z' fill='#2F6FDE'/><path d='M12 1l10 3.6v8.1c0 6-4.2 11.2-10 13.3z' fill='#1F54B8'/><path d='M7.2 13.6l3.3 3.3 6.4-6.8' fill='none' stroke='#fff' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/></svg>Risk-Free 30-Day Money-Back Guarantee via Amazon</span><span><svg class='flag' viewBox='0 0 24 25' width='15' height='15.6' aria-hidden='true'><circle cx='5' cy='6' r='3.4' fill='#E03131'/><circle cx='19' cy='6' r='3.4' fill='#E03131'/><circle cx='12' cy='13.2' r='8.6' fill='#fff' stroke='#E03131' stroke-width='2.4'/><path d='M12 8v5.4l3.4 2' fill='none' stroke='#111' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/><path d='M7 21.4l-1.6 1.8M17 21.4l1.6 1.8' stroke='#E03131' stroke-width='2' stroke-linecap='round'/></svg>Limited-Time Offer: Claim Your Exclusive 10% Off Coupon</span></div></div></div>
 <button type="button" class="ann-pause" id="annPause" aria-pressed="false" aria-label="Pause announcements"><svg class="i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg><svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button></div>
@@ -408,36 +447,48 @@ nav{gap:18px;font-size:.88rem}
 <button type="button" class="drawer-close" aria-label="Close">×</button>
 <div class="drawer-body">
 <div id="dForm">
-<div class="offer-timer" id="offerTimer" role="timer"><span>Offer ends in</span><b id="offerClock">5:00</b></div>
-<div class="offer-bar" aria-hidden="true"><i id="offerFill"></i></div>
-<p class="hurry" id="hurry" hidden>Hurry, your offer is about to close!</p>
+<button type="button" class="backbtn" id="backBtn" hidden>‹ Back</button>
 <h2 id="dTitle">Get 10% off</h2>
-<p>Don't miss out! Enter your email to get your discount.</p>
+<p id="dSub">Don't miss out! Sign up to get your discount.</p>
+<div id="authTop">
+<div class="auth-tabs" role="tablist" aria-label="Account"><button type="button" role="tab" id="tabUp" aria-selected="true">Sign up</button><button type="button" role="tab" id="tabIn" aria-selected="false">Sign in</button></div>
+<label class="consent"><input type="checkbox" id="dConsent"><span>I agree to receive product updates, exclusive offers, and marketing communications from GearCertified. Unsubscribe anytime.</span></label>
+<p class="legal" id="dLegal">By continuing you agree to our <button type="button" class="linkbtn" data-doc="terms">Terms</button> and <button type="button" class="linkbtn" data-doc="privacy">Privacy Policy</button>.</p>
+<p class="err" id="cErr" role="alert"></p>
+<div class="social"><button type="button" class="g" id="btnGoogle"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>Continue with Google</button><button type="button" class="a" id="btnApple"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>Continue with Apple</button></div>
+<div class="or" aria-hidden="true">or use email</div>
+</div>
 <form id="signup" novalidate>
+<div id="stepEmail">
 <label for="dEmail" class="vh">Email address</label>
 <input id="dEmail" type="email" placeholder="Email address" autocomplete="email">
-<label class="consent"><input type="checkbox" id="dConsent"><span>I agree to receive product updates, exclusive offers, and marketing communications from GearCertified. Unsubscribe anytime.</span></label>
-<p class="legal">By signing up you agree to our <button type="button" class="linkbtn" data-doc="terms">Terms</button> and <button type="button" class="linkbtn" data-doc="privacy">Privacy Policy</button>.</p>
+</div>
+<div id="stepPass" hidden>
+<label for="dPass" class="vh">Password</label>
+<input id="dPass" type="password" placeholder="Password" autocomplete="new-password">
+<div id="confWrap"><label for="dPass2" class="vh">Confirm password</label><input id="dPass2" type="password" placeholder="Confirm password" autocomplete="new-password"></div>
+<div class="pwrow"><label class="showpw"><input type="checkbox" id="showPw"><span>Show password</span></label><button type="button" class="linkbtn forgot" id="forgotBtn" hidden>Forgot?</button></div>
+</div>
 <p class="err" id="dErr" role="alert"></p>
-<button type="submit" class="btn btn-primary">Claim My 10% Off</button>
+<button type="submit" class="btn btn-primary" id="dSubmit">Continue</button>
 </form>
 </div>
-<div id="dVerify" hidden>
-<h2>Almost there!</h2>
-<p>We just sent a 4-digit verification code to your email. Enter it below to unlock your 10% OFF discount instantly!</p>
-<form id="verifyForm" novalidate>
-<label for="dCode" class="vh">4-digit verification code</label>
-<input id="dCode" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="4" autocomplete="one-time-code" placeholder="0000">
-<p class="err" id="vErr" role="alert"></p>
-<button type="submit" class="btn btn-primary">Unlock My 10% Off</button>
-</form>
-<p class="resend">Didn’t receive a code? <span id="rsBox">Resend Code in 0:29</span></p>
-<p class="ok" id="vOk" role="status"></p>
-<p class="tip">Tip: Check your Spam or Promotions folder, or <button type="button" class="linkbtn" id="diffEmail">Try a different email address</button></p>
-</div>
-<div id="dDone" hidden><h2>Your 10% off code</h2><div class="coupon"><code id="codeText">GC10OFF</code><button type="button" class="btn btn-primary" id="copyBtn">Copy code</button></div><p class="note">Add our product to your Amazon cart, then paste this code at checkout.</p><a href="#" class="btn btn-primary">Redeem on Amazon</a></div>
+<div id="dDone" hidden><p class="tagline">10% off your order</p><h2>My Coupons</h2><div class="coupon"><code id="codeText">GC10OFF</code><button type="button" class="btn btn-primary" id="copyBtn">Copy code</button></div><p class="note">Add our product to your Amazon cart, then paste this code at checkout.</p><a href="#" class="btn btn-primary">Redeem on Amazon</a></div>
 </div>
 </aside>
+<div class="rs-bg" id="rsBg" hidden></div>
+<div class="rs-pop" id="rsPop" role="dialog" aria-modal="true" aria-labelledby="rsTitle" hidden>
+<button type="button" class="notice-x" id="rsX" aria-label="Close">×</button>
+<h3 id="rsTitle">Reset your password</h3>
+<div id="rsForm">
+<p class="rs-lead">Enter your email and we’ll send you a link to reset your password.</p>
+<label for="rsEmail" class="vh">Email address</label>
+<input id="rsEmail" type="email" placeholder="Email address" autocomplete="email">
+<p class="err" id="rsErr" role="alert"></p>
+<button type="button" class="btn btn-primary" id="rsSend">Send reset link</button>
+</div>
+<div id="rsDone" hidden><p class="rs-lead" id="rsMsg"></p><button type="button" class="btn btn-primary" id="rsOk">Done</button></div>
+</div>
 <div class="drawer-bg" id="docBg"></div>
 <div class="doc" id="doc" role="dialog" aria-modal="true" aria-label="Legal information"><button type="button" class="drawer-close" id="docClose" aria-label="Close">×</button><div class="doc-body" id="docBody"></div></div>
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Product images, enlarged">
@@ -459,6 +510,7 @@ nav{gap:18px;font-size:.88rem}
 <div class="fl-links" id="flLinks"></div>
 </div>
 </div>
+<div class="notice" id="gcNote" role="status" hidden><button type="button" class="notice-x" id="noteX" aria-label="Close">×</button><p><button type="button" class="linkbtn" id="noteLink">Click Here</button> to get your 10% off coupon, or find it anytime by clicking your profile icon.</p></div>
 <div class="toast" id="toast" role="status"></div>
 <div class="drawer-bg" id="shBg"></div>
 <div class="doc" id="shSheet" role="dialog" aria-modal="true" aria-label="Share"><button type="button" class="drawer-close" id="shClose" aria-label="Close">×</button><div class="doc-body"><h2>Share GearCertified</h2><p>Send it to friends and family.</p><div class="share-grid" id="shGrid"></div></div></div>
@@ -496,14 +548,10 @@ lbClose.onclick=closeLb;
 lb.addEventListener("click",function(e){if(!e.target.closest(".lb-stage"))closeLb()});
 window.addEventListener("resize",function(){if(lb.classList.contains("open"))lbTrack.scrollLeft=lbIdx*lbTrack.clientWidth});
 document.addEventListener("keydown",function(e){if(!lb.classList.contains("open"))return;if(e.key==="Escape"){e.stopImmediatePropagation();closeLb()}else if(e.key==="ArrowLeft"){e.preventDefault();lbGo(lbCur()-1,true)}else if(e.key==="ArrowRight"){e.preventDefault();lbGo(lbCur()+1,true)}else if(e.key==="Tab"){var f=[lbClose,lbPrev,lbNext],i=f.indexOf(document.activeElement);e.preventDefault();if(e.shiftKey)f[i<=0?f.length-1:i-1].focus();else f[(i+1)%f.length].focus()}});
+var authMode="up",authStep=1;
 var dr=document.getElementById("drawer"),dbg=document.getElementById("dBg"),emailEl=document.getElementById("dEmail"),lastFocus;
-var offerT,offerEnd=0,offerLeft=300;
-function fmt2(s){var m=Math.floor(s/60),r=s%60;return m+":"+(r<10?"0":"")+r}
-function offerUI(l){var f=document.getElementById("offerFill"),h=document.getElementById("hurry");f.style.width=(l/300*100)+"%";f.parentNode.classList.toggle("warn",l<=60);h.hidden=l>60}
-function stopOffer(){clearInterval(offerT);if(offerEnd){offerLeft=Math.max(1,Math.ceil((offerEnd-Date.now())/1000));offerEnd=0}}
-function startOffer(fresh){stopOffer();if(fresh)offerLeft=300;var el=document.getElementById("offerClock"),box=document.getElementById("offerTimer");offerEnd=Date.now()+offerLeft*1000;el.textContent=fmt2(offerLeft);box.classList.toggle("warn",offerLeft<=60);offerUI(offerLeft);offerT=setInterval(function(){var left=Math.max(0,Math.ceil((offerEnd-Date.now())/1000));el.textContent=fmt2(left);box.classList.toggle("warn",left<=60);offerUI(left);if(left<=0){clearInterval(offerT);offerEnd=0;offerLeft=300;closeD();var pr=document.querySelector(".promo");if(pr)pr.remove();toast("Offer expired")}},250)}
-function openD(){var su=false;try{su=localStorage.getItem("gc_signed_up")==="1"}catch(x){}if(su){clearInterval(tmr);document.getElementById("dForm").hidden=true;document.getElementById("dVerify").hidden=true;document.getElementById("dDone").hidden=false}else if(!document.getElementById("dForm").hidden){startOffer()}lastFocus=document.activeElement;dbg.classList.add("open");dr.classList.add("open");document.body.style.overflow="hidden";setTimeout(function(){(su?document.getElementById("copyBtn"):emailEl).focus()},60)}
-function closeD(){stopOffer();dbg.classList.remove("open");dr.classList.remove("open");document.body.style.overflow="";if(lastFocus&&lastFocus.focus)lastFocus.focus()}
+function openD(){var su=false;try{su=localStorage.getItem("gc_signed_up")==="1"}catch(x){}if(su){document.getElementById("dForm").hidden=true;document.getElementById("dDone").hidden=false}lastFocus=document.activeElement;dbg.classList.add("open");dr.classList.add("open");document.body.style.overflow="hidden";setTimeout(function(){(su?document.getElementById("copyBtn"):emailEl).focus()},60)}
+function closeD(){hidePw();goStep(1);dbg.classList.remove("open");dr.classList.remove("open");document.body.style.overflow="";if(lastFocus&&lastFocus.focus)lastFocus.focus()}
 var promo=document.querySelector(".promo"),dragMoved=false,drag=null;
 promo.addEventListener("pointerdown",function(e){if(e.target.closest(".promo-x"))return;var r=promo.getBoundingClientRect();drag={y:e.clientY,top:r.top,id:e.pointerId};dragMoved=false});
 promo.addEventListener("pointermove",function(e){if(!drag)return;var dy=e.clientY-drag.y;if(!dragMoved&&Math.abs(dy)<6)return;if(!dragMoved){dragMoved=true;try{promo.setPointerCapture(drag.id)}catch(x){}promo.style.transform="none";promo.classList.add("dragging")}var t=Math.max(110,Math.min(window.innerHeight-promo.offsetHeight-8,drag.top+dy));promo.style.top=t+"px"});
@@ -514,9 +562,9 @@ window.addEventListener("resize",function(){if(promo.style.transform==="none"){v
 document.querySelector(".promo-open").onclick=function(){if(dragMoved)return;openD()};
 dr.querySelector(".drawer-close").onclick=closeD;
 dbg.onclick=closeD;
-document.addEventListener("keydown",function(e){if(e.key==="Escape"){if(shEl.classList.contains("open")){closeSh()}else if(docEl.classList.contains("open")){closeDoc()}else if(dr.classList.contains("open")){closeD()}}});
+document.addEventListener("keydown",function(e){if(e.key==="Escape"){if(!document.getElementById("rsPop").hidden){closeReset()}else if(shEl.classList.contains("open")){closeSh()}else if(docEl.classList.contains("open")){closeDoc()}else if(dr.classList.contains("open")){closeD()}}});
 function nudge(el){el.classList.remove("shake");void el.offsetWidth;el.classList.add("shake")}
-document.getElementById("signup").addEventListener("submit",function(e){e.preventDefault();var err=document.getElementById("dErr");if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailEl.value.trim())){err.textContent="Please enter a valid email address.";emailEl.focus();nudge(emailEl);return}if(!document.getElementById("dConsent").checked){err.textContent="Please check the box to agree to receive emails.";var cs=document.querySelector(".consent");document.getElementById("dConsent").focus();nudge(cs);return}err.textContent="";recordConsent(emailEl.value.trim());showVerify()});
+document.getElementById("signup").addEventListener("submit",function(e){e.preventDefault();var err=document.getElementById("dErr"),em=emailEl.value.trim(),pwEl=document.getElementById("dPass"),pw2El=document.getElementById("dPass2"),cons=document.getElementById("dConsent");if(authStep===1){var ev=checkEmail(em);if(ev){err.textContent=ev;emailEl.focus();nudge(emailEl);return}if(!cons.checked){err.textContent="";needConsent();return}document.getElementById("cErr").textContent="";goStep(2,true);return}if(!cons.checked){goStep(1,true);needConsent();return}if(pwEl.value.length<8){err.textContent="Password must be at least 8 characters.";pwEl.focus();nudge(pwEl);return}if(authMode==="up"&&pwEl.value!==pw2El.value){err.textContent="Passwords do not match.";pw2El.focus();nudge(pw2El);return}err.textContent="";document.getElementById("cErr").textContent="";recordConsent(em,"email");submitEmail(em,pwEl.value)});
 ["dEmail"].forEach(function(id){["paste","copy","cut","drop","contextmenu"].forEach(function(t){document.getElementById(id).addEventListener(t,function(e){e.preventDefault()})})});
 var SHARE_URL="https://gearcertified.com";
 var toastEl=document.getElementById("toast"),toastT;
@@ -545,28 +593,29 @@ document.getElementById("shClose").onclick=closeSh;
 shBg.onclick=closeSh;
 shGrid.addEventListener("click",function(ev){var b=ev.target.closest("button[data-a]"),a=ev.target.closest("a");if(b){var k=b.getAttribute("data-a");if(k==="copy"){copyLink();closeSh()}else if(k==="fb"){window.open("https://www.facebook.com/sharer/sharer.php?u="+encodeURIComponent(SHARE_URL)+"&quote="+encodeURIComponent(SH_TEXT),"_blank","noopener,width=640,height=640");closeSh()}else if(k==="more"){b.remove();shGrid.insertAdjacentHTML("beforeend",extraItems().map(R).join(""))}}else if(a){if(a.hasAttribute("data-ig"))igShare(ev);setTimeout(closeSh,200)}});
 function igShare(ev){var T=SH_TEXT+" "+SHARE_URL;if(IS_MOBILE&&navigator.share){ev.preventDefault();navigator.share({text:SH_TEXT,url:SHARE_URL}).catch(function(err){if(err&&err.name==="AbortError")return;copyLink("Message copied. Paste it in Instagram.",T);window.open("https://www.instagram.com/direct/inbox/","_blank","noopener")})}else{copyLink("Message copied. Paste it in Instagram.",T)}}
-var POLICY_VERSION="2026-11-07";
-function recordConsent(email){var rec={email:email,consentedAt:new Date().toISOString(),consentText:document.querySelector(".consent span").textContent,policyVersion:POLICY_VERSION,source:"discount-drawer"};try{localStorage.setItem("gc_consent",JSON.stringify({consentedAt:rec.consentedAt,consentText:rec.consentText,policyVersion:rec.policyVersion}))}catch(x){}/* TODO: send rec (email, timestamp, consent wording, IP) to your email service or backend so the consent record is stored server-side */return rec}
-var DOCS={privacy:{t:"Privacy Policy",h:`<p>Last updated: November 7, 2026</p>
+var POLICY_VERSION="2026-11-08.2";
+function recordConsent(email,method){var rec={email:email,consentedAt:new Date().toISOString(),consentText:document.querySelector(".consent span").textContent,policyVersion:POLICY_VERSION,source:"account-"+(method||"email"),method:method||"email"};try{localStorage.setItem("gc_consent",JSON.stringify({consentedAt:rec.consentedAt,consentText:rec.consentText,policyVersion:rec.policyVersion}))}catch(x){}/* TODO: send rec (email, timestamp, consent wording, IP) to your email service or backend so the consent record is stored server-side */return rec}
+var DOCS={privacy:{t:"Privacy Policy",h:`<p>Last updated: November 8, 2026</p>
 <p>This website is operated by GearCertified (“we”, “us”). This policy explains what personal information we collect, why, and the choices you have. Contact: <a href='mailto:support@gearcertified.com'>support@gearcertified.com</a></p>
-<h3>Information we collect</h3><ul><li>Your email address, if you sign up for our discount code or updates.</li><li>A record of your consent: the date and time, the wording you agreed to, and the version of this policy.</li><li>Technical data such as IP address and browser type, which our hosting and email providers may log automatically.</li><li>A small setting stored in your browser to remember that you signed up.</li></ul>
-<h3>How and why we use it</h3><ul><li>To verify your email and give you your discount code (to provide what you asked for).</li><li>To send product updates, offers, and marketing emails (with your consent, which you can withdraw at any time).</li><li>To keep proof of consent and unsubscribe requests, and to comply with the law (legal obligation and our legitimate interest in protecting our business).</li></ul>
-<h3>Sharing</h3><p>We do not sell your personal information or share it for cross-context behavioral advertising. We share it only with service providers that help us run this website and send email, under contract and only for our purposes, and when required by law or to protect our rights.</p>
+<h3>Information we collect</h3><ul><li>Your email address, if you create an account, sign in, or sign up for our discount code or updates.</li><li>If you create an account with email, the password you choose. We store passwords only in hashed form, never in plain text.</li><li>If you choose to sign in with Google or Apple, the basic account details that provider shares with us, such as your email address and whether sign-in succeeded. We do not receive your Google or Apple password.</li><li>A record of your consent: the date and time, the wording you agreed to, the sign-in method you used, and the version of this policy.</li><li>Technical data such as IP address and browser type, which our hosting and email providers may log automatically.</li><li>Small settings stored in your browser to remember that you are signed in and that you signed up.</li></ul>
+<h3>How and why we use it</h3><ul><li>To create and manage your account and show you your discount code in My Coupons (to provide what you asked for).</li><li>To send product updates, offers, and marketing emails (with your consent, which you can withdraw at any time).</li><li>To keep proof of consent and unsubscribe requests, and to comply with the law (legal obligation and our legitimate interest in protecting our business).</li></ul>
+<h3>Sharing</h3><p>We do not sell your personal information or share it for cross-context behavioral advertising. If you sign in with Google or Apple, that provider handles your sign-in under its own privacy policy. We share information only with service providers that help us run this website and send email, under contract and only for our purposes, and when required by law or to protect our rights.</p>
 <h3>International transfers</h3><p>We and our providers may process information in countries other than your own, including Canada and the United States. Where the law requires, we use appropriate safeguards for these transfers.</p>
-<h3>How long we keep it</h3><p>We keep your email until you unsubscribe or ask us to delete it. We may keep a minimal record of your consent and unsubscribe request afterwards so we can honor your choice and meet legal requirements.</p>
+<h3>How long we keep it</h3><p>We keep your account details and email until you ask us to delete them or unsubscribe. We may keep a minimal record of your consent and unsubscribe request afterwards so we can honor your choice and meet legal requirements.</p>
 <h3>Your rights</h3><p>Depending on where you live (for example the EU, UK, Canada, or California), you may have the right to access, correct, delete, or receive a copy of your information, to object to or restrict its use, and to withdraw consent. To use any right, email us. We will respond within the time required by law. You may also complain to your local data protection authority. We will not treat you unfairly for exercising your rights.</p>
 <h3>Marketing emails</h3><p>Every marketing email identifies GearCertified as the sender, includes our contact details and mailing address, and includes a working unsubscribe link. You can also unsubscribe by emailing us. We stop marketing emails within 10 business days of your request, as required by CASL and the U.S. CAN-SPAM Act.</p>
-<h3>Cookies and browser storage</h3><p>We do not use advertising or tracking cookies. We use your browser’s local storage only to remember your sign-up and consent. You can clear it in your browser settings at any time.</p>
+<h3>Cookies and browser storage</h3><p>We do not use advertising or tracking cookies. We use your browser’s local storage only to remember your sign-in, sign-up, and consent. You can clear it in your browser settings at any time.</p>
 <h3>Children</h3><p>This website is not directed to children under 16, and we do not knowingly collect their information. If you believe a child has given us information, contact us and we will delete it.</p>
 <h3>Security</h3><p>We use reasonable measures to protect your information, but no method of transmission or storage is completely secure.</p>
 <h3>Other websites</h3><p>Our products are sold on Amazon, and our site may link to social platforms. Our Follow Us panel links to our Linktree page, which Linktree operates under its own privacy policy. Shipping, returns, and money-back guarantees mentioned on our site are provided by Amazon, which handles those orders and the related personal information under its own privacy notice. Those sites have their own privacy policies, and we are not responsible for them.</p>
 <h3>Changes</h3><p>We may update this policy. The date above shows the latest version.</p>`},
-terms:{t:"Terms of Service",h:`<p>Last updated: November 7, 2026</p>
+terms:{t:"Terms of Service",h:`<p>Last updated: November 8, 2026</p>
 <p>These terms apply to your use of the GearCertified website. By using it, you agree to them. If you do not agree, please do not use the site. Contact: <a href='mailto:support@gearcertified.com'>support@gearcertified.com</a></p>
+<h3>Accounts</h3><p>You can create an account or sign in with your email address and a password, or with Google or Apple. To do so you must agree to these terms and our Privacy Policy and consent to receive product updates, offers, and marketing emails from us. You can unsubscribe from marketing emails at any time using the link in any email or by contacting us. Give accurate information, keep your password private, keep access to your account to yourself, and sign out on shared devices. We may suspend or close accounts that are misused. Contact us to delete your account.</p>
 <h3>Using the website</h3><p>Use the site only for lawful purposes. Do not misuse it, interfere with its operation, or try to access it in ways we have not allowed.</p>
 <h3>Purchases</h3><p>Our products are sold through Amazon. Pricing, availability, shipping, taxes, returns, and refunds are handled by Amazon under its own terms. We are not a party to your Amazon purchase.</p>
 <h3>Shipping, returns, and guarantees</h3><p>Free shipping for U.S. Amazon Prime members and the 30-day money-back guarantee mentioned on this website are provided by Amazon through its own programs and policies, not by GearCertified. Eligibility, terms, availability, and any changes are determined solely by Amazon and may change at any time. GearCertified does not control or provide Amazon’s shipping, delivery, returns, or refunds, and is not responsible for them. For help with an order, please contact Amazon.</p>
-<h3>Discount codes</h3><p>Discount codes are subject to Amazon’s promotion rules and any conditions shown when you redeem them. Codes have no cash value, may not be available in every country, and we may change or end an offer at any time. Offers are void where prohibited by law.</p>
+<h3>Discount codes</h3><p>Your discount code is available in My Coupons while you are signed in. Discount codes are subject to Amazon’s promotion rules and any conditions shown when you redeem them. Codes have no cash value, may not be available in every country, and we may change or end an offer at any time. Offers are void where prohibited by law.</p>
 <h3>Safe use of products</h3><p>Lifting grips are fitness equipment. Inspect them before each use, stop using them if they are worn out or damaged, and follow the product guide. Exercise carries risk. Talk to a qualified professional if you are unsure about your health or fitness.</p>
 <h3>Intellectual property</h3><p>The content on this site, including text, images, logos, and design, belongs to GearCertified or its licensors. You may not copy or reuse it without our written permission, except to share the site link.</p>
 <h3>Disclaimer</h3><p>The site is provided “as is” and “as available”, and we do not guarantee it will always be uninterrupted or error-free.</p>
@@ -601,13 +650,53 @@ var lastT=0,SPEED=36;/* pixels per second */
 function tick(t){var dt=lastT?Math.min(t-lastT,100):0;lastT=t;if(L){if(ann.classList.contains("paused")){pos=ann.scrollLeft;inn.style.transform=""}else if(!holding&&!reduce){pos+=SPEED*dt/1000;if(pos>=A+L)pos-=L;var f=Math.floor(pos);ann.scrollLeft=f;inn.style.transform="translate3d("+(-(pos-f)).toFixed(3)+"px,0,0)"}else{inn.style.transform=""}}requestAnimationFrame(tick)}
 requestAnimationFrame(tick);
 })();
-var tmr,rsBox=document.getElementById("rsBox");
-function fmt(s){return "0:"+(s<10?"0":"")+s}
-function startTimer(){clearInterval(tmr);var s=29;rsBox.textContent="Resend Code in "+fmt(s);tmr=setInterval(function(){s--;if(s>0){rsBox.textContent="Resend Code in "+fmt(s)}else{clearInterval(tmr);rsBox.innerHTML='<button type="button" class="linkbtn resend-btn" id="rsBtn">Resend Code</button>';document.getElementById("rsBtn").onclick=function(){document.getElementById("vOk").textContent="A new code has been sent.";document.getElementById("vErr").textContent="";startTimer()}}},1000)}
-function showVerify(){stopOffer();document.getElementById("dForm").hidden=true;document.getElementById("dVerify").hidden=false;document.getElementById("dCode").value="";document.getElementById("vErr").textContent="";document.getElementById("vOk").textContent="";startTimer();setTimeout(function(){document.getElementById("dCode").focus()},50)}
-document.getElementById("dCode").addEventListener("input",function(){this.value=this.value.replace(/\D/g,"").slice(0,4)});
-document.getElementById("verifyForm").addEventListener("submit",function(e){e.preventDefault();if(!/^\d{4}$/.test(document.getElementById("dCode").value)){document.getElementById("vErr").textContent="Please enter the 4-digit code.";return}try{localStorage.setItem("gc_signed_up","1")}catch(x){}clearInterval(tmr);document.getElementById("dVerify").hidden=true;document.getElementById("dDone").hidden=false});
-document.getElementById("diffEmail").onclick=function(){clearInterval(tmr);document.getElementById("dVerify").hidden=true;document.getElementById("dForm").hidden=false;startOffer(true);emailEl.value="";document.getElementById("dConsent").checked=false;document.getElementById("dErr").textContent="";emailEl.focus()};
+/* ---- accounts: icon, menu, sign in / sign up, coupons, welcome notice ---- */
+var acctBtn=document.getElementById("acctBtn"),acctMenu=document.getElementById("acctMenu"),noteEl=document.getElementById("gcNote");
+function getUser(){try{return JSON.parse(localStorage.getItem("gc_user")||"null")}catch(x){return null}}
+/* email check (format + common typos) and password helpers. A format check cannot prove a mailbox exists: confirm that on your server. */
+var EMAIL_FIX={"gmial.com":"gmail.com","gmai.com":"gmail.com","gamil.com":"gmail.com","gnail.com":"gmail.com","gmal.com":"gmail.com","gmail.con":"gmail.com","gmail.co":"gmail.com","gmail.cim":"gmail.com","hotmial.com":"hotmail.com","hotmal.com":"hotmail.com","hotmail.con":"hotmail.com","yaho.com":"yahoo.com","yahooo.com":"yahoo.com","yahoo.con":"yahoo.com","outlok.com":"outlook.com","outlook.con":"outlook.com","iclod.com":"icloud.com","icloud.con":"icloud.com"},BAD_TLD={con:1,cim:1,comm:1,coom:1,ocm:1,cmo:1,vom:1,xom:1,cpm:1,ner:1,nte:1,ogr:1};
+function has(o,k){return Object.prototype.hasOwnProperty.call(o,k)}
+function checkEmail(v){var BAD="Please enter a valid email address, like name@gmail.com.";var i=v.lastIndexOf("@");if(i<1||v.indexOf("@")!==i||v.length>254)return BAD;var l=v.slice(0,i),d=v.slice(i+1).toLowerCase();if(l.length>64||!/^[A-Za-z0-9!#$%&'*+\/=?^_`{|}~.-]+$/.test(l)||l.charAt(0)==="."||l.slice(-1)==="."||l.indexOf("..")>-1)return BAD;var p=d.split(".");if(p.length<2)return BAD;for(var k=0;k<p.length;k++){if(!/^[a-z0-9-]{1,63}$/.test(p[k])||p[k].charAt(0)==="-"||p[k].slice(-1)==="-")return BAD}if(has(EMAIL_FIX,d))return "Did you mean "+l+"@"+EMAIL_FIX[d]+"?";var t=p[p.length-1];if(!/^[a-z]{2,24}$/.test(t)||has(BAD_TLD,t))return BAD;return""}
+function hidePw(){document.getElementById("dPass").type="password";document.getElementById("dPass2").type="password";document.getElementById("showPw").checked=false}
+function resetPw(){document.getElementById("dPass").value="";document.getElementById("dPass2").value="";hidePw()}
+document.getElementById("showPw").addEventListener("change",function(){var t=this.checked?"text":"password";document.getElementById("dPass").type=t;document.getElementById("dPass2").type=t});
+/* Email + password. To go live, set window.GC_AUTH.email=function(email,password,mode){...} returning a Promise of {email}; reject with an Error whose message is shown to the user (mode is "up" or "in"). Until then this simulates a successful sign-in and accepts any password. */
+function submitEmail(em,pw){var h=window.GC_AUTH&&window.GC_AUTH.email;if(typeof h==="function"){h(em,pw,authMode).then(function(r){completeSignIn({method:"email",email:(r&&r.email)||em})},function(er){document.getElementById("dErr").textContent=(er&&er.message)||"Something went wrong. Please try again."})}else{completeSignIn({method:"email",email:em})}}
+function goStep(n,focus){authStep=n;var two=n===2,up=authMode==="up",em=emailEl.value.trim();document.getElementById("authTop").hidden=two;document.getElementById("stepEmail").hidden=two;document.getElementById("stepPass").hidden=!two;document.getElementById("backBtn").hidden=!two;document.getElementById("confWrap").hidden=!up;document.getElementById("forgotBtn").hidden=up;document.getElementById("dPass").setAttribute("autocomplete",up?"new-password":"current-password");document.getElementById("dSubmit").textContent=two?(up?"Sign up":"Sign in"):"Continue";document.getElementById("dTitle").textContent=two?(up?"Create your password":"Enter your password"):(up?"Get 10% off":"Welcome back");document.getElementById("dSub").textContent=two?(up?"Almost done! Choose a password for "+em+".":"Signing in as "+em+"."):(up?"Don't miss out! Sign up to get your discount.":"Sign in to your account to see your coupons.");document.getElementById("dErr").textContent="";if(focus)setTimeout(function(){(two?document.getElementById("dPass"):emailEl).focus()},30)}
+function setMode(m){authMode=m;document.getElementById("tabUp").setAttribute("aria-selected",m==="up");document.getElementById("tabIn").setAttribute("aria-selected",m!=="up");document.getElementById("dPass2").value="";document.getElementById("cErr").textContent="";goStep(1)}
+document.getElementById("backBtn").onclick=function(){goStep(1,true)};
+/* Forgot password popup. To go live, set window.GC_AUTH.reset=function(email){...} returning a Promise that sends the reset email from your server. Until then this only simulates it. */
+var rsPop=document.getElementById("rsPop"),rsBg=document.getElementById("rsBg"),rsEmail=document.getElementById("rsEmail"),rsLast;
+function openReset(){rsLast=document.activeElement;rsEmail.value=emailEl.value.trim();document.getElementById("rsErr").textContent="";document.getElementById("rsForm").hidden=false;document.getElementById("rsDone").hidden=true;rsBg.hidden=false;rsPop.hidden=false;setTimeout(function(){rsEmail.focus()},30)}
+function closeReset(){rsPop.hidden=true;rsBg.hidden=true;if(rsLast&&rsLast.focus)rsLast.focus()}
+function sendReset(){var em=rsEmail.value.trim(),er=checkEmail(em),btn=document.getElementById("rsSend");if(er){document.getElementById("rsErr").textContent=er;nudge(rsEmail);rsEmail.focus();return}document.getElementById("rsErr").textContent="";function done(){document.getElementById("rsMsg").textContent="If an account exists for "+em+", we’ve sent a link to reset your password. Check your spam or promotions folder if you don’t see it.";document.getElementById("rsForm").hidden=true;document.getElementById("rsDone").hidden=false}var h=window.GC_AUTH&&window.GC_AUTH.reset;if(typeof h==="function"){btn.disabled=true;h(em).then(done,function(){document.getElementById("rsErr").textContent="Couldn’t send the reset link. Please try again."}).then(function(){btn.disabled=false})}else{done()}}
+document.getElementById("forgotBtn").onclick=openReset;
+document.getElementById("rsSend").onclick=sendReset;
+document.getElementById("rsOk").onclick=closeReset;
+document.getElementById("rsX").onclick=closeReset;
+rsBg.onclick=closeReset;
+rsEmail.addEventListener("keydown",function(e){if(e.key==="Enter"){e.preventDefault();sendReset()}});
+document.getElementById("tabUp").onclick=function(){setMode("up")};
+document.getElementById("tabIn").onclick=function(){setMode("in")};
+function applyAuthUI(){var u=getUser(),pr=document.querySelector(".promo");acctBtn.classList.toggle("on",!!u);acctBtn.setAttribute("aria-label",u?"My account":"Sign in or sign up");if(u){document.getElementById("acctWho").textContent=u.email?("Signed in as "+u.email):("Signed in with "+(u.method==="apple"?"Apple":"Google"));if(pr)pr.style.display="none"}else if(pr){pr.style.display=""}}
+function closeMenu(){acctMenu.hidden=true;acctBtn.setAttribute("aria-expanded","false")}
+function hideNote(){noteEl.hidden=true}
+function completeSignIn(u){try{localStorage.setItem("gc_user",JSON.stringify({method:u.method,email:u.email||""}));localStorage.setItem("gc_signed_up","1")}catch(x){}resetPw();document.getElementById("dForm").hidden=true;document.getElementById("dDone").hidden=false;applyAuthUI();closeD();noteEl.hidden=false}
+function signOut(){try{localStorage.removeItem("gc_user");localStorage.removeItem("gc_signed_up")}catch(x){}closeMenu();hideNote();resetPw();document.getElementById("dDone").hidden=true;document.getElementById("dForm").hidden=false;emailEl.value="";document.getElementById("dConsent").checked=false;setMode("up");applyAuthUI();toast("Signed out")}
+/* One-click Google / Apple. To go live, set window.GC_AUTH={google:fn,apple:fn}; each fn runs the real OAuth popup and returns a Promise of {email}. Until then this simulates a successful sign-in so the flow can be previewed. */
+function needConsent(){var c=document.getElementById("dConsent");document.getElementById("cErr").textContent="Please check the box to agree before continuing.";c.focus();nudge(document.querySelector(".consent"))}
+document.getElementById("dConsent").addEventListener("change",function(){if(this.checked)document.getElementById("cErr").textContent=""});
+function socialSignIn(p){if(!document.getElementById("dConsent").checked){needConsent();return}document.getElementById("cErr").textContent="";recordConsent("",p);var h=window.GC_AUTH&&window.GC_AUTH[p];if(typeof h==="function"){h().then(function(r){completeSignIn({method:p,email:r&&r.email})},function(){toast("Sign-in cancelled")})}else{completeSignIn({method:p})}}
+document.getElementById("btnGoogle").onclick=function(){socialSignIn("google")};
+document.getElementById("btnApple").onclick=function(){socialSignIn("apple")};
+acctBtn.onclick=function(e){e.stopPropagation();hideNote();if(getUser()){var open=acctMenu.hidden;acctMenu.hidden=!open;acctBtn.setAttribute("aria-expanded",open?"true":"false");if(open)document.getElementById("menuCoupons").focus()}else{openD()}};
+document.addEventListener("click",function(e){if(!acctMenu.hidden&&!e.target.closest("#acctMenu"))closeMenu()});
+document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!acctMenu.hidden){closeMenu();acctBtn.focus()}});
+document.getElementById("menuCoupons").onclick=function(){closeMenu();openD()};
+document.getElementById("menuOut").onclick=signOut;
+document.getElementById("noteX").onclick=hideNote;
+document.getElementById("noteLink").onclick=function(){hideNote();openD()};
+applyAuthUI();
 var cb=document.getElementById("copyBtn");
 cb.onclick=function(){var t="GC10OFF";function ok(){cb.textContent="Copied!";setTimeout(function(){cb.textContent="Copy code"},2000)}function fb(){var ta=document.createElement("textarea");ta.value=t;ta.style.position="fixed";ta.style.opacity="0";document.body.appendChild(ta);ta.select();try{document.execCommand("copy");ok()}catch(e){cb.textContent="Press Ctrl+C"}document.body.removeChild(ta)}if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok,fb)}else{fb()}};
 })();
@@ -664,7 +753,7 @@ var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(f
 (function(){
 /* make both drawer forms work without relying on native form submission (e.g. inside sandboxed previews) */
 function fire(f){f.dispatchEvent(new Event("submit",{cancelable:true,bubbles:true}))}
-["signup","verifyForm"].forEach(function(id){
+["signup"].forEach(function(id){
 var f=document.getElementById(id);if(!f)return;
 var btn=f.querySelector("button[type=submit]");
 if(btn){btn.type="button";btn.addEventListener("click",function(){fire(f)})}
