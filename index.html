@@ -478,6 +478,50 @@ footer{flex:none}
 @media (max-width:480px){.notice{top:calc(56px + env(safe-area-inset-top,0px));left:12px;right:12px}.notice::before{left:13px}}
 
 .promo[hidden]{display:none!important}
+/* mobile: bring the announcement arrows slightly closer to the text */
+@media (max-width:700px){.ann{padding:0 14px}}
+/* PC: signup + coupon panel is a large focused card on the left (next to the "Get 10% off" tab), not fullscreen */
+@media (min-width:701px){
+.drawer{top:50%;bottom:auto;left:72px;right:auto;width:min(600px,calc(100vw - 112px));height:min(720px,88vh);border-radius:20px;box-shadow:0 30px 80px -20px rgba(0,0,0,.55);transform:translate(-32px,-50%);padding-bottom:0}
+.drawer.open{transform:translate(0,-50%)}
+.drawer-body{padding-top:64px;padding-bottom:40px}
+.drawer .drawer-close{position:absolute;top:14px;right:14px;width:42px;height:42px;font-size:1.6rem}
+}
+/* Mobile: coupon/signup sheet covers only the bottom half of the screen */
+@media (max-width:700px){
+.drawer{top:auto;bottom:0;left:0;right:0;width:100%;height:50vh;height:50dvh;max-height:50dvh;border-radius:20px 20px 0 0;box-shadow:0 -20px 50px -20px rgba(0,0,0,.45);transform:translateY(100%);opacity:1}
+.drawer.open{transform:none}
+.drawer-body{padding:56px 22px calc(28px + env(safe-area-inset-bottom,0px))}
+.drawer .drawer-close{position:absolute;top:10px;right:10px;width:40px;height:40px;font-size:1.5rem}
+}
+/* PC only: once signed up, the Coupon nav link opens a speech-bubble card that comes out of the menu button, on the left */
+@media (min-width:701px){
+.drawer-bg.dd{background:transparent}
+.drawer.dd{top:var(--ddtop,76px);left:var(--ddleft,16px);bottom:auto;right:auto;width:400px;max-width:calc(100vw - 32px);height:auto;max-height:none;overflow:visible;border-radius:18px;border:1px solid var(--line);box-shadow:0 20px 50px -14px rgba(0,0,0,.45);transform:translateY(-10px) scale(.96);transform-origin:var(--tail,13px) -10px}
+.drawer.dd.open{transform:none}
+.drawer.dd::before{content:"";position:absolute;top:-8px;left:var(--tail,13px);width:14px;height:14px;background:#fff;border-left:1px solid var(--line);border-top:1px solid var(--line);border-radius:3px 0 0 0;transform:rotate(45deg);z-index:1}
+.drawer.dd .cash-bg{border-radius:18px}
+.drawer.dd .drawer-body{padding:30px 28px 28px;max-height:calc(100vh - var(--ddtop,76px) - 24px);overflow-y:auto}
+.drawer.dd .drawer-close{top:8px;right:8px;width:34px;height:34px;font-size:1.3rem;box-shadow:none}
+.drawer.dd .drawer-body h2{font-size:1.6rem}
+}
+/* while the coupon bubble is open: hero headline/description fade out and the product images grow a little */
+@media (min-width:701px){
+.js .hero-grid .shot.reveal.in{transition:opacity .9s cubic-bezier(.22,.61,.36,1) var(--d,0s),translate .9s cubic-bezier(.22,.61,.36,1) var(--d,0s),transform .5s cubic-bezier(.22,.61,.36,1)}
+.gc-dd .hero-text.reveal{opacity:0!important;pointer-events:none;transition:opacity .4s ease!important}
+.gc-dd .hero-grid .shot{transform:scale(1.14);transform-origin:right center}
+}
+@media (min-width:961px){
+/* home page: Buy on Amazon fades with the headline and the coupon card sits in the freed space beside the enlarged product image (same 400px size as in About) */
+.gc-home .cta-row{opacity:0;pointer-events:none;transition:opacity .4s ease}
+.cta-row{transition:opacity .4s ease}
+/* the card still grows out of the menu button like the bubble does, then rests above the feature badges; the page stays clickable behind it */
+.drawer-bg.dd.home{pointer-events:none}
+.drawer.dd.home{transform-origin:var(--ox,0px) var(--oy,0px);transform:scale(.12);opacity:0;transition:transform .5s cubic-bezier(.22,.61,.36,1),opacity .3s,visibility 0s .5s}
+.drawer.dd.home.open{transform:none;opacity:1;transition:transform .5s cubic-bezier(.22,.61,.36,1),opacity .25s,visibility 0s}
+.drawer.dd.home::before{display:none}
+}
+@media (prefers-reduced-motion:reduce){.gc-dd .hero-grid .shot{transition:none!important}}
 /* black footer reaches the very bottom and the page cannot be pulled down to show white under it */
 html{background:#000;overscroll-behavior-y:none}
 body{overscroll-behavior-y:none;min-height:100vh;min-height:100dvh}
@@ -569,7 +613,7 @@ footer{padding-bottom:calc(44px + env(safe-area-inset-bottom,0px))}
 <p>I’m Stanley, an avid lifter from Canada. I’ve spent over five years in the gym, and somewhere along the way it stopped being just a workout and became my passion, the thing that has shaped who I am.</p>
 <p>Over the years, I picked up a lot of gym knowledge. I also started noticing something I couldn’t ignore: some gym gear just missed the mark. It was close, but not right, and I knew lifters deserved better.</p>
 <h2>What we believe</h2>
-<p>Good gear should do its job so well that you never have to think about it, leaving you free to focus on the set in front of you. That’s the standard I started GearCertified to meet, because too much of the gear I used let me down when I needed it most, whether it gave out when I was tired, felt off when I was pushing, or wore down long before it should have. Gear that only almost works isn’t good enough for the effort you put in.</p>
+<p>Good gear should do its job so well that you never have to think about it, leaving you free to focus on the set in front of you. It should hold up from the first rep to the last, no matter how hard you push. Gear that only almost works isn’t good enough for the effort you put in. That’s the standard I started GearCertified to meet.</p>
 </div></section>
 </main>
 <footer><div class="wrap"><div class="flinks"><button type="button" class="flink" data-doc="privacy">Privacy Policy</button><button type="button" class="flink" data-doc="terms">Terms of Service</button><button type="button" class="flink follow" id="followBtn" aria-haspopup="dialog">Follow Us</button></div>© 2026 GearCertified. All rights reserved.</div></footer>
@@ -593,7 +637,7 @@ footer{padding-bottom:calc(44px + env(safe-area-inset-bottom,0px))}
 <button type="submit" class="btn btn-primary" id="dSubmit">Sign up</button>
 </form>
 </div>
-<div id="dDone" hidden><p class="tagline">Coupon Code</p><h2>10% OFF YOUR ORDER</h2><div class="coupon"><code id="codeText">GC10OFF</code><button type="button" class="btn btn-primary" id="copyBtn">Copy code</button></div><p class="note">Add our product to your Amazon cart, then paste this code at checkout.</p><a href="#" class="btn btn-primary">Redeem on Amazon</a></div>
+<div id="dDone" hidden><p class="tagline">Coupon Code</p><h2>10% OFF YOUR ORDER</h2><div class="coupon"><code id="codeText">GC10OFF</code><button type="button" class="btn btn-primary" id="copyBtn">Copy code</button></div><p class="note">Add our product to your Amazon cart, then paste this code at checkout.</p><a href="#" class="btn btn-primary">Go to Amazon</a></div>
 </div>
 </aside>
 <div class="drawer-bg" id="docBg"></div>
@@ -680,8 +724,19 @@ document.addEventListener("keydown",function(e){if(!lb.classList.contains("open"
 var dr=document.getElementById("drawer"),dbg=document.getElementById("dBg"),emailEl=document.getElementById("dEmail"),email2El=document.getElementById("dEmail2"),lastFocus;
 function showPane(p){document.getElementById("dForm").hidden=p!=="form";document.getElementById("dDone").hidden=p!=="coupons"}
 function isSignedUp(){try{var v=JSON.parse(localStorage.getItem("gc_signed_up")||"null");return !!(v&&v.email&&v.at&&localStorage.getItem("gc_consent"))}catch(x){return false}}
-function openD(mode){var su=isSignedUp();if(mode==="form")su=false;showPane(su?"coupons":"form");lastFocus=document.activeElement;dbg.classList.add("open");dr.classList.add("open");document.body.style.overflow="hidden";setTimeout(function(){(su?document.getElementById("copyBtn"):emailEl).focus()},60)}
-function closeD(){document.getElementById("dErr").textContent="";dbg.classList.remove("open");dr.classList.remove("open");document.body.style.overflow="";if(lastFocus&&lastFocus.focus)lastFocus.focus()}
+function onAbout(){return document.body.classList.contains("on-about")}
+function homeOn(){return !onAbout()&&window.matchMedia("(min-width:961px)").matches&&!!document.querySelector(".hero-grid .shot")}
+function topEdge(){var m=0;["header",".ann-wrap"].forEach(function(q){var el=document.querySelector(q);if(el){var r=el.getBoundingClientRect();if(r.height&&r.top<window.innerHeight/2&&r.bottom>m)m=r.bottom}});return m}
+function syncHome(){var on=dr.classList.contains("dd")&&homeOn();dr.classList.toggle("home",on);dbg.classList.toggle("home",on);document.body.classList.toggle("gc-home",on)}
+var savedY=null;
+/* home page: scroll so the coupon and the product image are on screen together; closeD scrolls back to savedY */
+function scrollToHero(){var sh=document.querySelector(".hero-grid .shot");if(!sh)return;var mob=!window.matchMedia("(min-width:701px)").matches,hb=topEdge(),r=sh.getBoundingClientRect(),cy=r.top+r.height/2+window.scrollY,h=sh.offsetHeight*(mob?1:1.14),top=mob?hb+8:hb+Math.max(12,(window.innerHeight-hb-h)/2);savedY=window.scrollY;window.scrollTo({top:Math.max(0,Math.round(cy-h/2-top)),behavior:"smooth"})}
+function posDD(){var st=dr.style;if(dr.classList.contains("home")){var g=document.querySelector(".hero-grid"),gr=g.getBoundingClientRect(),cs=getComputedStyle(g),pl=parseFloat(cs.paddingLeft)||0,hr=document.querySelector(".hero-text").getBoundingClientRect(),pf=document.querySelector(".hero-actions .proof").getBoundingClientRect(),w=dr.offsetWidth,h=dr.offsetHeight,bot=pf.top-16,t=hr.top+(bot-hr.top-h)/2;if(h>bot-hr.top)t=bot-h;t=Math.round(Math.min(Math.max(t,topEdge()+12),window.innerHeight-h-12));var lf=Math.round(gr.left+pl),nb=document.getElementById("navBtn").getBoundingClientRect();st.setProperty("--ddtop",t+"px");st.setProperty("--ddleft",lf+"px");st.setProperty("--ox",Math.round(nb.left+nb.width/2-lf)+"px");st.setProperty("--oy",Math.round(nb.top+nb.height/2-t)+"px");return}var b=document.getElementById("navBtn").getBoundingClientRect();st.setProperty("--ddtop",Math.round(b.bottom+14)+"px");st.setProperty("--ddleft",Math.round(b.left)+"px");st.setProperty("--tail",Math.round(b.width/2-7)+"px")}
+window.addEventListener("scroll",function(){if(dr.classList.contains("dd")&&dr.classList.contains("open"))posDD()},{passive:true});
+window.addEventListener("resize",function(){if(dr.classList.contains("dd")&&dr.classList.contains("open")){syncHome();posDD()}});
+window.gcSync=function(){if(dr.classList.contains("dd")&&dr.classList.contains("open")){syncHome();posDD()}};
+function openD(mode){var su=isSignedUp();if(mode==="form")su=false;showPane(su?"coupons":"form");lastFocus=document.activeElement;/* PC + already signed up: coupon opens as a dropdown from the nav bar on the left; otherwise the focused card */var dd=su&&window.matchMedia("(min-width:701px)").matches;dr.style.transition="none";dr.classList.toggle("dd",dd);dbg.classList.toggle("dd",dd);document.body.classList.toggle("gc-dd",dd);syncHome();savedY=null;if(su&&!onAbout()&&(dd?homeOn():!window.matchMedia("(min-width:701px)").matches))scrollToHero();if(dd)posDD();void dr.offsetWidth;dr.style.transition="";dbg.classList.add("open");dr.classList.add("open");document.body.style.overflow=dd?"":"hidden";setTimeout(function(){(su?document.getElementById("copyBtn"):emailEl).focus({preventScroll:true})},60)}
+function closeD(){document.body.classList.remove("gc-dd","gc-home");document.getElementById("dErr").textContent="";dbg.classList.remove("open");dr.classList.remove("open");document.body.style.overflow="";if(savedY!==null){var y=savedY;savedY=null;if(!onAbout())window.scrollTo({top:y,behavior:"smooth"})}if(lastFocus&&lastFocus.focus)lastFocus.focus({preventScroll:true})}
 var promo=document.querySelector(".promo"),dragMoved=false,drag=null;
 promo.addEventListener("pointerdown",function(e){if(e.target.closest(".promo-x"))return;var r=promo.getBoundingClientRect();drag={y:e.clientY,top:r.top,id:e.pointerId};dragMoved=false});
 promo.addEventListener("pointermove",function(e){if(!drag)return;var dy=e.clientY-drag.y;if(!dragMoved&&Math.abs(dy)<6)return;if(!dragMoved){dragMoved=true;try{promo.setPointerCapture(drag.id)}catch(x){}promo.style.transform="none";promo.classList.add("dragging")}var t=Math.max(110,Math.min(window.innerHeight-promo.offsetHeight-8,drag.top+dy));promo.style.top=t+"px"});
@@ -765,12 +820,14 @@ var wrap=document.getElementById("ann"),slides=wrap.querySelectorAll(".ann-slide
 function show(n){i=(n+slides.length)%slides.length;for(var k=0;k<slides.length;k++){var on=k===i;slides[k].classList.toggle("on",on);slides[k].setAttribute("aria-hidden",on?"false":"true")}}
 function stop(){clearInterval(timer);timer=null}
 function start(){stop();if(reduce||paused)return;timer=setInterval(function(){show(i+1)},DELAY)}
-document.getElementById("annPrev").onclick=function(){show(i-1);start()};
-document.getElementById("annNext").onclick=function(){show(i+1);start()};
-wrap.addEventListener("mouseenter",function(){paused=true;stop()});
-wrap.addEventListener("mouseleave",function(){paused=false;start()});
-wrap.addEventListener("focusin",function(){paused=true;stop()});
-wrap.addEventListener("focusout",function(){paused=false;start()});
+var canHover=window.matchMedia&&window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+function afterClick(btn){/* touch/mouse taps must not leave the carousel paused: drop focus, then restart the timer */try{if(!btn.matches(":focus-visible"))btn.blur()}catch(x){btn.blur()}paused=canHover&&wrap.matches(":hover");start()}
+document.getElementById("annPrev").onclick=function(){show(i-1);afterClick(this)};
+document.getElementById("annNext").onclick=function(){show(i+1);afterClick(this)};
+wrap.addEventListener("mouseenter",function(){if(!canHover)return;paused=true;stop()});
+wrap.addEventListener("mouseleave",function(){if(!canHover)return;paused=false;start()});
+wrap.addEventListener("focusin",function(e){var kb=false;try{kb=e.target.matches(":focus-visible")}catch(x){}if(!kb)return;paused=true;stop()});
+wrap.addEventListener("focusout",function(){paused=canHover&&wrap.matches(":hover");start()});
 document.addEventListener("visibilitychange",function(){if(document.hidden)stop();else start()});
 start();
 })();
@@ -879,7 +936,7 @@ document.addEventListener("click",function(e){if(!m.hidden&&!e.target.closest("#
 m.addEventListener("click",function(e){var a=e.target.closest("a");if(!a)return;e.preventDefault();if(a.hasAttribute("data-coupon")){closeNav();if(window.gcOpenCoupon)window.gcOpenCoupon();return}var h=a.getAttribute("href").slice(1);closeNav();try{history.pushState(null,"","#"+h)}catch(x){try{location.hash=h}catch(y){}}route(false,h)});
 document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!m.hidden){closeNav();b.focus()}});
 var mainEl=document.getElementById("top"),ab=document.getElementById("aboutPage");
-function route(first,hh){var h=hh!==undefined?hh:location.hash.slice(1),about=h==="about";mainEl.hidden=about;ab.hidden=!about;document.body.classList.toggle("on-about",about);if(!about)window.dispatchEvent(new Event("resize"));document.title=about?"About | GearCertified":"GearCertified (Gear Certified) | Rubber Lifting Grips & Palm Grips";if(about){window.scrollTo(0,0)}else{var t=h&&document.getElementById(h);if(t)t.scrollIntoView();else if(!first)window.scrollTo(0,0)}}
+function route(first,hh){var h=hh!==undefined?hh:location.hash.slice(1),about=h==="about";mainEl.hidden=about;ab.hidden=!about;document.body.classList.toggle("on-about",about);if(!about)window.dispatchEvent(new Event("resize"));document.title=about?"About | GearCertified":"GearCertified (Gear Certified) | Rubber Lifting Grips & Palm Grips";if(about){window.scrollTo(0,0)}else{var t=h&&document.getElementById(h);if(t)t.scrollIntoView();else if(!first)window.scrollTo(0,0)}if(window.gcSync)window.gcSync()}
 window.addEventListener("hashchange",function(){route(false)});route(true);
 })();
 </script>
