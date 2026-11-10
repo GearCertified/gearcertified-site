@@ -897,8 +897,8 @@ html[data-theme="dark"] .launch-cta:hover{background:#d9d9d9;box-shadow:0 10px 2
 /* ===== Google + Apple sign-up buttons (shown only when the IDs in GC_SOCIAL are filled in) ===== */
 .soc{display:none}
 .soc.on{display:block}
-.soc .or{margin:14px 0 12px;font-size:.82rem}
-.soc-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.soc .or{margin:12px 0 14px;font-size:.82rem}
+.soc-row{display:grid;grid-template-columns:1fr;gap:8px}
 .soc-row.one{grid-template-columns:1fr}
 .soc-btn{display:flex;align-items:center;justify-content:center;gap:9px;min-height:46px;padding:0 12px;border-radius:999px;border:1.5px solid var(--line);background:#fff;color:#111;font:inherit;font-weight:600;font-size:.95rem;line-height:1;cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation;transition:border-color .2s,background .2s,transform .15s}
 .soc-btn[hidden]{display:none}
@@ -908,7 +908,7 @@ html[data-theme="dark"] .launch-cta:hover{background:#d9d9d9;box-shadow:0 10px 2
 .soc-btn:focus-visible{outline:none;box-shadow:0 0 0 2px #fff,0 0 0 4px #000}
 .soc-apple{background:#000;color:#fff;border-color:#000}
 @media (hover:hover) and (pointer:fine){.soc-google:hover{border-color:#111;background:#f5f5f5}.soc-apple:hover{background:#2b2b2b}}
-#dForm .soc .or{margin:10px 0 8px}
+#dForm .soc .or{margin:8px 0 10px}
 #dForm .soc-btn{min-height:44px;font-size:.92rem}
 @media (prefers-reduced-motion:reduce){.soc-btn{transition:none}.soc-btn:active{transform:none}}
 /* viewer: touch gestures (pinch, double-tap, drag, swipe) are handled in JS */
@@ -1022,6 +1022,7 @@ html[data-theme="dark"] .launch-cta:hover{background:#d9d9d9;box-shadow:0 10px 2
 <div class="tk-perf" aria-hidden="true"></div>
 <div class="tk-bot">
 <form id="signup" novalidate autocomplete="on">
+<div class="soc" id="soc"><div class="soc-row"><button type="button" class="soc-btn soc-google" id="socGoogle" aria-label="Sign up with Google" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M23.5 12.27c0-.85-.08-1.67-.22-2.45H12v4.64h6.46a5.52 5.52 0 01-2.4 3.62v3h3.88c2.27-2.09 3.56-5.17 3.56-8.81z"/><path fill="#34A853" d="M12 24c3.24 0 5.96-1.07 7.94-2.91l-3.88-3c-1.07.72-2.45 1.15-4.06 1.15-3.12 0-5.77-2.11-6.71-4.95H1.28v3.1A12 12 0 0012 24z"/><path fill="#FBBC05" d="M5.29 14.29a7.2 7.2 0 010-4.58v-3.1H1.28a12 12 0 000 10.78l4.01-3.1z"/><path fill="#EA4335" d="M12 4.76c1.76 0 3.34.61 4.58 1.8l3.44-3.44C17.95 1.19 15.24 0 12 0A12 12 0 001.28 6.61l4.01 3.1C6.23 6.87 8.88 4.76 12 4.76z"/></svg><span>Sign up with Google</span></button><button type="button" class="soc-btn soc-apple" id="socApple" aria-label="Sign up with Apple" hidden><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M16.37 12.62c-.02-2.2 1.8-3.26 1.88-3.31-1.02-1.5-2.61-1.7-3.18-1.73-1.35-.14-2.64.8-3.33.8-.69 0-1.75-.78-2.88-.76-1.48.02-2.85.86-3.61 2.18-1.54 2.67-.39 6.62 1.1 8.79.73 1.06 1.6 2.25 2.74 2.21 1.1-.04 1.52-.71 2.85-.71 1.33 0 1.71.71 2.88.69 1.19-.02 1.94-1.08 2.66-2.15.84-1.23 1.19-2.42 1.2-2.48-.03-.01-2.3-.88-2.32-3.5zM14.2 6.17c.6-.74 1.01-1.76.9-2.78-.87.04-1.93.58-2.55 1.31-.56.65-1.05 1.69-.92 2.69.97.08 1.97-.49 2.57-1.22z"/></svg><span>Sign up with Apple</span></button></div><div class="or">or</div></div>
 <label for="dEmail" class="vh">Email address</label>
 <input id="dEmail" name="email" type="email" inputmode="email" placeholder="Email address" autocomplete="email" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="next" maxlength="254">
 <div class="dom-sug" id="domSug" hidden role="group" aria-label="Email domain suggestions"></div>
@@ -1029,7 +1030,6 @@ html[data-theme="dark"] .launch-cta:hover{background:#d9d9d9;box-shadow:0 10px 2
 <label class="consent" id="dConsentRow"><input type="checkbox" id="dConsent"><span id="dLegal">I agree to receive product updates, exclusive offers, and marketing communications from GearCertified. Unsubscribe anytime.</span></label>
 <p class="legal" id="dTerms">By continuing you agree to our <button type="button" class="linkbtn" data-doc="terms">Terms</button> and <button type="button" class="linkbtn" data-doc="privacy">Privacy Policy</button>.</p>
 <button type="submit" class="btn btn-primary" id="dSubmit">Sign up</button>
-<div class="soc" id="soc"><div class="or">or sign up with</div><div class="soc-row"><button type="button" class="soc-btn soc-google" id="socGoogle" aria-label="Continue with Google" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M23.5 12.27c0-.85-.08-1.67-.22-2.45H12v4.64h6.46a5.52 5.52 0 01-2.4 3.62v3h3.88c2.27-2.09 3.56-5.17 3.56-8.81z"/><path fill="#34A853" d="M12 24c3.24 0 5.96-1.07 7.94-2.91l-3.88-3c-1.07.72-2.45 1.15-4.06 1.15-3.12 0-5.77-2.11-6.71-4.95H1.28v3.1A12 12 0 0012 24z"/><path fill="#FBBC05" d="M5.29 14.29a7.2 7.2 0 010-4.58v-3.1H1.28a12 12 0 000 10.78l4.01-3.1z"/><path fill="#EA4335" d="M12 4.76c1.76 0 3.34.61 4.58 1.8l3.44-3.44C17.95 1.19 15.24 0 12 0A12 12 0 001.28 6.61l4.01 3.1C6.23 6.87 8.88 4.76 12 4.76z"/></svg><span>Google</span></button><button type="button" class="soc-btn soc-apple" id="socApple" aria-label="Continue with Apple" hidden><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M16.37 12.62c-.02-2.2 1.8-3.26 1.88-3.31-1.02-1.5-2.61-1.7-3.18-1.73-1.35-.14-2.64.8-3.33.8-.69 0-1.75-.78-2.88-.76-1.48.02-2.85.86-3.61 2.18-1.54 2.67-.39 6.62 1.1 8.79.73 1.06 1.6 2.25 2.74 2.21 1.1-.04 1.52-.71 2.85-.71 1.33 0 1.71.71 2.88.69 1.19-.02 1.94-1.08 2.66-2.15.84-1.23 1.19-2.42 1.2-2.48-.03-.01-2.3-.88-2.32-3.5zM14.2 6.17c.6-.74 1.01-1.76.9-2.78-.87.04-1.93.58-2.55 1.31-.56.65-1.05 1.69-.92 2.69.97.08 1.97-.49 2.57-1.22z"/></svg><span>Apple</span></button></div></div>
 </form>
 <button type="button" class="tk-skip">No thanks</button>
 </div>
