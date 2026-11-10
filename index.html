@@ -1038,7 +1038,7 @@ shBg.onclick=closeSh;
 shGrid.addEventListener("click",function(ev){var b=ev.target.closest("button[data-a]"),a=ev.target.closest("a");if(b){var k=b.getAttribute("data-a");if(k==="copy"){copyLink();closeSh()}else if(k==="fb"){window.open("https://www.facebook.com/sharer/sharer.php?u="+encodeURIComponent(SHARE_URL)+"&quote="+encodeURIComponent(SH_TEXT),"_blank","noopener,width=640,height=640");closeSh()}else if(k==="more"){b.remove();shGrid.insertAdjacentHTML("beforeend",extraItems().map(R).join(""))}}else if(a){if(a.hasAttribute("data-ig"))igShare(ev);setTimeout(closeSh,200)}});
 function igShare(ev){var T=SH_TEXT+" "+SHARE_URL;if(IS_MOBILE&&navigator.share){ev.preventDefault();navigator.share({text:SH_TEXT,url:SHARE_URL}).catch(function(err){if(err&&err.name==="AbortError")return;copyLink("Message copied. Paste it in Instagram.",T);window.open("https://www.instagram.com/direct/inbox/","_blank","noopener")})}else{copyLink("Message copied. Paste it in Instagram.",T)}}
 var POLICY_VERSION="2026-11-09.2";
-function recordConsent(email,method){var rec={email:email,consentedAt:new Date().toISOString(),consentText:document.getElementById("dLegal").textContent,policyVersion:POLICY_VERSION,source:"discount-signup",method:method||"email"};try{localStorage.setItem("gc_consent",JSON.stringify({consentedAt:rec.consentedAt,consentText:rec.consentText,policyVersion:rec.policyVersion}))}catch(x){}/* send the signup (email, timestamp, consent wording, policy version) to the Google Sheet; text/plain + no-cors avoids a browser preflight */try{fetch("https://script.google.com/macros/s/AKfycbyLP2xpysxKExl7J_QPxow8BDeXKuzN7MzR6wiIF4mjNsszIgDpNeeE61G5PnT_7_K9/exec",{method:"POST",mode:"no-cors",keepalive:true,headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(rec)}).catch(function(){})}catch(x){}return rec}
+function recordConsent(email,method){var rec={email:email,consentedAt:new Date().toISOString(),consentText:document.getElementById("dLegal").textContent,policyVersion:POLICY_VERSION,source:"discount-signup",method:method||"email"};try{localStorage.setItem("gc_consent",JSON.stringify({consentedAt:rec.consentedAt,consentText:rec.consentText,policyVersion:rec.policyVersion}))}catch(x){}/* send the signup (email, timestamp, consent wording, policy version) to the Google Sheet; text/plain + no-cors avoids a browser preflight */try{fetch("https://script.google.com/macros/s/AKfycbyWXBy1sp4OL-uSRXIaGQYKob8gkIDbM6ydsEI8unEKsj6FIpwUXN0FsIzv_QGo_2GI/exec",{method:"POST",mode:"no-cors",keepalive:true,headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(rec)}).catch(function(){})}catch(x){}return rec}
 var DOCS={privacy:{t:"Privacy Policy",h:`<p>Last updated: November 9, 2026</p>
 <p>This website (gearcertified.com and gearcertified.ca) is operated by GearCertified (“we”, “us”, “our”) from Canada. This policy explains what personal information we collect, why, how we use it, and the choices you have. Privacy contact: <a href='mailto:support@gearcertified.com'>support@gearcertified.com</a></p>
 <h3>Information we collect</h3><ul><li>Your email address, when you sign up for our discount code or updates.</li><li>A record of your consent: the date and time, the wording you agreed to, the version of this policy, and where you signed up.</li><li>Your name, email address, message, and any attachments, if you email us.</li><li>Technical data such as your IP address, browser and device type, and the pages you request. Our hosting provider logs this automatically, and Google receives your IP address when your browser loads the fonts used on this site.</li><li>Small settings saved in your own browser, such as that you signed up, your consent record, and your light or dark mode choice.</li></ul><p>We do not collect payment card details or run a checkout on this website. Purchases are made on Amazon.</p>
@@ -1220,6 +1220,20 @@ function dark(){return r.getAttribute("data-theme")==="dark"}
 function sync(){var d=dark();b.setAttribute("aria-checked",d?"true":"false");b.title=d?"Switch to light mode":"Switch to dark mode"}
 b.addEventListener("click",function(){r.classList.add("theme-anim");var d=!dark();if(d)r.setAttribute("data-theme","dark");else r.removeAttribute("data-theme");try{localStorage.setItem("gc_theme",d?"dark":"light")}catch(e){}sync();setTimeout(function(){r.classList.remove("theme-anim")},450)});
 sync()})();
+</script>
+<script>
+(function(){
+/* Revocation check: if the visitor's email is no longer in the Google Sheet, forget their signup so they must sign up again.
+   Fails open: a network error never locks out a real subscriber. */
+var URL_="https://script.google.com/macros/s/AKfycbyWXBy1sp4OL-uSRXIaGQYKob8gkIDbM6ydsEI8unEKsj6FIpwUXN0FsIzv_QGo_2GI/exec";
+function stored(){try{var v=JSON.parse(localStorage.getItem("gc_signed_up")||"null");return v&&v.email&&v.at&&localStorage.getItem("gc_consent")?v.email:null}catch(x){return null}}
+function stillOnList(email){return fetch(URL_+"?email="+encodeURIComponent(email),{method:"GET"}).then(function(r){return r.json()}).then(function(j){return j.found!==false},function(){return true})}
+function revoke(){try{localStorage.removeItem("gc_signed_up");localStorage.removeItem("gc_consent")}catch(x){}var p=document.querySelector(".promo");if(p)p.hidden=false}
+function verify(){var em=stored();if(!em)return Promise.resolve(true);return stillOnList(em).then(function(ok){if(!ok)revoke();return ok})}
+verify();
+var orig=window.gcOpenCoupon;
+if(typeof orig==="function")window.gcOpenCoupon=function(){var was=!!stored();orig();if(was)verify().then(function(ok){if(!ok)orig()})};
+})();
 </script>
 </body>
 </html>
