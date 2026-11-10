@@ -1227,12 +1227,17 @@ sync()})();
    Fails open: a network error never locks out a real subscriber. */
 var URL_="https://script.google.com/macros/s/AKfycbyWXBy1sp4OL-uSRXIaGQYKob8gkIDbM6ydsEI8unEKsj6FIpwUXN0FsIzv_QGo_2GI/exec";
 function stored(){try{var v=JSON.parse(localStorage.getItem("gc_signed_up")||"null");return v&&v.email&&v.at&&localStorage.getItem("gc_consent")?v.email:null}catch(x){return null}}
-function stillOnList(email){return fetch(URL_+"?email="+encodeURIComponent(email),{method:"GET"}).then(function(r){return r.json()}).then(function(j){return j.found!==false},function(){return true})}
+function stillOnList(email){var chk=fetch(URL_+"?email="+encodeURIComponent(email),{method:"GET"}).then(function(r){return r.json()}).then(function(j){return j.found!==false},function(){return true});var cap=new Promise(function(res){setTimeout(function(){res(true)},3000)});return Promise.race([chk,cap])}
 function revoke(){try{localStorage.removeItem("gc_signed_up");localStorage.removeItem("gc_consent")}catch(x){}var p=document.querySelector(".promo");if(p)p.hidden=false}
-function verify(){var em=stored();if(!em)return Promise.resolve(true);return stillOnList(em).then(function(ok){if(!ok)revoke();return ok})}
-verify();
+var res={done:false,ok:true};
+function check(){var em=stored();if(!em){res={done:true,ok:true};return Promise.resolve(true)}return stillOnList(em).then(function(ok){res={done:true,ok:ok};if(!ok)revoke();return ok})}
+var first=check();/* runs at page load, so the answer is normally ready before the visitor clicks */
 var orig=window.gcOpenCoupon;
-if(typeof orig==="function")window.gcOpenCoupon=function(){var was=!!stored();orig();if(was)verify().then(function(ok){if(!ok)orig()})};
+if(typeof orig==="function")window.gcOpenCoupon=function(){
+if(!stored()){orig();return}
+if(res.done){orig();check();return}/* answer already known: open instantly, refresh it in the background */
+var opened=false,t=setTimeout(function(){opened=true;orig()},400);/* still waiting: never make the visitor wait more than 0.4s */
+first.then(function(ok){if(opened){if(!ok)orig()}else{clearTimeout(t);orig()}})};
 })();
 </script>
 </body>
