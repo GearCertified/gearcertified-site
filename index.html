@@ -780,6 +780,23 @@ html[data-theme="dark"] .ann-wrap:hover .ann-pp{opacity:.8}
 .theme-toggle .tt-knob svg{width:16px;height:16px}
 }
 </style>
+<style>
+/* performance: panel open/close animations */
+/* 1) the full-screen blur behind panels was re-rendered every frame (twice when a policy opens over the signup card): use a plain darker scrim instead */
+.drawer-bg{-webkit-backdrop-filter:none!important;backdrop-filter:none!important;background:rgba(0,0,0,.74)}
+.drawer-bg.dd{background:transparent}
+/* 2) give the panels their own GPU layer so the ticket-notch mask and shadows are painted once, not on every frame of the slide/fade */
+.drawer,.doc{will-change:transform,opacity;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.doc-body{overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+/* 3) pause the page's looping decorative animations while a panel is open (they repaint behind the scrim for nothing) */
+body:has(.drawer-bg.open) .hdr-coupon,
+body:has(.drawer-bg.open) header .nav-menu a[data-coupon],
+body:has(.drawer-bg.open) .ann-wrap::before,
+body:has(.drawer-bg.open) .ann-wrap *::before,
+body:has(.drawer-bg.open) .cta-row .stock i,
+body:has(.drawer-bg.open) .promo,
+body:has(.drawer-bg.open) .db{animation-play-state:paused!important}
+</style>
 </head>
 <body>
 <header>
