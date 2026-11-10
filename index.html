@@ -308,6 +308,7 @@ footer :focus-visible{outline-color:#fff}
 .doc-body p,.doc-body li{color:var(--muted);font-size:.95rem;margin-bottom:8px}
 .doc-body ul{padding-left:20px}
 .doc-body a{text-decoration:underline;color:var(--ink)}
+#doc .doc-body{padding:56px 24px 24px;max-height:min(68vh,560px);max-height:min(68dvh,560px)}#doc .doc-body h1{font-size:1.7rem;margin-bottom:6px}#doc .doc-body p,#doc .doc-body li{color:var(--ink);font-size:1rem;line-height:1.65}#doc .doc-done{width:100%;margin-top:22px}
 .toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:#000;color:#fff;padding:12px 20px;border-radius:999px;font-size:.9rem;z-index:80;opacity:0;pointer-events:none;transition:opacity .25s}
 .toast.show{opacity:1}
 #shBg{z-index:60}
@@ -446,7 +447,7 @@ header .bar.wrap{max-width:none;padding-left:16px;padding-right:16px}
 .nav-menu a:hover{background:none;padding-left:10px;border-color:rgba(255,255,255,.14)}
 .nav-menu :focus-visible{outline-color:#fff;outline-offset:-3px}
 #aboutPage{min-height:60vh}
-.legal{min-height:60vh}.legal h1{font-size:clamp(2rem,5vw,2.8rem)}.legal h3{font-family:Manrope,system-ui,sans-serif;font-size:1.15rem;font-weight:700;letter-spacing:0;margin:30px 0 8px}.legal ul{padding-left:22px;margin:0 0 18px}.legal li{color:var(--muted);font-size:1.08rem;margin-bottom:8px}.legal a{text-decoration:underline;color:var(--ink)}.legal .legal-back{display:none;margin-bottom:22px;font-weight:700;font-size:.95rem}body.from-signup .legal .legal-back{display:inline-block}
+.legal{min-height:60vh}.legal h1{font-size:clamp(2rem,5vw,2.8rem)}.legal h3{font-family:Manrope,system-ui,sans-serif;font-size:1.15rem;font-weight:700;letter-spacing:0;margin:30px 0 8px}.legal ul{padding-left:22px;margin:0 0 18px}.legal li{color:var(--ink);font-size:1.08rem;margin-bottom:8px}.legal p{color:var(--ink);line-height:1.7}.legal li{line-height:1.65}.legal h3{color:var(--ink)}.legal a{text-decoration:underline;color:var(--ink)}
 .about{padding:80px 0 112px}
 .about-in{max-width:720px}
 .about h1{margin-bottom:12px}
@@ -1010,7 +1011,6 @@ html[data-theme="dark"] .launch-cta:hover{background:#d9d9d9;box-shadow:0 10px 2
 </main>
 <main id="privacyPage" class="legal" hidden>
 <section class="about"><div class="wrap about-in">
-<a class="legal-back" href="#" data-legalback="1">&larr; Back to sign up</a>
 <h1>Privacy Policy</h1>
 <p>Last updated: November 9, 2026</p>
 <p>This website (gearcertified.com and gearcertified.ca) is operated by GearCertified (“we”, “us”, “our”) from Canada. This policy explains what personal information we collect, why, how we use it, and the choices you have. Privacy contact: <a href='mailto:support@gearcertified.com'>support@gearcertified.com</a></p>
@@ -1033,7 +1033,6 @@ html[data-theme="dark"] .launch-cta:hover{background:#d9d9d9;box-shadow:0 10px 2
 </main>
 <main id="termsPage" class="legal" hidden>
 <section class="about"><div class="wrap about-in">
-<a class="legal-back" href="#" data-legalback="1">&larr; Back to sign up</a>
 <h1>Terms of Service</h1>
 <p>Last updated: November 9, 2026</p>
 <p>These terms apply to your use of the GearCertified website (gearcertified.com and gearcertified.ca), operated by GearCertified (“we”, “us”) from Canada. By using the site or signing up, you agree to these terms and our Privacy Policy. If you do not agree, please do not use the site. Contact: <a href='mailto:support@gearcertified.com'>support@gearcertified.com</a></p>
@@ -1076,7 +1075,7 @@ html[data-theme="dark"] .launch-cta:hover{background:#d9d9d9;box-shadow:0 10px 2
 <div class="dom-sug" id="domSug" hidden role="group" aria-label="Email domain suggestions"></div>
 <p class="err" id="dErr" role="alert"></p>
 <label class="consent" id="dConsentRow"><input type="checkbox" id="dConsent"><span id="dLegal">I agree to receive product updates, exclusive offers, and marketing communications from GearCertified. Unsubscribe anytime.</span></label>
-<p class="legal" id="dTerms">By continuing you agree to our <a class="linkbtn" href="#terms" data-fromsignup="1">Terms</a> and <a class="linkbtn" href="#privacy" data-fromsignup="1">Privacy Policy</a>.</p>
+<p class="legal" id="dTerms">By continuing you agree to our <a class="linkbtn" href="#terms" data-legal="terms">Terms</a> and <a class="linkbtn" href="#privacy" data-legal="privacy">Privacy Policy</a>.</p>
 <button type="submit" class="btn btn-primary" id="dSubmit">Sign up</button>
 </form>
 <button type="button" class="tk-skip">No thanks</button>
@@ -1085,6 +1084,8 @@ html[data-theme="dark"] .launch-cta:hover{background:#d9d9d9;box-shadow:0 10px 2
 <div id="dDone" hidden><div class="tk-top"><p class="tagline">You’re on the list</p><h2>SEE YOU AT LAUNCH</h2></div><div class="tk-perf" aria-hidden="true"></div><div class="tk-bot"><p class="note">Your discount code will be emailed to you on launch day. It’s a limited-time offer, so keep an eye on your inbox.</p><button type="button" class="tk-undo" id="dWrong">Used the wrong email? Sign up again</button><button type="button" class="tk-skip">Close</button></div></div>
 </div>
 </aside>
+<div class="drawer-bg" id="docBg"></div>
+<div class="doc" id="doc" role="dialog" aria-modal="true" aria-label="Terms and privacy"><button type="button" class="drawer-close" id="docClose" aria-label="Close">×</button><div class="doc-body" id="docBody"></div></div>
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Product images, enlarged">
 <div class="lb-stage">
 <div class="lb-track" id="lbTrack"></div>
@@ -1484,16 +1485,14 @@ first.then(function(ok){if(opened){if(!ok)orig()}else{clearTimeout(t);orig()}})}
 })();
 </script>
 <script>
+/* Terms / Privacy opened from the email signup: a small popup over the signup (not a full page) that closes with the X, the Close button, a tap outside, or Esc */
 (function(){
-var from=null,draft="";
-function legal(h){return h==="privacy"||h==="terms"}
-document.addEventListener("click",function(e){
-var a=e.target.closest&&e.target.closest("[data-fromsignup]");
-if(a){e.preventDefault();var i=document.getElementById("dEmail");draft=i?i.value:"";from={prev:location.hash.slice(1)||"top"};document.body.classList.add("from-signup");closeD();location.hash=a.getAttribute("href").slice(1);return}
-var b=e.target.closest&&e.target.closest("[data-legalback]");
-if(b){e.preventDefault();var p=from?from.prev:"top";from=null;document.body.classList.remove("from-signup");location.hash=p;setTimeout(function(){openD("form");var i=document.getElementById("dEmail");if(draft&&i&&!i.value)i.value=draft},80)}
-});
-window.addEventListener("hashchange",function(){if(!legal(location.hash.slice(1))){from=null;document.body.classList.remove("from-signup")}});
+var doc=document.getElementById("doc"),bg=document.getElementById("docBg"),body=document.getElementById("docBody"),last=null;
+function openL(k){var m=document.getElementById(k+"Page"),s=m&&m.querySelector(".about-in");if(!s)return;last=document.activeElement;body.innerHTML=s.innerHTML+'<button type="button" class="btn btn-primary doc-done">Close</button>';body.scrollTop=0;bg.classList.add("open");doc.classList.add("open");document.getElementById("docClose").focus()}
+function closeL(){bg.classList.remove("open");doc.classList.remove("open");if(last&&last.focus)last.focus({preventScroll:true})}
+document.getElementById("docClose").onclick=closeL;bg.onclick=closeL;
+document.addEventListener("click",function(e){var t=e.target;if(!t||!t.closest)return;var a=t.closest("[data-legal]");if(a){e.preventDefault();openL(a.getAttribute("data-legal"));return}if(t.closest(".doc-done"))closeL()});
+document.addEventListener("keydown",function(e){if(e.key==="Escape"&&doc.classList.contains("open")){e.stopImmediatePropagation();closeL()}},true);
 })();
 </script>
 </body>
