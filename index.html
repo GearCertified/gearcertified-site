@@ -308,7 +308,7 @@ footer :focus-visible{outline-color:#fff}
 .doc-body p,.doc-body li{color:var(--muted);font-size:.95rem;margin-bottom:8px}
 .doc-body ul{padding-left:20px}
 .doc-body a{text-decoration:underline;color:var(--ink)}
-#doc .doc-body{padding:56px 24px 24px;max-height:min(68vh,560px);max-height:min(68dvh,560px)}#doc .doc-body h1{font-size:1.7rem;margin-bottom:6px}#doc .doc-body p,#doc .doc-body li{color:var(--ink);font-size:1rem;line-height:1.65}#doc .doc-done{width:100%;margin-top:22px}
+#doc .doc-body{padding:56px 24px 24px;max-height:min(68vh,560px);max-height:min(68dvh,560px)}#doc .doc-body h1{font-size:1.7rem;margin-bottom:6px}#doc .doc-body p,#doc .doc-body li{color:var(--ink);font-size:1rem;line-height:1.65}#doc .doc-done{width:100%;margin-top:22px}.g-back{margin:0 0 22px}.g-back .btn{width:100%;max-width:360px}
 .toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:#000;color:#fff;padding:12px 20px;border-radius:999px;font-size:.9rem;z-index:80;opacity:0;pointer-events:none;transition:opacity .25s}
 .toast.show{opacity:1}
 #shBg{z-index:60}
@@ -1011,6 +1011,7 @@ html[data-theme="dark"] .launch-cta:hover{background:#d9d9d9;box-shadow:0 10px 2
 </main>
 <main id="privacyPage" class="legal" hidden>
 <section class="about"><div class="wrap about-in">
+<div class="g-back" hidden><button type="button" class="btn btn-primary g-back-btn">&larr; Back to Google sign-in</button></div>
 <h1>Privacy Policy</h1>
 <p>Last updated: November 9, 2026</p>
 <p>This website (gearcertified.com and gearcertified.ca) is operated by GearCertified (“we”, “us”, “our”) from Canada. This policy explains what personal information we collect, why, how we use it, and the choices you have. Privacy contact: <a href='mailto:support@gearcertified.com'>support@gearcertified.com</a></p>
@@ -1033,6 +1034,7 @@ html[data-theme="dark"] .launch-cta:hover{background:#d9d9d9;box-shadow:0 10px 2
 </main>
 <main id="termsPage" class="legal" hidden>
 <section class="about"><div class="wrap about-in">
+<div class="g-back" hidden><button type="button" class="btn btn-primary g-back-btn">&larr; Back to Google sign-in</button></div>
 <h1>Terms of Service</h1>
 <p>Last updated: November 9, 2026</p>
 <p>These terms apply to your use of the GearCertified website (gearcertified.com and gearcertified.ca), operated by GearCertified (“we”, “us”) from Canada. By using the site or signing up, you agree to these terms and our Privacy Policy. If you do not agree, please do not use the site. Contact: <a href='mailto:support@gearcertified.com'>support@gearcertified.com</a></p>
@@ -1251,7 +1253,7 @@ var gBtn=document.getElementById("socGoogle"),err=document.getElementById("dErr"
 var haveG=!!C.googleClientId;
 var loaded={},gTok=null;
 function load(src,key,cb){if(loaded[key])return;loaded[key]=1;var s=document.createElement("script");s.src=src;s.async=true;s.onload=cb;s.onerror=function(){loaded[key]=0};document.head.appendChild(s)}
-function busy(on){gBtn.disabled=on}
+var busyT=null;function busy(on){clearTimeout(busyT);gBtn.disabled=on;if(on)busyT=setTimeout(function(){gBtn.disabled=false},90000)}
 function soon(n){err.textContent=n+" sign-up isn\u2019t switched on yet. Please use your email below."}
 function fail(){err.textContent="Sign-in didn\u2019t work. Please try again or use your email instead."}
 function notReady(){err.textContent="Still loading. Please tap again in a moment.";window.gcSocLoad()}
@@ -1260,8 +1262,8 @@ function jwt(t){try{var b=t.split(".")[1].replace(/-/g,"+").replace(/_/g,"/");wh
 /* Google: popup token flow, then read the verified email from Google's userinfo endpoint */
 function initG(){if(gTok||!(window.google&&google.accounts&&google.accounts.oauth2))return;gTok=google.accounts.oauth2.initTokenClient({client_id:C.googleClientId,scope:"openid email",callback:onG,error_callback:function(e){busy(false);if(!e||e.type!=="popup_closed")fail()}})}
 function onG(r){if(!r||r.error||!r.access_token){busy(false);if(!r||r.error!=="access_denied")fail();return}
-fetch("https://www.googleapis.com/oauth2/v3/userinfo",{headers:{Authorization:"Bearer "+r.access_token}}).then(function(x){return x.json()}).then(function(u){busy(false);if(!u||!u.email||u.email_verified===false){err.textContent="We couldn\u2019t get a verified email from Google. Please use the email form instead.";return}finishSignup(u.email,"google",r.access_token,[gBtn])}).catch(function(){busy(false);fail()})}
-gBtn.onclick=function(){err.textContent="";if(!haveG){soon("Google");return}if(!consentOK())return;initG();if(!gTok){notReady();return}busy(true);gTok.requestAccessToken({prompt:"select_account"})};
+busy(true);fetch("https://www.googleapis.com/oauth2/v3/userinfo",{headers:{Authorization:"Bearer "+r.access_token}}).then(function(x){return x.json()}).then(function(u){busy(false);if(!u||!u.email||u.email_verified===false){err.textContent="We couldn\u2019t get a verified email from Google. Please use the email form instead.";return}finishSignup(u.email,"google",r.access_token,[gBtn])}).catch(function(){busy(false);fail()})}
+gBtn.onclick=function(){err.textContent="";if(!haveG){soon("Google");return}if(!consentOK())return;initG();if(!gTok){notReady();return}gTok.requestAccessToken({prompt:"select_account"})};
 /* load the SDKs when the sign-up card opens, so the popup can open straight from the tap (popup blockers need that) */
 window.gcSocLoad=function(){if(haveG)load("https://accounts.google.com/gsi/client","g",initG);};
 })();
@@ -1488,11 +1490,23 @@ first.then(function(ok){if(opened){if(!ok)orig()}else{clearTimeout(t);orig()}})}
 /* Terms / Privacy opened from the email signup: a small popup over the signup (not a full page) that closes with the X, the Close button, a tap outside, or Esc */
 (function(){
 var doc=document.getElementById("doc"),bg=document.getElementById("docBg"),body=document.getElementById("docBody"),last=null;
-function openL(k){var m=document.getElementById(k+"Page"),s=m&&m.querySelector(".about-in");if(!s)return;last=document.activeElement;body.innerHTML=s.innerHTML+'<button type="button" class="btn btn-primary doc-done">Close</button>';body.scrollTop=0;bg.classList.add("open");doc.classList.add("open");document.getElementById("docClose").focus()}
+function openL(k){var m=document.getElementById(k+"Page"),s=m&&m.querySelector(".about-in");if(!s)return;last=document.activeElement;var c=s.cloneNode(true),gb=c.querySelector(".g-back");if(gb)gb.remove();body.innerHTML=c.innerHTML+'<button type="button" class="btn btn-primary doc-done">Close</button>';body.scrollTop=0;bg.classList.add("open");doc.classList.add("open");document.getElementById("docClose").focus()}
 function closeL(){bg.classList.remove("open");doc.classList.remove("open");if(last&&last.focus)last.focus({preventScroll:true})}
 document.getElementById("docClose").onclick=closeL;bg.onclick=closeL;
 document.addEventListener("click",function(e){var t=e.target;if(!t||!t.closest)return;var a=t.closest("[data-legal]");if(a){e.preventDefault();openL(a.getAttribute("data-legal"));return}if(t.closest(".doc-done"))closeL()});
 document.addEventListener("keydown",function(e){if(e.key==="Escape"&&doc.classList.contains("open")){e.stopImmediatePropagation();closeL()}},true);
+})();
+</script>
+<script>
+/* Terms / Privacy reached from Google's sign-in window (its Privacy and Terms links): give a clear way back so the Google sign-in can be finished */
+(function(){
+var ref=document.referrer||"",fromG=/^https?:\/\/[^\/]*google\./i.test(ref),isPopup=false;
+try{isPopup=!!window.opener&&window.opener!==window}catch(x){}
+if(!fromG&&!isPopup)return;
+[].forEach.call(document.querySelectorAll(".g-back"),function(b){b.hidden=false});
+document.addEventListener("click",function(e){var t=e.target;if(!t||!t.closest||!t.closest(".g-back-btn"))return;e.preventDefault();
+if(fromG&&history.length>1){history.back();return}
+window.close();setTimeout(function(){if(!window.closed)location.href=location.pathname},250)});
 })();
 </script>
 </body>
