@@ -1197,8 +1197,8 @@ document.getElementById("dConsent").addEventListener("change",function(){if(this
    Fill in the IDs below to switch the buttons on (a button with no ID still shows, but tells the visitor it is not switched on yet).
    googleClientId : Google Cloud Console > APIs & Services > Credentials > OAuth client ID (Web). Add https://gearcertified.com (and .ca) under Authorized JavaScript origins.
    appleClientId  : Apple Developer > Identifiers > Services ID with "Sign in with Apple" enabled (domain + return URL registered).
-   appleRedirectURI: the return URL registered for that Services ID. */
-window.GC_SOCIAL=window.GC_SOCIAL||{googleClientId:"",appleClientId:"",appleRedirectURI:"https://gearcertified.com/"};
+   appleRedirectURI: leave as is. It uses the address of the page itself, and that address (e.g. https://gearcertified.com) must be listed as a Return URL on the Services ID. */
+window.GC_SOCIAL=window.GC_SOCIAL||{googleClientId:"961165130286-5tqlmhmrm8gdplrgnah9klfeoroo0hvi.apps.googleusercontent.com",appleClientId:"",appleRedirectURI:location.origin};
 (function(){
 var C=window.GC_SOCIAL,box=document.getElementById("soc");if(!C||!box)return;
 var gBtn=document.getElementById("socGoogle"),aBtn=document.getElementById("socApple"),err=document.getElementById("dErr");
