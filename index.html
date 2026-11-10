@@ -446,6 +446,7 @@ header .bar.wrap{max-width:none;padding-left:16px;padding-right:16px}
 .nav-menu a:hover{background:none;padding-left:10px;border-color:rgba(255,255,255,.14)}
 .nav-menu :focus-visible{outline-color:#fff;outline-offset:-3px}
 #aboutPage{min-height:60vh}
+.legal{min-height:60vh}.legal h1{font-size:clamp(2rem,5vw,2.8rem)}.legal h3{font-family:Manrope,system-ui,sans-serif;font-size:1.15rem;font-weight:700;letter-spacing:0;margin:30px 0 8px}.legal ul{padding-left:22px;margin:0 0 18px}.legal li{color:var(--muted);font-size:1.08rem;margin-bottom:8px}.legal a{text-decoration:underline;color:var(--ink)}.legal .legal-back{display:none;margin-bottom:22px;font-weight:700;font-size:.95rem}body.from-signup .legal .legal-back{display:inline-block}
 .about{padding:80px 0 112px}
 .about-in{max-width:720px}
 .about h1{margin-bottom:12px}
@@ -695,8 +696,8 @@ html[data-theme="dark"] #contact{background:
  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='380' height='320'%3E%3Cdefs%3E%3Cpattern id='p' width='9' height='9' patternUnits='userSpaceOnUse' patternTransform='rotate(45)'%3E%3Cpath d='M0 0H9M0 0V9' stroke='white' stroke-width='1' fill='none'/%3E%3C/pattern%3E%3CradialGradient id='r' cx='0.5' cy='0.5' r='.5'%3E%3Cstop offset='0' stop-color='white'/%3E%3Cstop offset='.6' stop-color='white' stop-opacity='.5'/%3E%3Cstop offset='1' stop-color='white' stop-opacity='0'/%3E%3C/radialGradient%3E%3Cmask id='m'%3E%3Crect width='380' height='320' fill='url(%23r)'/%3E%3C/mask%3E%3C/defs%3E%3Crect width='380' height='320' fill='url(%23p)' mask='url(%23m)' opacity='0.12'/%3E%3C/svg%3E") no-repeat 100% 100%/380px 320px,
  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .9 -.35'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='.11'/%3E%3C/svg%3E") 0 0/220px 220px}
 html[data-theme="dark"] #top>section:not([id]):not(.hero):not(.tone){background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .9 -.35'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='.11'/%3E%3C/svg%3E") 0 0/220px 220px,#0e0e0e}
-html[data-theme="dark"] #aboutPage{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='380' height='320'%3E%3Cdefs%3E%3Cpattern id='p' width='9' height='9' patternUnits='userSpaceOnUse' patternTransform='rotate(45)'%3E%3Cpath d='M0 0H9M0 0V9' stroke='white' stroke-width='1' fill='none'/%3E%3C/pattern%3E%3CradialGradient id='r' cx='0.5' cy='0.5' r='.5'%3E%3Cstop offset='0' stop-color='white'/%3E%3Cstop offset='.6' stop-color='white' stop-opacity='.5'/%3E%3Cstop offset='1' stop-color='white' stop-opacity='0'/%3E%3C/radialGradient%3E%3Cmask id='m'%3E%3Crect width='380' height='320' fill='url(%23r)'/%3E%3C/mask%3E%3C/defs%3E%3Crect width='380' height='320' fill='url(%23p)' mask='url(%23m)' opacity='0.12'/%3E%3C/svg%3E") no-repeat 100% 0/380px 320px,url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .9 -.35'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='.11'/%3E%3C/svg%3E") 0 0/220px 220px,#0e0e0e}
-@media (max-width:700px){html[data-theme="dark"] #aboutPage{background-size:260px 220px,220px 220px,auto}}
+html[data-theme="dark"] #aboutPage,html[data-theme="dark"] #privacyPage,html[data-theme="dark"] #termsPage{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='380' height='320'%3E%3Cdefs%3E%3Cpattern id='p' width='9' height='9' patternUnits='userSpaceOnUse' patternTransform='rotate(45)'%3E%3Cpath d='M0 0H9M0 0V9' stroke='white' stroke-width='1' fill='none'/%3E%3C/pattern%3E%3CradialGradient id='r' cx='0.5' cy='0.5' r='.5'%3E%3Cstop offset='0' stop-color='white'/%3E%3Cstop offset='.6' stop-color='white' stop-opacity='.5'/%3E%3Cstop offset='1' stop-color='white' stop-opacity='0'/%3E%3C/radialGradient%3E%3Cmask id='m'%3E%3Crect width='380' height='320' fill='url(%23r)'/%3E%3C/mask%3E%3C/defs%3E%3Crect width='380' height='320' fill='url(%23p)' mask='url(%23m)' opacity='0.12'/%3E%3C/svg%3E") no-repeat 100% 0/380px 320px,url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .9 -.35'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='.11'/%3E%3C/svg%3E") 0 0/220px 220px,#0e0e0e}
+@media (max-width:700px){html[data-theme="dark"] #aboutPage,html[data-theme="dark"] #privacyPage,html[data-theme="dark"] #termsPage{background-size:260px 220px,220px 220px,auto}}
 @media (max-width:700px){
 html[data-theme="dark"] .hero,html[data-theme="dark"] #details,html[data-theme="dark"] .tone,html[data-theme="dark"] #faq,html[data-theme="dark"] #contact{background-size:260px 220px,220px 220px,auto}
 html[data-theme="dark"] #contact{background-size:260px 220px,220px 220px}
@@ -894,7 +895,7 @@ html[data-theme="dark"] .launch-cta:hover{background:#d9d9d9;box-shadow:0 10px 2
 .lb-arrow svg{width:20px;height:20px;display:block;pointer-events:none}
 .lb-btn:active{transform:scale(.93)}
 @media (prefers-reduced-motion:reduce){.arrow,.share,.lb-btn{transition:none}.arrow:active,.share:active,.lb-btn:active{transform:none}}
-/* ===== Google + Apple sign-up buttons (shown only when the IDs in GC_SOCIAL are filled in) ===== */
+/* ===== Google sign-up button (shown only when the IDs in GC_SOCIAL are filled in) ===== */
 .soc{display:block}
 .soc .or{margin:12px 0 14px;font-size:.82rem}
 .soc-row{display:grid;grid-template-columns:1fr;gap:8px}
@@ -905,8 +906,7 @@ html[data-theme="dark"] .launch-cta:hover{background:#d9d9d9;box-shadow:0 10px 2
 .soc-btn:active{transform:scale(.97)}
 .soc-btn:disabled{opacity:.55;cursor:default}
 .soc-btn:focus-visible{outline:none;box-shadow:0 0 0 2px #fff,0 0 0 4px #000}
-.soc-apple{background:#000;color:#fff;border-color:#000}
-@media (hover:hover) and (pointer:fine){.soc-google:hover{border-color:#111;background:#f5f5f5}.soc-apple:hover{background:#2b2b2b}}
+@media (hover:hover) and (pointer:fine){.soc-google:hover{border-color:#111;background:#f5f5f5}}
 #dForm .soc .or{margin:8px 0 10px}
 #dForm .soc-btn{min-height:44px;font-size:.92rem}
 @media (prefers-reduced-motion:reduce){.soc-btn{transition:none}.soc-btn:active{transform:none}}
@@ -1008,7 +1008,56 @@ html[data-theme="dark"] .launch-cta:hover{background:#d9d9d9;box-shadow:0 10px 2
 <p>The flaws didn’t stop at the padding. I also realized that most cuffed straps use a standard D-ring for cable attachments, and a D-ring moves around too much during exercises. That movement makes the surrounding fabric wear down faster and increases the risk of it tearing off completely. I solved this with a welded stainless steel triangle ring. Because it stays securely in place, it reduces unnecessary friction, helps prevent those failures, and significantly extends the life of the strap.</p>
 </div></section>
 </main>
-<footer><div class="wrap"><div class="flinks"><button type="button" class="flink" data-doc="privacy">Privacy Policy</button><button type="button" class="flink" data-doc="terms">Terms of Service</button><button type="button" class="flink follow" id="followBtn" aria-haspopup="dialog">Follow Us</button></div>© 2026 GearCertified. All rights reserved.</div></footer>
+<main id="privacyPage" class="legal" hidden>
+<section class="about"><div class="wrap about-in">
+<a class="legal-back" href="#" data-legalback="1">&larr; Back to sign up</a>
+<h1>Privacy Policy</h1>
+<p>Last updated: November 9, 2026</p>
+<p>This website (gearcertified.com and gearcertified.ca) is operated by GearCertified (“we”, “us”, “our”) from Canada. This policy explains what personal information we collect, why, how we use it, and the choices you have. Privacy contact: <a href='mailto:support@gearcertified.com'>support@gearcertified.com</a></p>
+<h3>Information we collect</h3><ul><li>Your email address, when you sign up for our discount code or updates.</li><li>A record of your consent: the date and time, the wording you agreed to, the version of this policy, and where you signed up.</li><li>Your name, email address, message, and any attachments, if you email us.</li><li>Technical data such as your IP address, browser and device type, and the pages you request. Our hosting provider logs this automatically, and Google receives your IP address when your browser loads the fonts used on this site.</li><li>Small settings saved in your own browser, such as that you signed up, your consent record, and your light or dark mode choice.</li></ul><p>We do not collect payment card details or run a checkout on this website. Purchases are made on Amazon.</p>
+<h3>How and why we use it</h3><ul><li>To give you your discount code after you sign up (to provide what you asked for).</li><li>To send you product updates, launch news, offers, and other marketing emails (with your consent, which you can withdraw at any time).</li><li>To answer your messages and give support.</li><li>To keep proof of consent and unsubscribe requests, and to comply with the law (legal obligation and our legitimate interest in protecting our business).</li><li>To keep the website secure and working, and to prevent misuse of discount codes (legitimate interests).</li></ul>
+<h3>Consent</h3><p>We ask for your consent before sending marketing emails, and you give it by ticking the box on our sign-up form. You can withdraw your consent at any time by using the unsubscribe link in any of our emails or by emailing us. Withdrawing consent does not affect what we did before you withdrew it.</p>
+<h3>Sharing and service providers</h3><p>We do not sell your personal information, and we do not share it for cross-context behavioral advertising. We share information only with service providers that help us run this website and send email, under contract and only for our purposes, and when required by law or to protect our rights. These currently include:</p><ul><li>Google, which stores our sign-up list (using Google Sheets) and provides the fonts used on this site.</li><li>Our website hosting provider, which delivers this site and keeps technical logs.</li><li>The email service we use to send our emails, once we start sending them.</li></ul><p>If we sell or restructure our business, your information may be transferred to the new owner, who must continue to protect it under this policy.</p>
+<h3>Amazon</h3><p>Our products are sold on Amazon, and the Amazon links on this website go to our own product listing. This is not an affiliate website. When you click through, you leave this website. Amazon handles your order, payment, shipping, and returns under its own terms and privacy notice, and we do not see your Amazon account or payment details. As a seller, we may receive limited order information from Amazon, which we use only as Amazon allows and to handle your order or support request.</p>
+<h3>International transfers</h3><p>We and our providers may process information in countries other than your own, including Canada and the United States. Where the law requires, we use appropriate safeguards for these transfers.</p>
+<h3>How long we keep it</h3><p>We keep your email address until you unsubscribe or ask us to delete it. We may keep a minimal record of your consent and unsubscribe request afterwards so we can honor your choice and meet legal requirements, such as proof of consent under Canada’s anti-spam law. We keep support emails for as long as needed to help you and meet our legal obligations.</p>
+<h3>Your rights</h3><p>Depending on where you live, you may have the right to access, correct, delete, or receive a copy of your information, to object to or restrict its use, and to withdraw consent. This includes rights under Canadian privacy law (PIPEDA and Alberta’s PIPA), the EU and UK GDPR, and California privacy law. To use any right, email us. We may need to verify your identity, and we will respond within the time required by law. California residents: we do not sell or share personal information as those terms are defined, and we will not treat you unfairly for using your rights. If you are unhappy with our response, you can complain to your local privacy authority, such as the Office of the Privacy Commissioner of Canada, the Office of the Information and Privacy Commissioner of Alberta, or your EU or UK data protection authority.</p>
+<h3>Marketing emails</h3><p>Every marketing email identifies GearCertified as the sender, includes our contact details and mailing address, and includes a working unsubscribe link. You can also unsubscribe by emailing us. We stop marketing emails within 10 business days of your request, as required by CASL and the U.S. CAN-SPAM Act.</p>
+<h3>Cookies and browser storage</h3><p>We do not use advertising, analytics, or tracking cookies. We use your browser’s local storage only to remember that you signed up, your consent, and your light or dark mode choice. You can clear it in your browser settings at any time. We do not track you across other websites, so Do Not Track signals do not change how this site works.</p>
+<h3>Children</h3><p>This website is not directed to children under 16, and we do not knowingly collect their information. If you believe a child has given us information, contact us and we will delete it.</p>
+<h3>Security</h3><p>We use reasonable measures to protect your information, but no method of transmission or storage is completely secure. If a breach affects your information and the law requires us to tell you, we will.</p>
+<h3>Other websites</h3><p>Our website links to Amazon, to our Linktree page, and to social platforms, and its share buttons open those platforms. They operate under their own privacy policies, and we are not responsible for them.</p>
+<h3>Changes</h3><p>We may update this policy at any time. The date above shows the latest version. By signing up for our discount code or updates, or by continuing to use this website, you agree to this policy and to any changes we make to it at any time. If you do not agree with a change, you can unsubscribe or ask us to delete your information at any time.</p>
+<h3>Contact</h3><p>Questions or requests about your information: <a href='mailto:support@gearcertified.com'>support@gearcertified.com</a></p>
+</div></section>
+</main>
+<main id="termsPage" class="legal" hidden>
+<section class="about"><div class="wrap about-in">
+<a class="legal-back" href="#" data-legalback="1">&larr; Back to sign up</a>
+<h1>Terms of Service</h1>
+<p>Last updated: November 9, 2026</p>
+<p>These terms apply to your use of the GearCertified website (gearcertified.com and gearcertified.ca), operated by GearCertified (“we”, “us”) from Canada. By using the site or signing up, you agree to these terms and our Privacy Policy. If you do not agree, please do not use the site. Contact: <a href='mailto:support@gearcertified.com'>support@gearcertified.com</a></p>
+<h3>Who can use this site</h3><p>You must be at least 16 years old to use this website or sign up. If you are under the age of majority where you live, ask a parent or guardian first.</p>
+<h3>Signing up and discount codes</h3><p>You can sign up with your email address to get a discount code and, if you tick the box, to receive product updates, offers, and marketing emails from us. Give a real email address that belongs to you. You can unsubscribe from marketing emails at any time using the link in any email or by contacting us. Discount codes are subject to Amazon’s promotion rules and any conditions shown when you redeem them. Codes have no cash value and may not be available in every country. We may refuse, limit, or cancel codes where we suspect misuse, such as repeated or fake sign-ups, and we may change or end an offer at any time. Offers are void where prohibited by law.</p>
+<h3>Using the website</h3><p>Use the site only for lawful purposes. Do not misuse it, interfere with its operation, copy or scrape it in bulk, try to access it in ways we have not allowed, or submit false or harmful information.</p>
+<h3>Purchases on Amazon</h3><p>Our products are sold through our listing on Amazon. The “Buy on Amazon” links on this website take you to that listing, and this is not an affiliate website. When you buy, you do so on Amazon, and Amazon’s terms and policies apply to your purchase. Pricing, availability, shipping, taxes, duties, returns, and refunds are handled through Amazon.</p>
+<h3>Prices and availability</h3><p>Prices, stock status, and product details shown on this website are for information and may not match Amazon’s listing at the moment you buy. The price and availability shown on Amazon when you place your order apply. We try to keep this site accurate but do not promise it is free of errors, and we may correct errors at any time.</p>
+<h3>Shipping and returns</h3><p>Shipping offers, such as free shipping for U.S. Amazon Prime members, and returns and refunds are provided by Amazon through its own programs and policies. Eligibility, terms, and availability are set by Amazon and may change at any time. We do not control Amazon’s shipping, delivery, returns, or refund programs. For help with an order, contact Amazon or email us. Nothing in these terms limits your rights under applicable consumer law.</p>
+<h3>Safe use of products</h3><p>Lifting grips are fitness equipment. Inspect them before each use, stop using them if they are worn out or damaged, and follow the product guide. Exercise carries risk. Product descriptions and photos are for general information, and how long a product lasts and how well it works depend on how you use and care for it. Nothing on this site is medical, health, or fitness advice. Talk to a qualified professional if you are unsure about your health or fitness.</p>
+<h3>Messages and feedback</h3><p>If you send us questions, feedback, or ideas, you let us use them to improve our products and website without payment or obligation to you. We handle personal information in your messages under our Privacy Policy.</p>
+<h3>Intellectual property</h3><p>The content on this site, including text, images, logos, design, and the GearCertified name, belongs to GearCertified or its licensors. You may view the site for personal, non-commercial use and share the site link. You may not copy, change, or reuse our content without our written permission. Amazon is a trademark of Amazon.com, Inc. or its affiliates.</p>
+<h3>Third-party links</h3><p>The site may link to other websites, such as Amazon and social platforms. We do not control them and are not responsible for their content or practices.</p>
+<h3>Disclaimer</h3><p>To the fullest extent permitted by law, the site is provided “as is” and “as available”, and we do not guarantee it will always be uninterrupted or error-free.</p>
+<h3>Limitation of liability</h3><p>To the fullest extent permitted by law, GearCertified is not liable for indirect, incidental, or consequential losses arising from your use of the site. Nothing in these terms excludes or limits liability that cannot be excluded by law, including for death or personal injury caused by negligence, fraud, or your mandatory consumer rights in your country.</p>
+<h3>Your responsibility</h3><p>To the extent permitted by law, you are responsible for claims, losses, and costs caused by your misuse of the site or your breach of these terms.</p>
+<h3>Suspension</h3><p>We may restrict or end your access to the website at any time, including if you break these terms.</p>
+<h3>Governing law</h3><p>These terms are governed by the laws of the Province of Alberta and the federal laws of Canada that apply there, and the courts of Alberta may hear disputes about them. This does not take away any mandatory consumer rights you have where you live.</p>
+<h3>General</h3><p>If any part of these terms is found unenforceable, the rest still applies. If we do not enforce a term, that does not mean we have given it up. These terms and our Privacy Policy are the whole agreement between you and us about this website.</p>
+<h3>Changes</h3><p>We may update these terms and the site at any time. By signing up, or by continuing to use the site after an update, you agree to the updated terms and to any changes to our Privacy Policy made at any time.</p>
+<h3>Contact</h3><p>Questions about these terms: <a href='mailto:support@gearcertified.com'>support@gearcertified.com</a></p>
+</div></section>
+</main>
+<footer><div class="wrap"><div class="flinks"><a class="flink" href="#privacy">Privacy Policy</a><a class="flink" href="#terms">Terms of Service</a><button type="button" class="flink follow" id="followBtn" aria-haspopup="dialog">Follow Us</button></div>© 2026 GearCertified. All rights reserved.</div></footer>
 
 <div class="drawer-bg" id="dBg"></div>
 <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="dTitle">
@@ -1021,13 +1070,13 @@ html[data-theme="dark"] .launch-cta:hover{background:#d9d9d9;box-shadow:0 10px 2
 <div class="tk-perf" aria-hidden="true"></div>
 <div class="tk-bot">
 <form id="signup" novalidate autocomplete="on">
-<div class="soc" id="soc"><div class="soc-row"><button type="button" class="soc-btn soc-google" id="socGoogle" aria-label="Sign up with Google"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M23.5 12.27c0-.85-.08-1.67-.22-2.45H12v4.64h6.46a5.52 5.52 0 01-2.4 3.62v3h3.88c2.27-2.09 3.56-5.17 3.56-8.81z"/><path fill="#34A853" d="M12 24c3.24 0 5.96-1.07 7.94-2.91l-3.88-3c-1.07.72-2.45 1.15-4.06 1.15-3.12 0-5.77-2.11-6.71-4.95H1.28v3.1A12 12 0 0012 24z"/><path fill="#FBBC05" d="M5.29 14.29a7.2 7.2 0 010-4.58v-3.1H1.28a12 12 0 000 10.78l4.01-3.1z"/><path fill="#EA4335" d="M12 4.76c1.76 0 3.34.61 4.58 1.8l3.44-3.44C17.95 1.19 15.24 0 12 0A12 12 0 001.28 6.61l4.01 3.1C6.23 6.87 8.88 4.76 12 4.76z"/></svg><span>Sign up with Google</span></button><button type="button" class="soc-btn soc-apple" id="socApple" aria-label="Sign up with Apple"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M16.37 12.62c-.02-2.2 1.8-3.26 1.88-3.31-1.02-1.5-2.61-1.7-3.18-1.73-1.35-.14-2.64.8-3.33.8-.69 0-1.75-.78-2.88-.76-1.48.02-2.85.86-3.61 2.18-1.54 2.67-.39 6.62 1.1 8.79.73 1.06 1.6 2.25 2.74 2.21 1.1-.04 1.52-.71 2.85-.71 1.33 0 1.71.71 2.88.69 1.19-.02 1.94-1.08 2.66-2.15.84-1.23 1.19-2.42 1.2-2.48-.03-.01-2.3-.88-2.32-3.5zM14.2 6.17c.6-.74 1.01-1.76.9-2.78-.87.04-1.93.58-2.55 1.31-.56.65-1.05 1.69-.92 2.69.97.08 1.97-.49 2.57-1.22z"/></svg><span>Sign up with Apple</span></button></div><div class="or">or</div></div>
+<div class="soc" id="soc"><div class="soc-row"><button type="button" class="soc-btn soc-google" id="socGoogle" aria-label="Sign up with Google"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M23.5 12.27c0-.85-.08-1.67-.22-2.45H12v4.64h6.46a5.52 5.52 0 01-2.4 3.62v3h3.88c2.27-2.09 3.56-5.17 3.56-8.81z"/><path fill="#34A853" d="M12 24c3.24 0 5.96-1.07 7.94-2.91l-3.88-3c-1.07.72-2.45 1.15-4.06 1.15-3.12 0-5.77-2.11-6.71-4.95H1.28v3.1A12 12 0 0012 24z"/><path fill="#FBBC05" d="M5.29 14.29a7.2 7.2 0 010-4.58v-3.1H1.28a12 12 0 000 10.78l4.01-3.1z"/><path fill="#EA4335" d="M12 4.76c1.76 0 3.34.61 4.58 1.8l3.44-3.44C17.95 1.19 15.24 0 12 0A12 12 0 001.28 6.61l4.01 3.1C6.23 6.87 8.88 4.76 12 4.76z"/></svg><span>Sign up with Google</span></button></div><div class="or">or</div></div>
 <label for="dEmail" class="vh">Email address</label>
 <input id="dEmail" name="email" type="email" inputmode="email" placeholder="Email address" autocomplete="email" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="next" maxlength="254">
 <div class="dom-sug" id="domSug" hidden role="group" aria-label="Email domain suggestions"></div>
 <p class="err" id="dErr" role="alert"></p>
 <label class="consent" id="dConsentRow"><input type="checkbox" id="dConsent"><span id="dLegal">I agree to receive product updates, exclusive offers, and marketing communications from GearCertified. Unsubscribe anytime.</span></label>
-<p class="legal" id="dTerms">By continuing you agree to our <button type="button" class="linkbtn" data-doc="terms">Terms</button> and <button type="button" class="linkbtn" data-doc="privacy">Privacy Policy</button>.</p>
+<p class="legal" id="dTerms">By continuing you agree to our <a class="linkbtn" href="#terms" data-fromsignup="1">Terms</a> and <a class="linkbtn" href="#privacy" data-fromsignup="1">Privacy Policy</a>.</p>
 <button type="submit" class="btn btn-primary" id="dSubmit">Sign up</button>
 </form>
 <button type="button" class="tk-skip">No thanks</button>
@@ -1036,8 +1085,6 @@ html[data-theme="dark"] .launch-cta:hover{background:#d9d9d9;box-shadow:0 10px 2
 <div id="dDone" hidden><div class="tk-top"><p class="tagline">You’re on the list</p><h2>SEE YOU AT LAUNCH</h2></div><div class="tk-perf" aria-hidden="true"></div><div class="tk-bot"><p class="note">Your discount code will be emailed to you on launch day. It’s a limited-time offer, so keep an eye on your inbox.</p><button type="button" class="tk-undo" id="dWrong">Used the wrong email? Sign up again</button><button type="button" class="tk-skip">Close</button></div></div>
 </div>
 </aside>
-<div class="drawer-bg" id="docBg"></div>
-<div class="doc" id="doc" role="dialog" aria-modal="true" aria-label="Legal information"><button type="button" class="drawer-close" id="docClose" aria-label="Close">×</button><div class="doc-body" id="docBody"></div></div>
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Product images, enlarged">
 <div class="lb-stage">
 <div class="lb-track" id="lbTrack"></div>
@@ -1178,9 +1225,9 @@ function openD(mode){if(window.gcSocLoad)window.gcSocLoad();document.documentEle
 function closeD(){document.body.classList.remove("gc-dd","gc-home");document.getElementById("dErr").textContent="";dbg.classList.remove("open");dr.classList.remove("open");document.body.style.overflow="";if(savedY!==null){var y=savedY;savedY=null;if(!onAbout())window.scrollTo({top:y,behavior:"smooth"})}if(lastFocus&&lastFocus.focus)lastFocus.focus({preventScroll:true})}
 dr.querySelector(".drawer-close").onclick=closeD;
 dbg.onclick=closeD;
-document.addEventListener("keydown",function(e){if(e.key==="Escape"){if(shEl.classList.contains("open")){closeSh()}else if(docEl.classList.contains("open")){closeDoc()}else if(dr.classList.contains("open")){closeD()}}});
+document.addEventListener("keydown",function(e){if(e.key==="Escape"){if(shEl.classList.contains("open")){closeSh()}else if(dr.classList.contains("open")){closeD()}}});
 function nudge(el){el.classList.remove("shake");void el.offsetWidth;el.classList.add("shake")}
-/* shared by the email form and the Google / Apple buttons: stores consent, sends the signup, shows the confirmation */
+/* shared by the email form and the Google button: stores consent, sends the signup, shows the confirmation */
 function finishSignup(em,method,proof,busy){var err=document.getElementById("dErr");err.textContent="";recordConsent(em,method,proof);function done(){try{localStorage.setItem("gc_signed_up",JSON.stringify({email:em,at:new Date().toISOString()}))}catch(x){}var pr=document.querySelector(".promo");if(pr)pr.hidden=true;emailEl.value="";document.getElementById("dConsent").checked=false;document.getElementById("gcNote").hidden=true;if(window.gcMarkSignedUp)window.gcMarkSignedUp();showPane("coupons");if(!dr.classList.contains("open")){openD();showPane("coupons")}setNotch();dr.scrollTop=0;var xb=dr.querySelector("#dDone .tk-skip");if(xb)xb.focus({preventScroll:true})}var hk=window.GC_AUTH&&window.GC_AUTH.subscribe;if(typeof hk==="function"){busy.forEach(function(b){b.disabled=true});hk(em).then(done,function(er){err.textContent=(er&&er.message)||"Something went wrong. Please try again."}).then(function(){busy.forEach(function(b){b.disabled=false})})}else{done()}}
 document.getElementById("signup").addEventListener("submit",function(e){e.preventDefault();var err=document.getElementById("dErr"),em=emailEl.value.trim(),btn=document.getElementById("dSubmit");var ev=checkEmail(em);if(ev){err.textContent=ev;nudge(emailEl);emailEl.focus();return}if(!document.getElementById("dConsent").checked){err.textContent="Please check the box to agree to receive updates and offers.";var row=document.getElementById("dConsentRow");nudge(row);document.getElementById("dConsent").focus();return}err.textContent="";finishSignup(em,"email",null,[btn])});
 /* the two email fields: typing and browser autofill are allowed; paste, copy, cut and drag-drop are blocked */
@@ -1193,19 +1240,17 @@ var list=DOMS.filter(function(d){return d.indexOf(typed)===0&&d!==typed});if(!li
 box.innerHTML="";list.slice(0,4).forEach(function(d){var b=document.createElement("button");b.type="button";b.textContent="@"+d;b.addEventListener("pointerdown",function(e){e.preventDefault()});b.addEventListener("click",function(){emailEl.value=local+"@"+d;box.hidden=true;document.getElementById("dErr").textContent="";emailEl.dispatchEvent(new Event("input",{bubbles:true}));try{emailEl.blur()}catch(x){}});box.appendChild(b)});box.hidden=false}
 emailEl.addEventListener("input",render);emailEl.addEventListener("focus",render);emailEl.addEventListener("blur",function(){setTimeout(function(){if(document.activeElement.closest&&document.activeElement.closest("#domSug"))return;box.hidden=true},150)})})();
 document.getElementById("dConsent").addEventListener("change",function(){if(this.checked)document.getElementById("dErr").textContent=""});
-/* ===== Sign up with Google / Apple =====
-   Fill in the IDs below to switch the buttons on (a button with no ID still shows, but tells the visitor it is not switched on yet).
-   googleClientId : Google Cloud Console > APIs & Services > Credentials > OAuth client ID (Web). Add https://gearcertified.com (and .ca) under Authorized JavaScript origins.
-   appleClientId  : Apple Developer > Identifiers > Services ID with "Sign in with Apple" enabled (domain + return URL registered).
-   appleRedirectURI: leave as is. It uses the address of the page itself, and that address (e.g. https://gearcertified.com) must be listed as a Return URL on the Services ID. */
-window.GC_SOCIAL=window.GC_SOCIAL||{googleClientId:"961165130286-5tqlmhmrm8gdplrgnah9klfeoroo0hvi.apps.googleusercontent.com",appleClientId:"",appleRedirectURI:location.origin};
+/* ===== Sign up with Google =====
+   Fill in the ID below to switch the button on (a button with no ID still shows, but tells the visitor it is not switched on yet).
+   googleClientId : Google Cloud Console > APIs & Services > Credentials > OAuth client ID (Web). Add https://gearcertified.com (and .ca) under Authorized JavaScript origins. */
+window.GC_SOCIAL=window.GC_SOCIAL||{googleClientId:"961165130286-5tqlmhmrm8gdplrgnah9klfeoroo0hvi.apps.googleusercontent.com"};
 (function(){
 var C=window.GC_SOCIAL,box=document.getElementById("soc");if(!C||!box)return;
-var gBtn=document.getElementById("socGoogle"),aBtn=document.getElementById("socApple"),err=document.getElementById("dErr");
-var haveG=!!C.googleClientId,haveA=!!(C.appleClientId&&C.appleRedirectURI);
-var loaded={},gTok=null,aReady=false;
+var gBtn=document.getElementById("socGoogle"),err=document.getElementById("dErr");
+var haveG=!!C.googleClientId;
+var loaded={},gTok=null;
 function load(src,key,cb){if(loaded[key])return;loaded[key]=1;var s=document.createElement("script");s.src=src;s.async=true;s.onload=cb;s.onerror=function(){loaded[key]=0};document.head.appendChild(s)}
-function busy(on){gBtn.disabled=on;aBtn.disabled=on}
+function busy(on){gBtn.disabled=on}
 function soon(n){err.textContent=n+" sign-up isn\u2019t switched on yet. Please use your email below."}
 function fail(){err.textContent="Sign-in didn\u2019t work. Please try again or use your email instead."}
 function notReady(){err.textContent="Still loading. Please tap again in a moment.";window.gcSocLoad()}
@@ -1214,14 +1259,10 @@ function jwt(t){try{var b=t.split(".")[1].replace(/-/g,"+").replace(/_/g,"/");wh
 /* Google: popup token flow, then read the verified email from Google's userinfo endpoint */
 function initG(){if(gTok||!(window.google&&google.accounts&&google.accounts.oauth2))return;gTok=google.accounts.oauth2.initTokenClient({client_id:C.googleClientId,scope:"openid email",callback:onG,error_callback:function(e){busy(false);if(!e||e.type!=="popup_closed")fail()}})}
 function onG(r){if(!r||r.error||!r.access_token){busy(false);if(!r||r.error!=="access_denied")fail();return}
-fetch("https://www.googleapis.com/oauth2/v3/userinfo",{headers:{Authorization:"Bearer "+r.access_token}}).then(function(x){return x.json()}).then(function(u){busy(false);if(!u||!u.email||u.email_verified===false){err.textContent="We couldn\u2019t get a verified email from Google. Please use the email form instead.";return}finishSignup(u.email,"google",r.access_token,[gBtn,aBtn])}).catch(function(){busy(false);fail()})}
+fetch("https://www.googleapis.com/oauth2/v3/userinfo",{headers:{Authorization:"Bearer "+r.access_token}}).then(function(x){return x.json()}).then(function(u){busy(false);if(!u||!u.email||u.email_verified===false){err.textContent="We couldn\u2019t get a verified email from Google. Please use the email form instead.";return}finishSignup(u.email,"google",r.access_token,[gBtn])}).catch(function(){busy(false);fail()})}
 gBtn.onclick=function(){err.textContent="";if(!haveG){soon("Google");return}if(!consentOK())return;initG();if(!gTok){notReady();return}busy(true);gTok.requestAccessToken({prompt:"select_account"})};
-/* Apple (covers iCloud accounts): popup flow, then read the email from the returned ID token */
-function initA(){if(aReady)return true;if(!window.AppleID)return false;AppleID.auth.init({clientId:C.appleClientId,scope:"email",redirectURI:C.appleRedirectURI,state:"gc",usePopup:true});aReady=true;return true}
-aBtn.onclick=function(){err.textContent="";if(!haveA){soon("Apple");return}if(!consentOK())return;if(!initA()){notReady();return}busy(true);
-AppleID.auth.signIn().then(function(r){busy(false);var t=r&&r.authorization&&r.authorization.id_token,p=t&&jwt(t);if(!p||!p.email||!(p.email_verified===true||p.email_verified==="true")){err.textContent="We couldn\u2019t get a verified email from Apple. Please use the email form instead.";return}finishSignup(p.email,"apple",t,[gBtn,aBtn])}).catch(function(e){busy(false);if(e&&(e.error==="popup_closed_by_user"||e.error==="user_cancelled_authorize"))return;fail()})};
 /* load the SDKs when the sign-up card opens, so the popup can open straight from the tap (popup blockers need that) */
-window.gcSocLoad=function(){if(haveG)load("https://accounts.google.com/gsi/client","g",initG);if(haveA)load("https://appleid.cdn-apple.com/appleauth/static/jsapi/appleid/1/en_US/appleid.auth.js","a",initA)};
+window.gcSocLoad=function(){if(haveG)load("https://accounts.google.com/gsi/client","g",initG);};
 })();
 var SHARE_URL="https://gearcertified.com";
 var toastEl=document.getElementById("toast"),toastT;
@@ -1255,49 +1296,6 @@ function igShare(ev){copyLink("Message copied. Paste it in a chat on Instagram."
 function ttShare(ev){copyLink("Message copied. Paste it in TikTok.",SH_TEXT+" "+SHARE_URL)}
 var POLICY_VERSION="2026-11-09.2";
 function recordConsent(email,method,proof){var rec={email:email,consentedAt:new Date().toISOString(),consentText:document.getElementById("dLegal").textContent,policyVersion:POLICY_VERSION,source:"discount-signup",method:method||"email"};if(proof)rec.proof=proof;try{localStorage.setItem("gc_consent",JSON.stringify({consentedAt:rec.consentedAt,consentText:rec.consentText,policyVersion:rec.policyVersion}))}catch(x){}/* send the signup (email, timestamp, consent wording, policy version) to the Google Sheet; text/plain + no-cors avoids a browser preflight */try{fetch("https://script.google.com/macros/s/AKfycbwa-i1fIj-0C2MYO2ZGssE9-fLYNh1RcTzq3fVVcEzDRHqyxzXb-77DHINeUnxC4vm2/exec",{method:"POST",mode:"no-cors",keepalive:true,headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(rec)}).catch(function(){})}catch(x){}return rec}
-var DOCS={privacy:{t:"Privacy Policy",h:`<p>Last updated: November 9, 2026</p>
-<p>This website (gearcertified.com and gearcertified.ca) is operated by GearCertified (“we”, “us”, “our”) from Canada. This policy explains what personal information we collect, why, how we use it, and the choices you have. Privacy contact: <a href='mailto:support@gearcertified.com'>support@gearcertified.com</a></p>
-<h3>Information we collect</h3><ul><li>Your email address, when you sign up for our discount code or updates.</li><li>A record of your consent: the date and time, the wording you agreed to, the version of this policy, and where you signed up.</li><li>Your name, email address, message, and any attachments, if you email us.</li><li>Technical data such as your IP address, browser and device type, and the pages you request. Our hosting provider logs this automatically, and Google receives your IP address when your browser loads the fonts used on this site.</li><li>Small settings saved in your own browser, such as that you signed up, your consent record, and your light or dark mode choice.</li></ul><p>We do not collect payment card details or run a checkout on this website. Purchases are made on Amazon.</p>
-<h3>How and why we use it</h3><ul><li>To give you your discount code after you sign up (to provide what you asked for).</li><li>To send you product updates, launch news, offers, and other marketing emails (with your consent, which you can withdraw at any time).</li><li>To answer your messages and give support.</li><li>To keep proof of consent and unsubscribe requests, and to comply with the law (legal obligation and our legitimate interest in protecting our business).</li><li>To keep the website secure and working, and to prevent misuse of discount codes (legitimate interests).</li></ul>
-<h3>Consent</h3><p>We ask for your consent before sending marketing emails, and you give it by ticking the box on our sign-up form. You can withdraw your consent at any time by using the unsubscribe link in any of our emails or by emailing us. Withdrawing consent does not affect what we did before you withdrew it.</p>
-<h3>Sharing and service providers</h3><p>We do not sell your personal information, and we do not share it for cross-context behavioral advertising. We share information only with service providers that help us run this website and send email, under contract and only for our purposes, and when required by law or to protect our rights. These currently include:</p><ul><li>Google, which stores our sign-up list (using Google Sheets) and provides the fonts used on this site.</li><li>Our website hosting provider, which delivers this site and keeps technical logs.</li><li>The email service we use to send our emails, once we start sending them.</li></ul><p>If we sell or restructure our business, your information may be transferred to the new owner, who must continue to protect it under this policy.</p>
-<h3>Amazon</h3><p>Our products are sold on Amazon, and the Amazon links on this website go to our own product listing. This is not an affiliate website. When you click through, you leave this website. Amazon handles your order, payment, shipping, and returns under its own terms and privacy notice, and we do not see your Amazon account or payment details. As a seller, we may receive limited order information from Amazon, which we use only as Amazon allows and to handle your order or support request.</p>
-<h3>International transfers</h3><p>We and our providers may process information in countries other than your own, including Canada and the United States. Where the law requires, we use appropriate safeguards for these transfers.</p>
-<h3>How long we keep it</h3><p>We keep your email address until you unsubscribe or ask us to delete it. We may keep a minimal record of your consent and unsubscribe request afterwards so we can honor your choice and meet legal requirements, such as proof of consent under Canada’s anti-spam law. We keep support emails for as long as needed to help you and meet our legal obligations.</p>
-<h3>Your rights</h3><p>Depending on where you live, you may have the right to access, correct, delete, or receive a copy of your information, to object to or restrict its use, and to withdraw consent. This includes rights under Canadian privacy law (PIPEDA and Alberta’s PIPA), the EU and UK GDPR, and California privacy law. To use any right, email us. We may need to verify your identity, and we will respond within the time required by law. California residents: we do not sell or share personal information as those terms are defined, and we will not treat you unfairly for using your rights. If you are unhappy with our response, you can complain to your local privacy authority, such as the Office of the Privacy Commissioner of Canada, the Office of the Information and Privacy Commissioner of Alberta, or your EU or UK data protection authority.</p>
-<h3>Marketing emails</h3><p>Every marketing email identifies GearCertified as the sender, includes our contact details and mailing address, and includes a working unsubscribe link. You can also unsubscribe by emailing us. We stop marketing emails within 10 business days of your request, as required by CASL and the U.S. CAN-SPAM Act.</p>
-<h3>Cookies and browser storage</h3><p>We do not use advertising, analytics, or tracking cookies. We use your browser’s local storage only to remember that you signed up, your consent, and your light or dark mode choice. You can clear it in your browser settings at any time. We do not track you across other websites, so Do Not Track signals do not change how this site works.</p>
-<h3>Children</h3><p>This website is not directed to children under 16, and we do not knowingly collect their information. If you believe a child has given us information, contact us and we will delete it.</p>
-<h3>Security</h3><p>We use reasonable measures to protect your information, but no method of transmission or storage is completely secure. If a breach affects your information and the law requires us to tell you, we will.</p>
-<h3>Other websites</h3><p>Our website links to Amazon, to our Linktree page, and to social platforms, and its share buttons open those platforms. They operate under their own privacy policies, and we are not responsible for them.</p>
-<h3>Changes</h3><p>We may update this policy at any time. The date above shows the latest version. By signing up for our discount code or updates, or by continuing to use this website, you agree to this policy and to any changes we make to it at any time. If you do not agree with a change, you can unsubscribe or ask us to delete your information at any time.</p>
-<h3>Contact</h3><p>Questions or requests about your information: <a href='mailto:support@gearcertified.com'>support@gearcertified.com</a></p>`},
-terms:{t:"Terms of Service",h:`<p>Last updated: November 9, 2026</p>
-<p>These terms apply to your use of the GearCertified website (gearcertified.com and gearcertified.ca), operated by GearCertified (“we”, “us”) from Canada. By using the site or signing up, you agree to these terms and our Privacy Policy. If you do not agree, please do not use the site. Contact: <a href='mailto:support@gearcertified.com'>support@gearcertified.com</a></p>
-<h3>Who can use this site</h3><p>You must be at least 16 years old to use this website or sign up. If you are under the age of majority where you live, ask a parent or guardian first.</p>
-<h3>Signing up and discount codes</h3><p>You can sign up with your email address to get a discount code and, if you tick the box, to receive product updates, offers, and marketing emails from us. Give a real email address that belongs to you. You can unsubscribe from marketing emails at any time using the link in any email or by contacting us. Discount codes are subject to Amazon’s promotion rules and any conditions shown when you redeem them. Codes have no cash value and may not be available in every country. We may refuse, limit, or cancel codes where we suspect misuse, such as repeated or fake sign-ups, and we may change or end an offer at any time. Offers are void where prohibited by law.</p>
-<h3>Using the website</h3><p>Use the site only for lawful purposes. Do not misuse it, interfere with its operation, copy or scrape it in bulk, try to access it in ways we have not allowed, or submit false or harmful information.</p>
-<h3>Purchases on Amazon</h3><p>Our products are sold through our listing on Amazon. The “Buy on Amazon” links on this website take you to that listing, and this is not an affiliate website. When you buy, you do so on Amazon, and Amazon’s terms and policies apply to your purchase. Pricing, availability, shipping, taxes, duties, returns, and refunds are handled through Amazon.</p>
-<h3>Prices and availability</h3><p>Prices, stock status, and product details shown on this website are for information and may not match Amazon’s listing at the moment you buy. The price and availability shown on Amazon when you place your order apply. We try to keep this site accurate but do not promise it is free of errors, and we may correct errors at any time.</p>
-<h3>Shipping and returns</h3><p>Shipping offers, such as free shipping for U.S. Amazon Prime members, and returns and refunds are provided by Amazon through its own programs and policies. Eligibility, terms, and availability are set by Amazon and may change at any time. We do not control Amazon’s shipping, delivery, returns, or refund programs. For help with an order, contact Amazon or email us. Nothing in these terms limits your rights under applicable consumer law.</p>
-<h3>Safe use of products</h3><p>Lifting grips are fitness equipment. Inspect them before each use, stop using them if they are worn out or damaged, and follow the product guide. Exercise carries risk. Product descriptions and photos are for general information, and how long a product lasts and how well it works depend on how you use and care for it. Nothing on this site is medical, health, or fitness advice. Talk to a qualified professional if you are unsure about your health or fitness.</p>
-<h3>Messages and feedback</h3><p>If you send us questions, feedback, or ideas, you let us use them to improve our products and website without payment or obligation to you. We handle personal information in your messages under our Privacy Policy.</p>
-<h3>Intellectual property</h3><p>The content on this site, including text, images, logos, design, and the GearCertified name, belongs to GearCertified or its licensors. You may view the site for personal, non-commercial use and share the site link. You may not copy, change, or reuse our content without our written permission. Amazon is a trademark of Amazon.com, Inc. or its affiliates.</p>
-<h3>Third-party links</h3><p>The site may link to other websites, such as Amazon and social platforms. We do not control them and are not responsible for their content or practices.</p>
-<h3>Disclaimer</h3><p>To the fullest extent permitted by law, the site is provided “as is” and “as available”, and we do not guarantee it will always be uninterrupted or error-free.</p>
-<h3>Limitation of liability</h3><p>To the fullest extent permitted by law, GearCertified is not liable for indirect, incidental, or consequential losses arising from your use of the site. Nothing in these terms excludes or limits liability that cannot be excluded by law, including for death or personal injury caused by negligence, fraud, or your mandatory consumer rights in your country.</p>
-<h3>Your responsibility</h3><p>To the extent permitted by law, you are responsible for claims, losses, and costs caused by your misuse of the site or your breach of these terms.</p>
-<h3>Suspension</h3><p>We may restrict or end your access to the website at any time, including if you break these terms.</p>
-<h3>Governing law</h3><p>These terms are governed by the laws of the Province of Alberta and the federal laws of Canada that apply there, and the courts of Alberta may hear disputes about them. This does not take away any mandatory consumer rights you have where you live.</p>
-<h3>General</h3><p>If any part of these terms is found unenforceable, the rest still applies. If we do not enforce a term, that does not mean we have given it up. These terms and our Privacy Policy are the whole agreement between you and us about this website.</p>
-<h3>Changes</h3><p>We may update these terms and the site at any time. By signing up, or by continuing to use the site after an update, you agree to the updated terms and to any changes to our Privacy Policy made at any time.</p>
-<h3>Contact</h3><p>Questions about these terms: <a href='mailto:support@gearcertified.com'>support@gearcertified.com</a></p>`}};
-var docEl=document.getElementById("doc"),docBg=document.getElementById("docBg"),docBody=document.getElementById("docBody"),docLast;
-function openDoc(k){docLast=document.activeElement;docBody.innerHTML="<h2>"+DOCS[k].t+"</h2>"+DOCS[k].h;docBody.scrollTop=0;docBg.classList.add("open");docEl.classList.add("open");document.body.style.overflow="hidden";document.getElementById("docClose").focus()}
-function closeDoc(){docBg.classList.remove("open");docEl.classList.remove("open");if(!dr.classList.contains("open"))document.body.style.overflow="";if(docLast&&docLast.focus)docLast.focus()}
-document.getElementById("docClose").onclick=closeDoc;
-docBg.onclick=closeDoc;
-document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("[data-doc]");if(b)openDoc(b.getAttribute("data-doc"))});
 (function(){
 var wrap=document.getElementById("ann"),slides=wrap.querySelectorAll(".ann-slide"),i=0,timer=null,DELAY=4000,userPaused=false,ppBtn=document.getElementById("annPause");
 function show(n){var prev=i;i=(n+slides.length)%slides.length;for(var k=0;k<slides.length;k++){var on=k===i;slides[k].classList.toggle("out",k===prev&&!on);slides[k].classList.toggle("on",on);slides[k].setAttribute("aria-hidden",on?"false":"true")}}
@@ -1347,24 +1345,21 @@ document.getElementById("noteLink").onclick=function(){document.getElementById("
 window.gcOpenCoupon=function(){document.getElementById("gcNote").hidden=true;openD()};
 
 document.querySelectorAll("[data-signup]").forEach(function(a){a.addEventListener("click",function(e){e.preventDefault();if(window.gcOpenCoupon)window.gcOpenCoupon()})});
-/* auto popup of the signup: phones/tablets after 15s; desktop at 10-12s or 40% scroll depth, whichever comes first.
+/* auto popup of the signup: only when the visitor scrolls down to "One Size Fits Most" or the FAQ.
    Once per visit, never for anyone already signed up, and not if the visitor already opened the signup themselves. */
 (function(){
-var KEY="gc_autopop",fired=false,tm=null;
+var KEY="gc_autopop",fired=false,tm=null,io=null;
 try{if(sessionStorage.getItem(KEY))fired=true}catch(x){}
-function mark(){fired=true;clearTimeout(tm);window.removeEventListener("scroll",onScroll);try{sessionStorage.setItem(KEY,"1")}catch(x){}}
+function mark(){fired=true;clearTimeout(tm);if(io)io.disconnect();try{sessionStorage.setItem(KEY,"1")}catch(x){}}
 var realOpen=openD;openD=function(m){mark();return realOpen(m)};
 if(fired)return;
-var mobile=window.matchMedia("(max-width:700px), (hover:none) and (pointer:coarse)").matches;
-function blocked(){return dr.classList.contains("open")||document.body.style.overflow==="hidden"||(typeof shEl!=="undefined"&&shEl&&shEl.classList.contains("open"))||(typeof docEl!=="undefined"&&docEl&&docEl.classList.contains("open"))}
+function blocked(){return dr.classList.contains("open")||document.body.style.overflow==="hidden"||(typeof shEl!=="undefined"&&shEl&&shEl.classList.contains("open"))}
 function pop(){
 if(fired)return;
 if(isSignedUp()){mark();return}
 if(document.hidden||blocked()){clearTimeout(tm);tm=setTimeout(pop,1500);return}
 openD("form")}
-function onScroll(){var d=document.documentElement,max=d.scrollHeight-window.innerHeight;if(max>0&&window.scrollY/max>=0.4)pop()}
-tm=setTimeout(pop,mobile?15000:10000+Math.floor(Math.random()*2001));
-if(!mobile)window.addEventListener("scroll",onScroll,{passive:true});
+if("IntersectionObserver" in window){var tg=[document.querySelector(".size"),document.getElementById("faq")].filter(Boolean);if(tg.length){io=new IntersectionObserver(function(es){for(var q=0;q<es.length;q++){if(es[q].isIntersecting){pop();return}}},{rootMargin:"0px 0px -25% 0px",threshold:0});tg.forEach(function(t){io.observe(t)})}}
 })();
 })();
 </script>
@@ -1449,8 +1444,8 @@ m.addEventListener("click",function(e){var a=e.target.closest("a");if(!a)return;
 document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!m.hidden){closeNav();b.focus()}});
 document.querySelectorAll(".ann-link").forEach(function(a){a.addEventListener("click",function(e){e.preventDefault();closeNav();if(window.gcOpenCoupon)window.gcOpenCoupon()})});
 var hc=document.querySelector(".hdr-coupon");if(hc)hc.addEventListener("click",function(e){e.preventDefault();closeNav();if(window.gcOpenCoupon)window.gcOpenCoupon()});
-var mainEl=document.getElementById("top"),ab=document.getElementById("aboutPage");
-function route(first,hh){var h=hh!==undefined?hh:location.hash.slice(1),about=h==="about";mainEl.hidden=about;ab.hidden=!about;document.body.classList.toggle("on-about",about);if(!about)window.dispatchEvent(new Event("resize"));document.title=about?"About | GearCertified":"GearCertified | Premium Lifting Gear & Training Essentials";if(about){window.scrollTo(0,0)}else{var t=h&&document.getElementById(h);if(t)t.scrollIntoView();else if(!first)window.scrollTo(0,0)}if(window.gcSync)window.gcSync()}
+var mainEl=document.getElementById("top"),ab=document.getElementById("aboutPage"),PG={about:ab,privacy:document.getElementById("privacyPage"),terms:document.getElementById("termsPage")},TT={about:"About | GearCertified",privacy:"Privacy Policy | GearCertified",terms:"Terms of Service | GearCertified"};
+function route(first,hh){var h=hh!==undefined?hh:location.hash.slice(1),pg=Object.prototype.hasOwnProperty.call(PG,h)?h:"",about=!!pg;mainEl.hidden=about;for(var k in PG)PG[k].hidden=k!==pg;document.body.classList.toggle("on-about",about);if(!about)window.dispatchEvent(new Event("resize"));document.title=about?TT[pg]:"GearCertified | Premium Lifting Gear & Training Essentials";if(about){window.scrollTo(0,0)}else{var t=h&&document.getElementById(h);if(t)t.scrollIntoView();else if(!first)window.scrollTo(0,0)}if(window.gcSync)window.gcSync()}
 window.addEventListener("hashchange",function(){route(false)});route(true);
 })();
 </script>
@@ -1486,6 +1481,19 @@ if(!stored()){orig();return}
 if(res.done){orig();check();return}/* answer already known: open instantly, refresh it in the background */
 var opened=false,t=setTimeout(function(){opened=true;orig()},400);/* still waiting: never make the visitor wait more than 0.4s */
 first.then(function(ok){if(opened){if(!ok)orig()}else{clearTimeout(t);orig()}})};
+})();
+</script>
+<script>
+(function(){
+var from=null,draft="";
+function legal(h){return h==="privacy"||h==="terms"}
+document.addEventListener("click",function(e){
+var a=e.target.closest&&e.target.closest("[data-fromsignup]");
+if(a){e.preventDefault();var i=document.getElementById("dEmail");draft=i?i.value:"";from={prev:location.hash.slice(1)||"top"};document.body.classList.add("from-signup");closeD();location.hash=a.getAttribute("href").slice(1);return}
+var b=e.target.closest&&e.target.closest("[data-legalback]");
+if(b){e.preventDefault();var p=from?from.prev:"top";from=null;document.body.classList.remove("from-signup");location.hash=p;setTimeout(function(){openD("form");var i=document.getElementById("dEmail");if(draft&&i&&!i.value)i.value=draft},80)}
+});
+window.addEventListener("hashchange",function(){if(!legal(location.hash.slice(1))){from=null;document.body.classList.remove("from-signup")}});
 })();
 </script>
 </body>
